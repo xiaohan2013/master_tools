@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>打印机啊</title>
+  <style>
+  		div{float: left;}
+      #one,#two{ width:400px;  border:1px solid red;padding:10px;}
+       #two{ border:1px solid #339;overflow: hidden; }
+  </style>
+
+</head>
+
+<body>
+        <div id="two">
+         电子商务的定义是，电子商务是指在互联网（Internet）、企业内部网（Intranet）和增值网（VAN，Value Added Network）以上电子交易方式进行交易活动和相关服务的活动，是传统商业活动各环节的电子化、网络化。电子商务是利用微电脑技术和网络通讯技术进行的商务活动。各国政府、学者、企业界人士根据自己所处的地位和对电子商务参与的角度和程度的不同，给出了许多不同的定义。但是，电子商务不等同于商务电子化。
+电子商务即使在各国或不同的领域有不同的定义，但其关键依然是依靠着电子设备和网络技术进行的商业模式，随着电子商务的高速发展，它已不仅仅包括其购物的主要内涵，还应包括了物流配送等附带服务。电子商务包括电子货币交换、供应链管理、电子交易市场、网络营销、在线事务处理、电子数据交换（EDI）、存货管理和自动数据收集系统。在此过程中，利用到的信息技术包括：互联网、外联网、电子邮件、数据库、电子目录和移动电话。
+首先将电子商务划分为广义和狭义的电子商务。广义的电子商务定义为，使用各种电子工具从事商务活动；狭义电子商务定义为，主要利用Internet从事商务或活动。无论是广义的还是狭义的电子商务的概念，电子商务都涵盖了两个方面：一是离不开互联网这个平台，没有了网络，就称不上为电子商务；二是通过互联网完成的是一种商务活动。
+狭义上讲，电子商务（Electronic Commerce，简称EC)是指：通过使用互联网等电子工具（这些工具包括电报、电话、广播、电视、传真、计算机、计算机网络、移动通信等）在全球范围内进行的商务贸易活动。是以计算机网络为基础所进行的各种商务活动，包括商品和服务的提供者、广告商、消费者、中介商等有关各方行为的总和。人们一般理解的电子商务是指狭义上的电子商务。
+广义上讲，电子商务一词源自于Electronic Business，就是通过电子手段进行的商业事务活动。通过使用互联网等电子工具，使公司内部、供应商、客户和合作伙伴之间，利用电子业务共享信息，实现企业间业务流程的电子化，配合企业内部的电子化生产管理系统，提高企业的生产、库存、流通和资金等各个环节的效率。
+        </div>
+    <div  id="one"></div>
+    
+    
+      <script>
+ 		
+       
+         var prints = function ( target,str ,speed){
+ 	        var timer = null;
+		    var count = 0;
+ 	        timer = setInterval(function(){
+			  
+			  if( count >= str.length ){
+				 
+				 clearInterval(timer);
+				  
+				  }else{
+ 					target.innerHTML = str.substring( 0,count );
+					count++;  
+ 					  }
+ 			  },speed)
+ 		 };
+      
+         var  oDiv = document.getElementById("one");
+         var  oDiv2 = document.getElementById('two');
+        
+		 var str  = oDiv2.innerHTML;
+	    
+       setTimeout(function(){
+		    
+			prints( oDiv ,str, 80 );
+		   
+		   },100);
+
+	      
+      
+      
+      
+      
+      
+      
+      </script>
+    
+    
+
+</body>
+</html>
