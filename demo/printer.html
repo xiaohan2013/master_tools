@@ -7,6 +7,9 @@
   		div{float: left;}
       #one,#two{ width:400px;  border:1px solid red;padding:10px;}
        #two{ border:1px solid #339;overflow: hidden; }
+       #one{
+       	font-family: "微软雅黑";
+       }
   </style>
 
 </head>
@@ -27,21 +30,25 @@
        
          var prints = function ( target,str ,speed){
  	        var timer = null;
-		    var count = 0;
- 	        timer = setInterval(function(){
+		 count = 1;
+		  function printer(){
+
 			  
 			  if( count >= str.length ){
 				 
 				 //clearInterval(timer);
-				 count= 0;
+				 count= 1;
 				  
 				  }else{
  					target.innerHTML = str.substring( 0,count )+"|";
 					count++;  
  					  }
- 			  },speed)
+ 			 
+         }
+ 	        //timer = setInterval(function(){printer()},speed)
+ 	        timer = setInterval(printer,speed)
  		 };
-      
+        
          var  oDiv = document.getElementById("one");
          var  oDiv2 = document.getElementById('two');
         
@@ -53,13 +60,6 @@
 		   
 		   },100);
 
-	      
-      
-      
-      
-      
-      
-      
       </script>
     
     
