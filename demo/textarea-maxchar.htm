@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>textarea-maxchar</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	#text{
+		height: 500px;width:500px;-webkit-border-radius: 10px;
+		font-family: "微软雅黑";
+		font-size: 16px;;
+		resize:none;
+		outline: none;
+		margin: 20px auto;
+	}
+	.count{
+		font-weight: bold;
+		font-family: "微软雅黑";
+	}
+</style>
+<script type="text/javascript">
+window.onclick=function(){
+	var oText=document.getElementById('text');
+	function check(obj,Maxchar){ 
+          
+       
+        if(obj.value.length>Maxchar){ //如果超出 
+              
+            obj.value=obj.value.substring(0,Maxchar); //截取0到Maxchar的字符串 
+            } 
+        var curr=Maxchar-obj.value.length; 
+        document.getElementsByClassName("count")[0].innerHTML="您还可以输入"+curr.toString()+"字" 
+        //classname获取到的是个集合 
+          
+        } 
+    oText.onkeydown=function(){
+    	check(this,300)
+    }
+}
+</script>
+</head>
+<body>
+	<h3>请输入文字：</h3>
+    <textarea id="text" rows="20" cols="220" ></textarea>
+	<div class="count"></div>
+</body>
+</html>
