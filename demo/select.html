@@ -9,7 +9,7 @@
 <link href="" rel="stylesheet">
 <script src="http://style.t305.com/mc/bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
-	var json=[{
+  var json=[{
  "name" :"shuzhou",
  "id" : "001",
  "items" : [{
@@ -28,54 +28,84 @@
  "items" : [{
   "parentNode" : "mc",
   "name" : "mc01",
-  "id" : "000101"
+  "id" : "0001101"
  },
  {
   "parentNode" : "mc",
   "name" : "mc02",
-  "id" : "000102"
+  "id" : "0001102"
  }]
 }
 ]
    
-
-   function initPro(s1,s2) {
+  window.Sel={
+   initPro:function(s1,s2) {
        var option1 = '';
-       var jsonData=json;
-        $.each(jsonData, function(index, indexItems) {
-         option1 += "<option id=" + indexItems.id + ">"
+       
+        $.each(json, function(index, indexItems) {
+         option1 += "<option value=" + indexItems.id + ">"
            + indexItems.name + "</option>";
         });
         $("#"+s1).append(option1);
         $("#"+s1).bind("change", function() {
-         second(jsonData);
+       
+        Sel.second(json,s1,s2);
+
         })
+      },
  
- function second(data) {
+ second:function(json,s1,s2) {
+    s1='first';
+    s2="second";
     var option2 = '';
-    var selectedIndex = $("#first :selected").text();
+    var selectedIndex = $("#" + s1 + " :selected").text();
     $("#"+s2).empty();
     if($("#"+s1+":selected").val() == -1){
-     $("#"+s2).append("<option id=\"-1\">请选择</option>");
+     $("#"+s2).append("<option value=\"-1\">请选择</option>");
     }
-    $.each(data, function(index, indexItems) {
+    $.each(json, function(index, indexItems) {
      var proName = indexItems.name;
      $.each(indexItems.items, function(index, indexItems) {
       if (indexItems.parentNode != selectedIndex) {
-       return;
-      } else {
-       option2 += "<option id=" + indexItems.id + ">"
+       return true;﻿
+      } 
+       option2 += "<option value=" + indexItems.id + ">"
          + indexItems.name + "</option>";
-    }
    })
   });
   $("#"+s2).append(option2);
- };
-};
-$(function() {
- initPro("first","second");
-});
-	
+ },
+ selectDefault:function(s1,s2,val1,val2) {
+    $("#" + s1).val(val1);
+    $("#" + s1).trigger('change');
+    $("#" + s2).val(val2);
+ }
+}
+  function selectDefault(s1,s2){
+
+    if ( typeof(firstVal) !== 'undefined'){
+       $("#"+s1).val(firstVal)
+                       
+}
+    if ( typeof(secondVal) !== 'undefined'){
+      $("#"+s2).val(secondVal);
+}   
+
+}
+
+
+$(function(){
+ 
+  Sel.initPro("first","second");
+  Sel.selectDefault("first","second","0011","0001102");
+ 
+  
+})
+ 
+
+
+
+  
 </script>
 </head>
 <body>
