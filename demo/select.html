@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>s4</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://style.t305.com/mc/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+	var json=[{
+ "name" :"shuzhou",
+ "id" : "001",
+ "items" : [{
+  "parentNode" : "shuzhou",
+  "name" : "shuzhou01",
+  "id" : "00101"
+ },
+ {
+  "parentNode" : "shuzhou",
+  "name" : "shuzhou02",
+  "id" : "00102"
+ }]
+},{
+ "name" :"mc",
+ "id" : "0011",
+ "items" : [{
+  "parentNode" : "mc",
+  "name" : "mc01",
+  "id" : "000101"
+ },
+ {
+  "parentNode" : "mc",
+  "name" : "mc02",
+  "id" : "000102"
+ }]
+}
+]
+   
+
+   function initPro(s1,s2) {
+       var option1 = '';
+       var jsonData=json;
+        $.each(jsonData, function(index, indexItems) {
+         option1 += "<option id=" + indexItems.id + ">"
+           + indexItems.name + "</option>";
+        });
+        $("#"+s1).append(option1);
+        $("#"+s1).bind("change", function() {
+         second(jsonData);
+        })
+ 
+ function second(data) {
+    var option2 = '';
+    var selectedIndex = $("#first :selected").text();
+    $("#"+s2).empty();
+    if($("#"+s1+":selected").val() == -1){
+     $("#"+s2).append("<option id=\"-1\">请选择</option>");
+    }
+    $.each(data, function(index, indexItems) {
+     var proName = indexItems.name;
+     $.each(indexItems.items, function(index, indexItems) {
+      if (indexItems.parentNode != selectedIndex) {
+       return;
+      } else {
+       option2 += "<option id=" + indexItems.id + ">"
+         + indexItems.name + "</option>";
+    }
+   })
+  });
+  $("#"+s2).append(option2);
+ };
+};
+$(function() {
+ initPro("first","second");
+});
+	
+</script>
+</head>
+<body>
+    
+     <select id="first">
+          <option value="-1">请选择</option>
+     </select>
+     <select id="second">
+          <option value="-1">请选择</option>
+     </select>
+
+</body>
+</html>
