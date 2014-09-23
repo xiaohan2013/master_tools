@@ -34,6 +34,8 @@
 			
 </style>
 <style type="text/css">
+	body{line-height: 1.6;font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","微软雅黑","黑体",Arial,sans-serif;color: #222;font-size: 14px;}
+	dl{margin-bottom:0;}
 	.inner_side{border: 1px solid #e7e7eb;width: 27%;max-width: 240px;}
 	.bd{min-height:500px;}
     .sub_title_bar{line-height: 36px;padding: 0 12px;font-size: 0;}
@@ -44,6 +46,7 @@
 	.icon16_common.add_gray{background: url("http://style.t305.com/images/base_z20273e.png") 0 -4460px no-repeat;}
 	.icon16_common{width: 16px;height: 16px;vertical-align: middle;display: inline-block;line-height: 100px;overflow: hidden;}
 	.inner_menu_box{position: relative;margin-bottom: 14px;}
+	.inner_menu{margin-top: 0;}
 	.inner_menu:first-child {border-top-width: 0;}
 	.inner_menu{border-top: 1px solid #e7e7eb;}
 	.inner_menu_item.selected{background-color: #f4f5f9;}
@@ -52,11 +55,33 @@
 	.inner_menu_link strong{width: 80px;display: inline-block;margin-top: -2px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;max-width: 80px;font-weight: 400;font-style: normal;vertical-align: middle;cursor: pointer;}
 	.inner_menu_item.selected .menu_opr{display: block;background-color: #f4f5f9;}
 	.inner_menu:hover .menu_opr{display: block;}
+	.inner_menu:hover .inner_menu_item{background-color: #f4f5f9;}
+	.sselected{background-color: #f4f5f9;}
 	.inner_menu .menu_opr{display: none;position: absolute;top: 0;right: 1em;}
 	.inner_menu .menu_opr a{display: inline-block;margin-left: .5em;margin-top: -0.2em;}
 	.icon14_common.edit_gray{background: url("http://style.t305.com/images/base_z20273e.png") 0 -3647px no-repeat;}
 	.icon14_common.del_gray{background: url("http://style.t305.com/images/base_z20273e.png") 0 -3695px no-repeat;}
 	.icon14_common{width: 14px;height: 14px;vertical-align: middle;display: inline-block;line-height: 100px;overflow: hidden;}
+	
+	.add_mask{background-color:black;-opacity:0.6;filter:alpha(opacity=60%);position:relative;z-index:10001;width:100%;height:100%;top:-111px;display:none;}
+	.add_dialog{background: white;position: absolute;width: 650px;left: 50%;margin-left: -250px;top: 30%;height: 398px;margin-top: -250px;text-align: center;}
+	.add_dialog_head{line-height: 52px;height: 52px;border-bottom-width: 0;position: relative;
+padding: 0 20px;background-color: #f4f5f9;}
+	.add_dialog_head h3{margin:0;line-height:52px;text-align: left;}
+	.add_pop_closed{background: url("http://style.t305.com/images/base_z20273e.png") 0 -2709px no-repeat;position: absolute;top: 50%;margin-top: -8px;right: 20px;width: 16px;height: 16px;line-height: 999em;overflow: hidden;}
+	.msg_tab{z-index:8888;display:none;}
+	.add_dialog_middle{padding-top:50px;}
+	.add_dialog_middle_p{text-align: center}
+	.add_dialog_foot{background-color:#f4f5f9;position: absolute;width:100%;height: 100px;line-height:100px;text-align: center;bottom:0;}
+	.add_mask_b1{position: absolute;left: 180px;top: 35px;-webkit-transition:all 100ms;transition:all 100ms;border-radius: 3px;width: 100px;height: 30px;line-height:30px;display:inline-block;background:green;color:white;cursor:pointer;}
+	.add_mask_b2{position: absolute;left: 360px;top: 35px;-webkit-transition:all 100ms;transition:all 100ms;border-radius: 3px;width: 100px;height: 30px;line-height:30px;display:inline-block;background:white;cursor:pointer;}
+	.add_mask_b1:hover{width:110px;}
+	.add_mask_b2:hover{width:110px;}
+	#save_all{position: absolute;width: 200px;left: 0;top: 450px;}
+	
+	
+	
+	
 </style>
 <link rel="stylesheet" href="http://style.t305.com/ace/assets/css/jquery-ui-1.10.3.full.min.css" />
 <link rel="stylesheet" href="http://style.t305.com/mc/css/page/imageText.css" />
@@ -110,10 +135,19 @@
 														<a href="javascript:void(0);" id="addBt" class="opr_meta icon16_common add_gray">添加</a>
 													</div>
 												</div>
-												<div class="inner_menu_box gray with_switch ui-sortable ui-sortable-disabled" id="">
-													<dl class="inner_menu jsMenu ui-sortable ui-sortable-disabled">
-														<dt>
+												<div class="inner_menu_box gray" id="dlBox">
+													<dl class='inner_menu ' id='men_0'>
+														<dt class="inner_menu_item" id="menu_0">
 															<a href="javascript:void(0);" class="inner_menu_link"><strong>123</strong></a>
+															<span class="menu_opr">
+																<a href="javascript:void(0);" class="icon14_common  edit_gray jsEditBt">编辑</a>
+																<a href="javascript:void(0);" class="icon14_common del_gray jsDelBt">删除</a>
+															</span>
+														</dt>
+													</dl>
+													<dl class="inner_menu " id='men_1'>
+														<dt class="inner_menu_item" id="menu_1">
+															<a href="javascript:void(0);" class="inner_menu_link"><strong>1234</strong></a>
 															<span class="menu_opr">
 																<a href="javascript:void(0);" class="icon14_common  edit_gray jsEditBt">编辑</a>
 																<a href="javascript:void(0);" class="icon14_common del_gray jsDelBt">删除</a>
@@ -151,7 +185,8 @@
 											    
 											</div>
 										
-											<button id="loading-btn" type="button" class="btn btn-success" style="float:right;">&nbsp;保&nbsp;存&nbsp;事&nbsp;件&nbsp;</button>
+											<button id="loading-btn" type="button" class="btn btn-success" style="float:right;">&nbsp;保&nbsp;存&nbsp;</button>
+											<button id="save_all" type="button" class="btn">提交</button>
 									</div>
 								</div><div class="slimScrollBar ui-draggable" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 47.8468899521531px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; display: none; background: rgb(51, 51, 51);"></div></div>
 							</div>
@@ -176,7 +211,26 @@
 	
 </div>
 <!-- #dialog-confirm -->
-
+<!-- #add gongzhong start -->
+<div class="add_mask">
+	<div class="add_dialog">
+		<div class="add_dialog_head">
+			<h3>请在下方输入要添加的内容</h3>
+			<a href="javascript:;" onclick="return false" class=" add_pop_closed"></a>
+		</div>
+		<div class="add_dialog_middle">
+			<div class="add_dialog_middle_p">
+				<p>菜单名称不多于五个字符</p>
+				<input type="text" name="add_dialog_middle_input"/>
+			</div>
+		</div>
+		<div class="add_dialog_foot">
+			<div class="add_mask_b1">确认</div>
+			<div class="add_mask_b2">取消</div>
+		</div>
+	</div>
+</div>
+<!-- #add gongzhong end -->
 
 <script src="http://style.t305.com/js/mmoree/module/dialog-mask-v1.6.js"></script>	
 <script src="http://style.t305.com/js/lib/zepto/zepto.min.js"></script>
@@ -279,21 +333,19 @@ $(document).ready(function(){
 		}
 	});
 	
-	
-	$('.btn-success').click(function(){
-		//li
-		var li=$(this).siblings('ul').children('.selected');
-		var strjson='';
+	function reCon(){
+		var li=$('.btn-success').siblings('ul').children('.selected');
+		var json={};
 		//存储 文字
 		if(li.hasClass('tab_text')){
 			var text=$(".content-area").text();
 			
 			//{‘key’:’welcome’,’type’:‘text’,‘content’:‘欢迎您’}
-			var json ={};
-				json.key='welcome';
+			
+				json.key=$('.sselected').find('strong').text();
 				json.type='text';
 				json.content=text;
-				strjson=JSON.stringify(json);
+				
 		
 		}else if(li.hasClass('tab_img')){
 			var imghtml=$(".content-area").html();
@@ -301,27 +353,27 @@ $(document).ready(function(){
 					imgUrl = imgUrl.substring(0,imgUrl.indexOf('"'));
 					
 			//{‘key’:’welcome’,‘type’:‘image’,‘content’:’http://www.baidu.com'}
-			var json={};
-				json.key='welcome';
+			
+				json.key=$('.sselected').find('strong').text();
 				json.type='image';
 				json.content=imgUrl;
-				strjson=JSON.stringify(json);
+				
 			
 		
 		}else if(li.hasClass('tab_video')){
 			var youkuUrl=$('.youkuUrl').val();
 			//{‘key’:’welcome’,‘type’:‘video’,‘subtype’:‘youku’,‘content’:’http://www.baidu.com'}
-			var json={};
-				json.key='welcome';
+			
+				json.key=$('.sselected').find('strong').text();
 				json.type='video';
 				json.subtype='youku';
 				json.content=youkuUrl;
-				strjson=JSON.stringify(json);
+				
 			
 		
 		}else if(li.hasClass('tab_imgtxt')){
 			var imgtxts=$('.appmsg');
-			var json={};
+		
 			//{‘key’:’welcome’,‘type’:‘imgtext’,‘imgtextList’:[{‘id’:’1112’,’url’:’http://www.baidu.com’},{‘id’:’1112’,’url’:’’}]}
 			var imgtextList=[];
 			
@@ -331,12 +383,25 @@ $(document).ready(function(){
 				eachjson.url=$(imgtxts[i]).data('url');
 				imgtextList.push(eachjson);
 			}
-				json.key='welcome';
+				json.key=$('.sselected').find('strong').text();
 				json.type='imgtext';
 				json.imgtextList=imgtextList;
-				strjson=JSON.stringify(json);
+				
 		}
+		return json;
+	}
+	
+	$('.btn-success').click(function(){
+		var reJson=[];
+		var i=$('.inner_menu_box').eq(0).find('.sselected').index();
+		console.info(reCon());
+		//var json[i]=;
 		
+	})
+	
+	$('#save_all').click(function(){
+		//li
+		reCon();
 		
 		
 		var reqUrl = "/uapi/mp_config.htm";
@@ -410,19 +475,97 @@ $(document).ready(function(){
 					$('')
 				}
 		});
+		
+		$('#addBt').click(function(){
+			$('.add_mask').eq(0).css('height',500+document.documentElement.clientHeight);
+			if($('.add_mask').eq(0).css('display') == 'none')
+				{
+					$('.add_mask').eq(0).css('display','block');
+				}
+			else{
+					$('.add_mask').eq(0).css('display','none');
+			}
+			$('.add_mask_b1').eq(0).click(function(){
+			var con2= $("input[name='add_dialog_middle_input']").val();
+			$('.add_mask').eq(0).css('display','none');
+			addDl(con2);
+			})
+			
+		});
+		$('.add_pop_closed').eq(0).click(function(){
+			$('.add_mask').eq(0).css('display','none');
+		});
+		$('.add_mask_b2').eq(0).click(function(){
+			$('.add_mask').eq(0).css('display','none');
+		});
+		
+		
+		
+		function addDl(con){
+			if(!"abc"){
+			var did = '#men-' + num;
+			var html="<dl class='inner_menu' id='"+did+"' data-type=' ' data-key=' ' data-subtype=' ' data-content=' ' data-imgtextList=' '>";
+				html=html+"<dt class='inner_menu_item' id='menu_"+num+"'>";
+				html=html+"<a href='javascript:void(0);' class='inner_menu_link'><strong>123</strong></a>";
+				html=html+"<span class='menu_opr'>";
+				html=html+"<a href='javascript:void(0);' class='icon14_common edit_gray jsEditBt'"+">编辑</a>";
+				html=html+"<a href='javascript:void(0);' class='icon14_common del_gray jsEditBt'"+">删除</a>";
+				html=html+"</span></dt></dl>";
+				
+				$(".inner_menu_box").append(html);
+				$(".inner_menu_box").height('auto');
+			}else{
+			var num=$('.inner_menu').length;
+				var did = '#men-' + num;
+			var html="<dl class='inner_menu' id='"+did+"' data-type=' ' data-key=' ' data-subtype=' ' data-content=' ' data-imgtextList=' '>";
+				html=html+"<dt class='inner_menu_item' id='menu_"+num+"'>";
+				html=html+"<a href='javascript:void(0);' class='inner_menu_link'><strong>"+con+"</strong></a>";
+				html=html+"<span class='menu_opr'>";
+				html=html+"<a href='javascript:void(0);' class='icon14_common edit_gray jsEditBt'"+">编辑</a>";
+				html=html+"<a href='javascript:void(0);' class='icon14_common del_gray jsEditBt'"+">删除</a>";
+				html=html+"</span></dt></dl>";
+				
+				$(".inner_menu_box").append(html);
+				$(".inner_menu_box").height('auto');
+			}
+		}
+		
+		
+		$('.edit_gray').click(function(){
+			var that=this;
+			$('.add_mask').eq(0).css('height',500+document.documentElement.clientHeight);
+			var con=$(this).parent().parent().find('strong').text();
+			//console.log($(this).parent().parent().find('strong').text())
+			$("input[name='add_dialog_middle_input']").val(con);
+			$('.add_mask').eq(0).css('display','block');
+			
+			$('.add_mask_b1').eq(0).click(function(){
+			var con1= $("input[name='add_dialog_middle_input']").val();
+			$(that).parent().parent().find('strong').text(con1);
+			$('.add_mask').eq(0).css('display','none');
+		})
+		})
+		$('.del_gray').click(function(){
+			$(this).parent().parent().parent().remove();
+			
+			
+		})
+		
+		setInterval(function(){console.log($('.inner_menu_box').find('dl').length)},2000)
+		$('.inner_menu').click(function(){
+			$('.msg_tab').eq(0).css('display','block');
+			$(this).addClass('sselected').siblings().removeClass('sselected');
+			//$(this).siblings().click(function(){$('.content-area').html("");})
+			
+			if(!"abc"){
+				
+			}else{
+				//console.log('abc');
+			}
+		})
+		
 	}
 </script>
-
-<script id="tpl-imageText" type="text/html">
-
-
-
-
-
-
-
-</script>
-
 
 
 
