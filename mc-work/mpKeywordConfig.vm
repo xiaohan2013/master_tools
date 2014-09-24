@@ -136,24 +136,7 @@ padding: 0 20px;background-color: #f4f5f9;}
 													</div>
 												</div>
 												<div class="inner_menu_box gray" id="dlBox">
-													<dl class='inner_menu ' id='men_0'>
-														<dt class="inner_menu_item" id="menu_0">
-															<a href="javascript:void(0);" class="inner_menu_link"><strong>123</strong></a>
-															<span class="menu_opr">
-																<a href="javascript:void(0);" class="icon14_common  edit_gray jsEditBt">编辑</a>
-																<a href="javascript:void(0);" class="icon14_common del_gray jsDelBt">删除</a>
-															</span>
-														</dt>
-													</dl>
-													<dl class="inner_menu " id='men_1'>
-														<dt class="inner_menu_item" id="menu_1">
-															<a href="javascript:void(0);" class="inner_menu_link"><strong>1234</strong></a>
-															<span class="menu_opr">
-																<a href="javascript:void(0);" class="icon14_common  edit_gray jsEditBt">编辑</a>
-																<a href="javascript:void(0);" class="icon14_common del_gray jsDelBt">删除</a>
-															</span>
-														</dt>
-													</dl>
+													
 												</div>
 											</div>
 										</div>
@@ -390,27 +373,32 @@ $(document).ready(function(){
 		}
 		return json;
 	}
-	
+	reJson=new Array();
 	$('.btn-success').click(function(){
-		var reJson=[];
-		var i=$('.inner_menu_box').eq(0).find('.sselected').index();
-		console.info(reCon());
-		//var json[i]=;
+			var ium=$('.inner_menu_box').eq(0).find('.sselected').index();
+			//console && console.log(reCon());
+			reJson[ium]=reCon();
+			//reJson.push( reCon() );
+			console && console.log(reJson);
 		
 	})
 	
+	
+	
 	$('#save_all').click(function(){
 		//li
-		reCon();
+		
 		
 		
 		var reqUrl = "/uapi/mp_config.htm";
 				
 				
-				var welMsg=strjson;
-			
+				console.log(reJson);
+				var reJso=JSON.stringify(reJson);
+				console.log(reJso);
 				var mpId=$('#mpId').val();
-	    	    var reqParams = "welMsg="+welMsg+"&method=addWelcomeConfig&backType=json&mpId="+mpId;
+			
+	    	    var reqParams = "config="+reJso+"&method=addKeywordConfig&backType=json&mpId="+mpId;
 	    	    
 	    	    
 	        	var successFun = function(result){
@@ -468,6 +456,9 @@ $(document).ready(function(){
 <script type="text/javascript">
 	window.onload=function()
 	{
+	
+		addDl();
+		
 		$('.add-keyword').click(function(){
 			var con1=$('.control-panel input').eq(0).val();
 			if(con1)
@@ -476,8 +467,10 @@ $(document).ready(function(){
 				}
 		});
 		
-		$('#addBt').click(function(){
-			$('.add_mask').eq(0).css('height',500+document.documentElement.clientHeight);
+		
+		$('body').on('click','#addBt',function(){
+			
+			$('.add_mask').eq(0).css('height',500+$(window).height());
 			if($('.add_mask').eq(0).css('display') == 'none')
 				{
 					$('.add_mask').eq(0).css('display','block');
@@ -485,12 +478,47 @@ $(document).ready(function(){
 			else{
 					$('.add_mask').eq(0).css('display','none');
 			}
-			$('.add_mask_b1').eq(0).click(function(){
-			var con2= $("input[name='add_dialog_middle_input']").val();
-			$('.add_mask').eq(0).css('display','none');
-			addDl(con2);
-			})
-			
+				
+			return false;
+		});
+		
+		
+		$('body').on('click','.add_mask_b1',function(){
+				var con2= $("input[name='add_dialog_middle_input']").val();
+				addDl(con2);
+				$('.add_mask').eq(0).css('display','none');
+				
+				$('.inner_menu').click(function(){
+					$('.msg_tab').eq(0).css('display','block');
+					$(this).addClass('sselected').siblings().removeClass('sselected');
+					//$(this).siblings().click(function(){$('.content-area').html("");})
+					if(!"abc"){
+				
+					}else{
+						$('.content-area').html("");
+					}
+				})
+				$('.edit_gray').click(function(){
+					var that=this;
+					$('.add_mask').eq(0).css('height',500+$('window').height());
+					var con=$(this).parent().parent().find('strong').text();
+					//console && console.log($(this).parent().parent().find('strong').text())
+					$("input[name='add_dialog_middle_input']").val(con);
+					$('.add_mask').eq(0).css('display','block');
+					
+					$('.add_mask_b1').eq(0).click(function(){
+					var con1= $("input[name='add_dialog_middle_input']").val();
+					$(that).parent().parent().find('strong').text(con1);
+					$('.add_mask').eq(0).css('display','none');
+					return false;
+					})
+					
+				})
+				$('.del_gray').click(function(){
+				$(this).parent().parent().parent().remove();
+				})
+				
+				return false;
 		});
 		$('.add_pop_closed').eq(0).click(function(){
 			$('.add_mask').eq(0).css('display','none');
@@ -502,31 +530,44 @@ $(document).ready(function(){
 		
 		
 		function addDl(con){
-			if(!"abc"){
-			var did = '#men-' + num;
-			var html="<dl class='inner_menu' id='"+did+"' data-type=' ' data-key=' ' data-subtype=' ' data-content=' ' data-imgtextList=' '>";
-				html=html+"<dt class='inner_menu_item' id='menu_"+num+"'>";
-				html=html+"<a href='javascript:void(0);' class='inner_menu_link'><strong>123</strong></a>";
-				html=html+"<span class='menu_opr'>";
-				html=html+"<a href='javascript:void(0);' class='icon14_common edit_gray jsEditBt'"+">编辑</a>";
-				html=html+"<a href='javascript:void(0);' class='icon14_common del_gray jsEditBt'"+">删除</a>";
-				html=html+"</span></dt></dl>";
+		
+				if(!arguments[0]){
 				
-				$(".inner_menu_box").append(html);
-				$(".inner_menu_box").height('auto');
-			}else{
-			var num=$('.inner_menu').length;
+					if($!config+""){
+					console && console.log($!config)
+						for(var num=0;num<$($!config).length;num++){
+							reJson[num]=$($!config)[num];
+							var did = '#men-' + num;
+							var html="<dl class='inner_menu' id='"+did+"'>";
+								html=html+"<dt class='inner_menu_item' id='menu_"+num+"'>";
+								html=html+"<a href='javascript:void(0);' class='inner_menu_link'><strong>"+$($!config)[num].key+"</strong></a>";
+								html=html+"<span class='menu_opr'>";
+								html=html+"<a href='javascript:void(0);' class='icon14_common edit_gray jsEditBt'"+">编辑</a>";
+								html=html+"<a href='javascript:void(0);' class='icon14_common del_gray jsEditBt'"+">删除</a>";
+								html=html+"</span></dt></dl>";
+								
+								$(".inner_menu_box").append(html);
+								$(".inner_menu_box").height('auto');
+								html='';
+							}
+							}
+				}
+				else{
+				
+				var num=$('.inner_menu').length;
 				var did = '#men-' + num;
-			var html="<dl class='inner_menu' id='"+did+"' data-type=' ' data-key=' ' data-subtype=' ' data-content=' ' data-imgtextList=' '>";
+				var html="<dl class='inner_menu' id='"+did+"'>";
 				html=html+"<dt class='inner_menu_item' id='menu_"+num+"'>";
 				html=html+"<a href='javascript:void(0);' class='inner_menu_link'><strong>"+con+"</strong></a>";
 				html=html+"<span class='menu_opr'>";
 				html=html+"<a href='javascript:void(0);' class='icon14_common edit_gray jsEditBt'"+">编辑</a>";
 				html=html+"<a href='javascript:void(0);' class='icon14_common del_gray jsEditBt'"+">删除</a>";
 				html=html+"</span></dt></dl>";
-				
+				console && console.log(html)
 				$(".inner_menu_box").append(html);
 				$(".inner_menu_box").height('auto');
+				html='';
+				
 			}
 		}
 		
@@ -535,7 +576,7 @@ $(document).ready(function(){
 			var that=this;
 			$('.add_mask').eq(0).css('height',500+document.documentElement.clientHeight);
 			var con=$(this).parent().parent().find('strong').text();
-			//console.log($(this).parent().parent().find('strong').text())
+			//console && console.log($(this).parent().parent().find('strong').text())
 			$("input[name='add_dialog_middle_input']").val(con);
 			$('.add_mask').eq(0).css('display','block');
 			
@@ -543,7 +584,8 @@ $(document).ready(function(){
 			var con1= $("input[name='add_dialog_middle_input']").val();
 			$(that).parent().parent().find('strong').text(con1);
 			$('.add_mask').eq(0).css('display','none');
-		})
+			})
+		
 		})
 		$('.del_gray').click(function(){
 			$(this).parent().parent().parent().remove();
@@ -551,20 +593,40 @@ $(document).ready(function(){
 			
 		})
 		
-		setInterval(function(){console.log($('.inner_menu_box').find('dl').length)},2000)
+		//setInterval(function(){console && console.log($('.inner_menu_box').find('dl').length)},2000)
 		$('.inner_menu').click(function(){
+			console && console.log($!config)
 			$('.msg_tab').eq(0).css('display','block');
 			$(this).addClass('sselected').siblings().removeClass('sselected');
 			//$(this).siblings().click(function(){$('.content-area').html("");})
 			
-			if(!"abc"){
-				
+			if($!config+""){
+				if( $($!config)[$(this).index()].type=='text' )
+				{
+					$('.content-area').html( $($!config)[$(this).index()].content );
+					$('.wtab').eq(0).addClass('selected').siblings().removeClass('selected');
+				}
+				else if( $($!config)[$(this).index()].type=='image' ){
+					$('.content-area').html( "<img src='"+$($!config)[$(this).index()].content+"'/>" );
+					$('.wtab').eq(1).addClass('selected').siblings().removeClass('selected');
+				}
+				else if( $($!config)[$(this).index()].type=='video' ){
+					$('.content-area').html("<embed height='400' type='application/x-shockwave-flash' align='middle' width='480' src='"+$($!config)[$(this).index()].content+"' allow.access='always' />");
+					$('.wtab').eq(2).addClass('selected').siblings().removeClass('selected');
+				}
+				else if( $($!config)[$(this).index()].type=='imgtext' ){
+					
+					$('.tab_imgtxt').trigger('click');
+					$('.wtab').eq(3).addClass('selected').siblings().removeClass('selected');
+				}
 			}else{
-				//console.log('abc');
+				$('.content-area').html("");
 			}
 		})
 		
 	}
+	
+	console && console.log($!config)
 </script>
 
 
@@ -579,3 +641,86 @@ $(document).ready(function(){
 <script src="http://style.t305.com/ace/assets/js/jquery-ui-1.10.3.full.min.js"></script>
 <script src="http://style.t305.com/mc/js/modules/dialog/main.js"></script>
 
+
+
+
+<!--
+	function youkuVideoAdd(youkuUrl){
+		var youkuid =youkuUrl.substring(youkuUrl.indexOf('id_')+3,youkuUrl.indexOf('.html'));
+		var content="<EMBED height=400 type=application/x-shockwave-flash align=middle width=480 src=http://static.youku.com/v/swf/qplayer.swf?VideoIDS=";
+			content+=youkuid;
+			content+='=&isAutoPlay=false&isShowRelatedVideo=false&embedid=-&showAd=0 allow.Access="always"></EMBED>';
+		$('.content-area').html(content);		
+	}
+
+
+	function imgtextAdd(pics){
+		var content='';
+		for(i = 0 ; i < pics.length; ++i) {
+			//alert(pics[i].id + ":" + pics[i].title);
+			//return pics;
+			if(i==0){
+				content+='<div id="appmsg';
+				content+=pics[i].id;
+				content+='" style="width:320px">';
+				content+='<div class="appmsg" data-id="';
+				content+=pics[i].id;
+				content+='" data-url="';
+				content+=pics[i].url;
+				content+='">';
+				content+='<div class="appmsg_content">';
+				content+='<h4 class="appmsg_title">';
+				content+='<a href="" target="_blank">';
+				content+=pics[i].title;
+				content+='</a>';
+				content+='</h4>';
+				content+='<div class="appmsg_info">';
+				//日期数据为空
+				content+='<em class="appmsg_date">$formater.dateToString($!kwContent.gmtCreate,"yyyy-MM-dd")</em>';
+				content+='</div>';
+				content+='<div class="appmsg_thumb_wrp">';
+				content+='<img src="';
+				content+=pics[i].pic;
+				content+='!300.130" alt="" class="appmsg_thumb">';
+				content+='</div>';
+				//概述也木有
+				content+='<p class="appmsg_desc">$!webUtil.left("';
+				content+=pics[i].summary;
+				content+='",60,"...")</p>';						
+				content+='</div>';
+				content+='<div class="appmsg_mask"></div>';
+				content+='</div>';
+				content+='</div>';
+			}else{
+				content+='<div id="appmsg';
+				content+=pics[i].id;
+				content+='" style="width:320px;height:120px;margin-top:-21px;">';
+				content+='<div class="appmsg" style="height:120px;" data-id="';
+				content+=pics[i].id;
+				content+='" data-url="';
+				content+=pics[i].url;
+				content+='">';
+				content+='<div class="appmsg_item"  style="height:120px;"  >';
+				content+='<h4 class="appmsg_title" style="width:150px;margin-left:10px;">';
+				content+='<a href="" target="_blank">';
+				content+=pics[i].title;
+				content+='</a>';
+				content+='</h4>';
+				content+='<div class="appmsg_info">';
+				//日期数据为空
+				content+='<em class="appmsg_date">$formater.dateToString($!kwContent.gmtCreate,"yyyy-MM-dd")</em>';
+				content+='</div>';
+				content+='<div class="">';
+				content+='<img src="';
+				content+=pics[i].pic;
+				content+='!100.100" alt="" class="appmsg_thumb" style="margin-top:-70px;">';
+				content+='</div>';
+				content+='</div>';
+				content+='<div class="appmsg_mask"></div>';
+				content+='</div>';
+				content+='</div>';
+			}
+		}
+		$('.content-area').html(content);
+	}
+-->
