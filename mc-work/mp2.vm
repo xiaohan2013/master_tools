@@ -381,6 +381,7 @@ $(document).ready(function(){
 			//reJson[ium]=reCon();
 			//console.log(reJson[ium])
 			reJson.push( reCon() );
+			reJson=reJson.unique();
 			console && console.log(reJson);
 		
 	})
@@ -394,7 +395,7 @@ $(document).ready(function(){
 		
 		var reqUrl = "/uapi/mp_config.htm";
 				
-				
+				reJson=reJson.unique();
 				console.log(reJson);
 				var reJso=JSON.stringify(reJson);
 				console.log(reJso);
@@ -412,7 +413,7 @@ $(document).ready(function(){
 	        	var failFun = function(result) {
 					alert(result.data);	
 				}
-		ajaxJsonRequestExt(reqUrl,reqParams,successFun,failFun);
+		//ajaxJsonRequestExt(reqUrl,reqParams,successFun,failFun);
 	});
 	
 });
@@ -490,6 +491,7 @@ $(document).ready(function(){
 		
 		$('body').on('click','.add_mask_b1',function(){
 				var con2= $("input[name='add_dialog_middle_input']").val();
+				
 				addDl(con2);
 				$('.add_mask').eq(0).css('display','none');
 				
@@ -584,7 +586,7 @@ $(document).ready(function(){
 							}
 				}
 				else{
-				
+				if($('.inner_menu_box strong').size()==0){
 				var num=$('.inner_menu').length;
 				var did = '#men-' + num;
 				var html="<dl class='inner_menu' id='"+did+"'>";
@@ -598,7 +600,31 @@ $(document).ready(function(){
 				$(".inner_menu_box").append(html);
 				$(".inner_menu_box").height('auto');
 				html='';
-				
+				}else{
+					var reg=[];
+					for(var i=0;i<$('.inner_menu_box strong').length;i++){
+						reg.push( $('.inner_menu_box strong').eq(i).text() );
+					}
+					
+					if( reg.inArray(con) ){
+					alert('该值已经存在!!!');return
+						}else{
+							var num=$('.inner_menu').length;
+							var did = '#men-' + num;
+							var html="<dl class='inner_menu' id='"+did+"'>";
+							html=html+"<dt class='inner_menu_item' id='menu_"+num+"'>";
+							html=html+"<a href='javascript:void(0);' class='inner_menu_link'><strong>"+con+"</strong></a>";
+							html=html+"<span class='menu_opr'>";
+							html=html+"<a href='javascript:void(0);' class='icon14_common edit_gray jsEditBt'"+">编辑</a>";
+							html=html+"<a href='javascript:void(0);' class='icon14_common del_gray jsEditBt'"+">删除</a>";
+							html=html+"</span></dt></dl>";
+							console && console.log(html)
+							$(".inner_menu_box").append(html);
+							$(".inner_menu_box").height('auto');
+							html='';
+						}
+					
+				}
 			}
 		}
 		
@@ -733,6 +759,7 @@ $(document).ready(function(){
 					
 				}
 				else if( $($!config)[$(this).index()].type=='imgtext' ){
+					console.info($($!config)[$(this).index()]);
 					imgtextAdd( $($!config)[$(this).index()].imgtextList );
 					
 					
@@ -754,7 +781,28 @@ $(document).ready(function(){
 			    } 
 			    this.length-=1 
 			} 
-		
+		Array.prototype.unique = function()
+			{
+				var n = {},r=[];
+				for(var i = 0; i < this.length; i++)
+				{
+					if (!n[this[i]]) 
+					{
+						n[this[i]] = true; 
+						r.push(this[i]); 
+					}
+				}
+				return r;
+			}
+		Array.prototype.inArray = function(e)
+			{
+			for(i=0;i<this.length;i++)
+			{
+			if(this[i] == e)
+			return true;
+			}
+			return false;
+			}
 	}
 	
 	//console && console.log($!config)
