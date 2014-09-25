@@ -569,6 +569,7 @@ $(document).ready(function(){
 	
 	function reCon(){
 		var li=$('.btn-success').siblings('ul').children('.selected');
+		
 		var json={};
 		//存储 文字
 		if(li.hasClass('tab_text')){
@@ -629,11 +630,10 @@ $(document).ready(function(){
 	
 	$('.btn-success').click(function(){
 			var ium=$('.inner_menu_box').eq(0).find('.sselected').find('strong').text();
-			//console && console.log(reCon());
-			//reJson[ium]=reCon();
-			//console.log(reJson[ium])
+			
+			console.log(reCon())
 			reJson.push( reCon() );
-			reJson=reJson.unique();
+			
 			console && console.log(reJson);
 		
 	})
@@ -787,7 +787,7 @@ $(document).ready(function(){
 		function addDl(con){
 				if(!arguments[0]){
 					if($!config+""){
-					//console && console.log($!config)
+					console && console.log($!config)
 						for(var num=0;num<$($!config).length;num++){
 							reJson.push($($!config)[num]);
 							var did = '#men-' + num;
@@ -803,7 +803,7 @@ $(document).ready(function(){
 								$(".inner_menu_box").height('auto');
 								html='';
 							}
-							}
+					}
 				}
 				else{
 					if($('.inner_menu_box strong').size()==0){
@@ -820,7 +820,7 @@ $(document).ready(function(){
 							$(".inner_menu_box").append(html);
 							$(".inner_menu_box").height('auto');
 							html='';
-						}else{
+					}else{
 								console && console.log('1');
 								
 								var reg=[];
@@ -957,29 +957,37 @@ $(document).ready(function(){
 			$(this).addClass('sselected').siblings().removeClass('sselected');
 			//$(this).siblings().click(function(){$('.content-area').html("");})
 			$('.content-area').html("");
+			
 			if($!config+""){
-				if( $($!config)[$(this).index()].type=='text' )
-				{
-					$('.content-area').html( $($!config)[$(this).index()].content );
-					
-				}
-				else if( $($!config)[$(this).index()].type=='image' ){
-					$('.content-area').html( "<img src='"+$($!config)[$(this).index()].content+"'/>" );
-					
-				}
-				else if( $($!config)[$(this).index()].type=='video' ){
-					youkuVideoAdd( $($!config)[$(this).index()].content )
-					
-				}
-				else if( $($!config)[$(this).index()].type=='imgtext' ){
-					console.info($($!config)[$(this).index()]);
-					imgtextAdd( $($!config)[$(this).index()].imgtextList );
-					
-					
-				}
+				ind=$(this).index();
+				console.log(ind)
+					if($($!config)[$(this).index()]){
+						if( $($!config)[$(this).index()].type ){
+							if( $($!config)[ind].type=='text' )
+							{
+								$('.content-area').html( $($!config)[$(this).index()].content );
+								
+							}
+							else if( $($!config)[$(this).index()].type=='image' ){
+								$('.content-area').html( "<img src='"+$($!config)[$(this).index()].content+"'/>" );
+								
+							}
+							else if( $($!config)[$(this).index()].type=='video' ){
+								youkuVideoAdd( $($!config)[$(this).index()].content )
+								
+							}
+							else if( $($!config)[$(this).index()].type=='imgtext' ){
+								console.info($($!config)[$(this).index()]);
+								imgtextAdd( $($!config)[$(this).index()].imgtextList );
+								
+								
+							}
+						}
+					}
 			}else{
 				$('.content-area').html("");
 			}
+			
 		})
 		
 		Array.prototype.remove=function(dx) 
@@ -999,9 +1007,9 @@ $(document).ready(function(){
 				var n = {},r=[];
 				for(var i = 0; i < this.length; i++)
 				{
-					if (!n[this[i]]) 
+					if (!n[this[i].key]) 
 					{
-						n[this[i]] = true; 
+						n[this[i].key] = 1; 
 						r.push(this[i]); 
 					}
 				}
