@@ -1,0 +1,75 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; list-style:none; } 
+body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+body{font-family:'Microsoft Yahei',Arial, Helvetica, sans-serif;padding:0;font-size:12px;margin:0 auto;color: #fff; background:url(../images/home/d_bg.jpg) top center; background-size:100% 100%;  background-color:#000000;}
+body#page{height:auto;}
+.clear{clear:both;}
+a{ text-decoration:none;color:#8A50C1;}
+img{width: 100%;display:block; border:0;}
+a img{background:transparent};
+a img:hover,a img:active{background:transparent;}
+
+/*--------------------------------------*/
+.homepage{width:100%; max-width:640px; height:auto; margin:auto;}
+#container{ width:100%; max-width:640px; height:auto; margin:auto; position:relative;}
+
+#SwipeTarget { width:100%; z-index:1; position:relative; max-width:640px; overflow:hidden;}
+#SwipeTargetIndex{ width:100%; z-index:1; position:relative; max-width:640px; overflow:hidden; opacity:0;}
+  .micon{ position:absolute; z-index:10; width:40%; max-width:300px; top:37%; left:30%; }
+  #micon{width:100%; height:100%; }
+	
+  .mdameil{ position:absolute; z-index:9; width:50%; left:0%; }
+	.mdameir{ position:absolute; z-index:9; width:50%; left:50%; background:#000; }
+	
+	.mlogo{ position:absolute; z-index:8; width:100%;  }
+	.mzouguang{ position:absolute; z-index:7; left:17%; top:7.5%; width:15%;}
+	.mtext{ position:absolute; z-index:8; width:100%; top:32%; opacity:0;}
+	
+	.htext{ position:absolute; z-index:8; width:100%; top:29.8%;}
+	.mingyue{position:absolute; z-index:2; top:55%; left:7%; width:18%;opacity:0;}
+	.mingyue1{position:absolute; z-index:2; top:55%; left:7%; width:18%;opacity:0;}
+	.mainContent{position:absolute; width:100%; z-index:10; margin:0 auto; top:0; left:0; text-align:center; opacity:0;}
+	.m_logo{width:50%; margin:0 auto; margin-top:4%;margin-bottom:4%; padding-top:4%;}
+	.m_pic{margin-bottom:3%; background-color:#000;}
+	.m_pic img{width:100%;}
+	.m_icon{background:url(../images/banner_bg.jpg) no-repeat; background-size:100% 100%; width:100%;overflow:hidden;display:none;}
+	.m_icon ul{}
+	.m_icon ul li{width:25%; line-height:25px; margin-bottom:3%; float:left; background-size:100% 100%;}
+	.m_icon ul li a{color:#FFF; display:block;}
+	.m_banner{width:72%; margin:0 auto;}
+	.m_contact{padding-top:53%; margin-bottom:10px; line-height:28px;}
+	.m_contact a{color:#FFF;}
+	.m_foot{padding-top:8%; padding-bottom:5%;display:none;}
+	
+	.hbtns1,.hbtns2,.hbtns3,.hbtns4,.hbtns5{ position:absolute; z-index:2; top:82%; width:11%;}
+	.hbtns1{left:81%;}
+	.hbtns2{ left:63%;}
+	.hbtns3{ left:45%;}
+	.hbtns4{ left:27%;}
+	.hbtns5{ left:9%;}
+	.hdengguang{ position:absolute; z-index:1;}
+	 
+  .mbtns1,.mbtns2,.mbtns3,.mbtns4,.mbtns5{ position:absolute; z-index:2; top:100%; width:11%;opacity:0;}
+	.mbtns1{left:81%;}
+	.mbtns2{ left:63%;}
+	.mbtns3{ left:45%;}
+	.mbtns4{ left:27%;}
+	.mbtns5{ left:9%;}
+  .mdengguang{ position:absolute; z-index:1; display:none; }
+
+.loadings{background:url(../images/loading.gif) no-repeat center center;}
+.logo{ width:100%; position:fixed; bottom:0; z-index:1000; margin:0 auto; max-width:700px; }
+.logos{ width:26%; margin:0 auto; text-align:center;}
+
+.yuyue1{ width:50%; position:absolute; top:26%;}
+.yuyue2{ width:50%; position:absolute; top:41%;}
+.yuyue3{ width:50%; position:absolute; top:55%;}
+
+
+/* CSS Media Queries
+/*---------------------------------------*/
+@media screen and (max-width: 700px) {
+#container{width:100%; height:auto;}
+#pagecontainer{width:100%; height:100%;}
+#bottom_nav{ width:100%;}

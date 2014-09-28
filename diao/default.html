@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>路劲香港时光</title>
+<meta name="Keywords" content="路劲香港时光微楼书" />
+<meta name="Description" content="路劲香港时光微楼书" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/swipe.js"></script>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		onexuanzhuan();
+	});
+</script>
+</head>
+<body>
+<div id="container">
+    <div id="SwipeTargetIndex">
+        <div class="micon">
+            <div id="micon"><img src="images/home/gq.png"></div>
+        </div>
+        
+        <div class="mdameil"><img src="images/home/m_left.jpg"></div>
+        <div class="mdameir"><img src="images/home/m_right.jpg"></div>
+        
+        <div class="mainContent">
+        	<div style="width:94%; margin:0 auto; background-color:#FFF;">
+            	<div class="m_logo">
+                    <img src="images/logo.jpg" width="100%" />
+                </div>
+                <div class="m_pic">
+                    <section>
+                        <div style="-webkit-transform:translate3d(0,0,0); width:100% !important; margin:0 auto; overflow:hidden; ">
+                            <div id="banner_box" class="box_swipe">
+                                <ul>
+                                    <li><img src="images/pic_1.jpg" width="100%" /></li>
+                                    <li><img src="images/pic_2.jpg" width="100%" /></li>
+                                    <li><img src="images/pic_3.jpg" width="100%" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                            $(function(){
+                                new Swipe(document.getElementById('banner_box'), {
+                                    speed:700,
+                                    auto:6000,
+                                    callback: function(){
+                                        var lis = $(this.element).next("ol").children();
+                                        lis.removeClass("on").eq(this.index).addClass("on");
+                                    }
+                                });
+                            });
+                        </script>
+                    </section>
+                </div>
+                <div class="m_icon">
+                    <div class="m_banner">
+                    	<ul>
+                            <li><a href="pinpai.html"><img src="images/btn_pinpai.jpg" width="100%" /></a></li>
+                            <li><a href="gaikuang.html"><img src="images/btn_gaikuang.jpg" width="100%" /></a></li>
+                            <li><a href="pt/default.html"><img src="images/btn_peitao.jpg" width="100%" /></a></li>
+                            <li><a href="huxing.html"><img src="images/btn_huxing.jpg" width="100%" /></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#"><img src="images/btn_quanjing.jpg" width="100%" /></a></li>
+                            <li><a href="wuye.html"><img src="images/btn_wuye.jpg" width="100%" /></a></li>
+                            <li><a href="http://mp.weixin.qq.com/mp/getmasssendmsg?__biz=MzA3NzY3NDAxOA==#wechat_webview_type=1&wechat_redirect"><img src="images/btn_huigu.jpg" width="100%" /></a></li>
+                            <li><a href="lianxi.html"><img src="images/btn_lianxi.jpg" width="100%" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="m_foot">
+                    <a href="tel:051267611111"><img src="images/index_foot.jpg" width="100%" /></a>
+                </div>
+            </div>
+        </div>
+        <img src="images/bg.jpg" />
+    </div>
+</div>
+<script type="text/javascript" src="js/round.js"></script>
+<script type="text/javascript">
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.call('hideToolbar');
+});
+var dataForWeixin={
+	appId:	"",
+	img:	"http://weisft.com/ljxgsg/images/share.jpg",
+	url:	"http://weisft.com/ljxgsg/default.html",
+	title:	"路劲香港时光微楼书",
+	desc:	"让时代惊艳的香港时光",
+	fakeid:	"",
+};
+(function(){
+	var onBridgeReady=function(){
+		// 发送给好友; 
+		WeixinJSBridge.on('menu:share:appmessage', function(argv){
+			WeixinJSBridge.invoke('sendAppMessage',{
+				"appid":		dataForWeixin.appId,
+				"img_url":		dataForWeixin.img,
+				"img_width":	"120",
+				"img_height":	"120",
+				"link":				dataForWeixin.url,
+				"desc":				dataForWeixin.desc,
+				"title":			dataForWeixin.title
+			}, function(res){});
+		});
+		// 分享到朋友圈;
+		WeixinJSBridge.on('menu:share:timeline', function(argv){
+			WeixinJSBridge.invoke('shareTimeline',{
+			"img_url":dataForWeixin.img,
+			"img_width":"120",
+			"img_height":"120",
+			"link":dataForWeixin.url,
+			"desc":dataForWeixin.desc,
+			"title":dataForWeixin.title
+			}, function(res){});
+		});
+	};
+	if(document.addEventListener){
+		document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+	}else if(document.attachEvent){
+		document.attachEvent('WeixinJSBridgeReady'   , onBridgeReady);
+		document.attachEvent('onWeixinJSBridgeReady' , onBridgeReady);
+	}
+})();
+</script>
+</body>
+</html>
