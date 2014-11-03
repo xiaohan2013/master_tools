@@ -8,8 +8,10 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'js/ajax.js',
-        dest: 'dest/ajax.min.js'
+        //src: 'js/ajax.js',
+        //dest: 'dest/ajax.min.js'
+        src: 'lib/css/animate.css',
+        dest: 'dest/animate_min.css'
       }
     }
   });
