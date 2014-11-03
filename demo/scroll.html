@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>页面滚动特效</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/> 
+<script type="text/javascript" src="http://www.update8.com/images/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://fm.ttpod.com/js/vendor/jquery.mousewheel/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="http://fm.ttpod.com/js/vendor/jquery.easing/jquery.easing.1.3.min.js"></script>
+
+<style>	
+	* {margin:0; padding:0;}
+	html,body{overflow:hidden; }
+	body{position:relative; background:#fff; font-family: "微软雅黑"}
+	h1,h2,h3,h4,h5,h6 {font-size:14px; font-style: normal; font-weight:400;}
+	li,ul {list-style:none;}
+	#wrap {overflow: hidden;}
+	#wrap .section {position: relative; overflow: hidden;}
+	.box {width:1100px; margin:0 auto; position: relative;}
+	.section1 {background:url(http://fm.ttpod.com/css/img/down/banner.jpg) no-repeat center center;}
+	.fm-tit {position: absolute; bottom:40%; left:10%; opacity:0}
+	.d-btn {position: absolute; bottom: 10%; left:10%;  opacity:0}
+	.d-btn span,.d-btn .code {display: inline-block; vertical-align: middle;}
+	.d-btn span a {display: inline-block; width:246px; height:80px; text-indent: -9999px; background:url(http://fm.ttpod.com/css/img/sp_down.png) no-repeat ;}
+	.d-btn span.d1 a{background-position: 0 -591px;}
+	.d-btn span.d2 a{background-position: 0 -351px;}
+	.section2 {background-color:#f1f1f1;}
+	.se-head {text-align: center; padding: 40px 0 0;}
+	.se-head .title {width: 420px; height:60px; margin:0 auto; background: url(http://fm.ttpod.com/css/img/sp_down.png?1408691345834) no-repeat;}
+	.se-head .title.t1 {background-position: 0 -231px;}
+	.se-head .title.t2 {background-position: 0 -171px;}
+	.se-head h6 {font-size:24px; line-height: 30px; color:#999;}
+	.c2 > span {position: absolute;} 
+	.cont2 {bottom:-150px; left:50%; margin-left:-179px; opacity: 0}
+	.op {left:50%; opacity: 0}
+	.op1 { bottom:-60px; margin-left:-300px;}
+	.op2 { bottom:-50px; margin-left:85px;}
+	.op3 { bottom:125px; margin-left:-385px;}
+	.op4 { bottom:105px; margin-left:240px;}
+	.op5 { bottom:150px; margin-left:155px;}
+	.op6 { bottom:250px; margin-left:-235px;}
+	.tx {padding:5px 15px; border:1px solid #d8d8d8; border-radius:5px; background-color: #fff; opacity: 0}
+	.tx1 {left:110px; bottom:20px}
+	.tx2 {left:75px; bottom:75px}
+	.tx3 {left:20px; bottom:220px}
+	.tx4 {left:110px; bottom:300px}
+	.tx5 {left:190px; bottom:320px}
+	.tx6 {left:350px; bottom:420px}
+	.tx7 {left:610px; bottom:440px}
+	.tx8 {right:150px; bottom:280px}
+	.tx9 {right:110px; bottom:120px}
+	.tx10 {right:110px; bottom:220px}
+	.tx11 {right:215px; bottom:320px}
+	.tx12 {right:110px; bottom:420px}
+	.tx13 {right:141px; bottom:50px}
+	.tx14 {right:176px; bottom:11px}
+	.picWrap {position: relative; width:540px; height:540px; background:url("http://fm.ttpod.com/css/img/sp_down.png") no-repeat 0 -1541px; margin:0 auto; }
+	.picWrap .pt {position: absolute; width:160px; height:160px; background:url("http://fm.ttpod.com/css/img/down/pic.jpg") no-repeat; border-radius:50%; z-index: 1; opacity: 0}
+	.picWrap .p1 {background-position: 0 0; left:195px; top:-75px; }
+	.picWrap .p2 {background-position: 0 -160px; left:-42px; top:60px;}
+	.picWrap .p3 {background-position: 0 -319px; left:-41px; top:318px;}
+	.picWrap .p4 {background-position: 0 -480px; left:180px; top:421px;}
+	.picWrap .p5 {background-position: 0 -640px; left:418px; top:319px;}
+	.picWrap .p6 {background-position: 0 -800px; left:420px; top:60px;}
+	.picWrap .ht {position: absolute; padding-bottom: 21px;opacity: 0}
+	.picWrap .ht.tit1 {left:-275px; top:30px;}
+	.picWrap .ht i {position: absolute;background: url("http://fm.ttpod.com/css/img/sp_down.png")}
+	.picWrap .ht.tit1 .icon-down-line1 {background-position: 0 -70px; width: 120px; height: 21px; bottom: 0; right:0;}
+	.picWrap .ht-c {position: relative; width:200px; min-height:40px; border:1px solid#d8d8d8; border-radius:3px;  padding:0 50px 8px 5px; background-color: #fff}
+	.picWrap .ht span {font-size: 10px; color:#999;}
+	.picWrap .ht img {width: 40px; height: 40px; position: absolute; right:5px; top:5px;}
+	.picWrap .ht.tit2 {left:550px; bottom:190px;}
+	.picWrap .ht.tit2 .icon-down-line2 {background-position: 0 -28px; width: 120px; height: 21px; bottom: 0; left:0;}
+	.section4 {background-color: #e1e1e1}
+	.map {position: relative; bottom: 0; height: 650px}
+	.map > div {position: absolute; opacity: 0}
+	.map .map1 {left:27px; bottom:-100px}
+	.map .map2 {left:27px; bottom:-100px}
+	.map .map3 {left:27px; bottom:-100px}
+	.map .map4 {left:27px; bottom:-100px}
+	.map .map5 {left:27px; bottom:-100px}
+	.codeShow {text-align: center; padding: 50px 0;}
+	.codeShow p{ font-size: 36px; line-height: 50px; color:#999;}
+	.dBtn {margin-top:40px;}
+	.dBtn a {display: inline-block; width:246px; height:76px; line-height: 76px; font-size: 28px; margin:0 15px; text-decoration: none; color:#333; background-color:#e5e5e5; border-radius: 5px; border:2px solid #d8d8d8;}
+	#navLi {position: fixed; right:50px; top:50%;}
+	#navLi li {width:15px; height:15px; background-color:blue; border-radius: 50%; margin:5px 0;}
+	#navLi li.current {background-color:#ff6600}
+	.animation {
+    -webkit-animation: bounceIn .8s .2s ease both;
+    -moz-animation: bounceIn .8s .2s ease both;
+    animation: bounceIn .8s .2s ease both;
+    -o-animation: bounceIn .8s .2s ease both
+}
+
+@-webkit-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.3)
+    }
+    
+    50% {
+        opacity: .8;
+        -webkit-transform: scale(1.05)
+    }
+    
+    70% {
+        -webkit-transform: scale(.9)
+    }
+    
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1)
+    }
+}
+
+@-moz-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -moz-transform: scale(.3)
+    }
+    
+    50% {
+        opacity: .8;
+        -moz-transform: scale(1.05)
+    }
+    
+    70% {
+        -moz-transform: scale(.9)
+    }
+    
+    100% {
+        opacity: 1;
+        -moz-transform: scale(1)
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(.3)
+    }
+    
+    50% {
+        opacity: .8;
+        transform: scale(1.05)
+    }
+    
+    70% {
+        transform: scale(.9)
+    }
+    
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.animation1 {
+    -webkit-animation: mapo1 1.2s both;
+    -moz-animation: mapo1 1.2s ease both;
+    animation: mapo1 1.2s ease both;
+    -o-animation: mapo1 1.2s ease both
+}
+
+.animation2 {
+    -webkit-animation: mapo2 1s 1.2s ease-in-out both;
+    -moz-animation: mapo2 1s 1.2s ease-in-out both;
+    animation: mapo2 1s 1.2s ease-in-out both;
+    -o-animation: mapo2 1s 1.2s ease-in-out both
+}
+
+.animation3 {
+    -webkit-animation: mapo3 1s 1.2s ease both;
+    -moz-animation: mapo3 1s 1.2s ease both;
+    animation: mapo3 1s 1.2s ease both;
+    -o-animation: mapo3 1s 1.2s ease both
+}
+
+.animation4 {
+    -webkit-animation: mapo4 1s 1.2s ease-in-out both;
+    -moz-animation: mapo4 1s 1.2s ease-in-out both;
+    animation: mapo4 1s 1.2s ease-in-out both;
+    -o-animation: mapo4 1s 1.2s ease-in-out both
+}
+
+.animation5 {
+    -webkit-animation: mapo5 1s 1.8s ease-in-out both;
+    -moz-animation: mapo5 1s 1.8s ease-in-out both;
+    animation: mapo5 1s 1.8s ease-in-out both;
+    -o-animation: mapo5 1s 1.8s ease-in-out both
+}
+
+@-webkit-keyframes mapo1 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@-moz-keyframes mapo1 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@keyframes mapo1 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@-webkit-keyframes mapo2 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@-moz-keyframes mapo2 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@keyframes mapo2 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@-webkit-keyframes mapo3 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@-moz-keyframes mapo3 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@keyframes mapo3 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 0px
+    }
+}
+
+@-webkit-keyframes mapo4 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 38px
+    }
+}
+
+@-moz-keyframes mapo4 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 38px
+    }
+}
+
+@keyframes mapo4 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: 38px
+    }
+}
+
+@-webkit-keyframes mapo5 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: -4px
+    }
+}
+
+@-moz-keyframes mapo5 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom: -4px
+    }
+}
+
+@keyframes mapo5 {
+    0% {
+        opacity: 0
+    }
+    
+    100% {
+        opacity: 1;
+        bottom:-4px
+    }
+}
+
+
+.paused {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused
+}
+
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="section section1">
+			<div class="fm-tit"><img src="http://fm.ttpod.com/css/img/down/fm.png" /></div>
+			<div class="d-btn">
+				<span class="d1"><a href="#">iphone</a></span>
+				<span class="d2"><a href="#">and</a></span>
+				<em class="code"><img src="http://fm.ttpod.com/css/img/down/code.png" width="95" height="95" /></em>
+			</div>
+		</div>
+		<div class="section section2">
+			<div class="box">
+				<div class="se-head">
+					<h1 class="title t1"></h1>
+					<h6>精心打造独具特色的主题频道，多元化的声音内容服务</h6>
+					<div class="c2">
+						<span class="op op3"><img src="http://fm.ttpod.com/css/img/down/op3.jpg"></span>
+						<span class="op op1"><img src="http://fm.ttpod.com/css/img/down/op1.jpg"></span>
+						<span class="op op5"><img src="http://fm.ttpod.com/css/img/down/op5.jpg"></span>
+						<span class="op op4"><img src="http://fm.ttpod.com/css/img/down/op4.jpg"></span>
+						<span class="op op2"><img src="http://fm.ttpod.com/css/img/down/op2.png"></span>
+						<span class="op op6"><img src="http://fm.ttpod.com/css/img/down/op6.jpg"></span>
+
+						<span class="tx tx1">情歌</span>
+						<span class="tx tx2">轻音乐</span>
+						<span class="tx tx3">Hot爆新歌</span>
+						<span class="tx tx4">日韩</span>
+						<span class="tx tx5">小清新</span>
+						<span class="tx tx6">华语</span>
+						<span class="tx tx7">运动</span>
+						<span class="tx tx8">欧美大咖</span>
+						<span class="tx tx9">影视原声</span>
+						<span class="tx tx10">独立派</span>
+						<span class="tx tx11">天天播报</span>
+						<span class="tx tx12">旅行</span>
+						<span class="tx tx13">红茶馆</span>
+						<span class="tx tx14">青春</span>
+						<span class="cont2"><img src="http://fm.ttpod.com/css/img/down/bg1.png"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section3">
+			<div class="box">
+				<div class="se-head">
+					<h1 class="title t2"></h1>
+					<h6>拥有独特的用户协同共享机制，由大众精挑细选，精彩源源不断</h6>
+				</div>
+				<div class="picWrap">
+					<span class="pt p1"></span>
+					<span class="pt p2"></span>
+					<span class="pt p3"></span>
+					<span class="pt p4"></span>
+					<span class="pt p5"></span>
+					<span class="pt p6"></span>
+					<div class="ht tit1">
+						<i class="icon-down-line1"></i>
+						<div class="ht-c">
+							<span>这首歌很赞！大家快来试听下吧，都来支持我们的偶像好吗？</span>
+							<img src="http://fm.ttpod.com/css/img/down/photo1.jpg">
+						</div>
+					</div>
+					<div class="ht tit2">
+						<i class="icon-down-line2"></i>
+						<div class="ht-c">
+							<span>这个频道不错，占个位先！我会常来挖掘喜爱的音乐哦... </span>
+							<img src="http://fm.ttpod.com/css/img/down/photo3.jpg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section4">
+			<div class="box">
+				<div class="se-head">
+					<h1 class="title t2"></h1>
+					<h6>拥有独特的用户协同共享机制，由大众精挑细选，精彩源源不断</h6>
+				</div>
+				<div class="map">
+					<div class="map1"><img src="http://fm.ttpod.com/css/img/down/section4-1.jpg"></div>
+					<div class="map2"><img src="http://fm.ttpod.com/css/img/down/section4-2.png"></div>
+					<div class="map3"><img src="http://fm.ttpod.com/css/img/down/section4-3.png"></div>
+					<div class="map4"><img src="http://fm.ttpod.com/css/img/down/section4-4.png"></div>
+					<div class="map5"><img src="http://fm.ttpod.com/css/img/down/section4-5.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="section section5">
+			<div class="codeShow">
+				<p><img src="http://fm.ttpod.com/css/img/down/code.png" width="150" height="150"></p>
+				<p>扫描二维码下载APP</p>
+				<div class="dBtn">
+					<a href="#" class="a1">iPhone下载</a>
+					<a href="#" class="a2">Android下载</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var winH=document.documentElement.clientHeight || document.body.clientHeight;
+		var wrap=$('#wrap'),section=wrap.find('.section'),len=section.length,box=$('.box'),m,index=1,c=$(".cont2"),TS={}
+		var ul=document.createElement('ul');
+		ul.setAttribute('id','navLi')
+		$.each(section,function(i,n){
+			box[0].style.height=n.style.height=winH+'px';
+			var li=document.createElement('li');
+			li.className='li'+parseInt(i+1);
+			ul.appendChild(li)
+		})
+		wrap[0].appendChild(ul)
+		$('#navLi').find('li').eq(0).addClass('current');
+		$('#navLi').css('margin-top',-parseInt(($('#navLi')[0].offsetHeight)/2))
+
+		function h(){
+			winH=document.documentElement.clientHeight || document.body.clientHeight;
+			$.each(section,function(i,n){
+				box[0].style.height=n.style.height=winH+'px'
+			})
+		}
+
+		h()
+
+		window.onresize=function(){
+			h();
+			var tt=section.eq(index-1).offset().top;
+			$('html,body').stop().animate({scrollTop:tt},600);
+			$('#navLi').css('margin-top',-parseInt(($('#navLi')[0].offsetHeight)/2))
+
+		}
+
+		function $$(obj){
+			if(obj){
+				return document.getElementById(obj);
+			}
+		}
+
+		$(window).on('mousewheel',function(i, a){
+			i.preventDefault();
+			m || (m = setTimeout(function() {
+            m = null
+        }, 500), (a>0) ? TS.up() : (a<0) && TS.down())
+		});
+
+		TS={
+			an:function(obj,n){
+				setTimeout(function(){
+					obj.addClass('animation')
+				},n)
+			},
+			an1:function(obj,className,n){
+				setTimeout(function(){
+					obj.addClass(className)
+				},n)
+			},
+			section1:function(){
+				var t=this.top('.section1');
+				this.scrollTop(t)
+				$('.fm-tit,.d-btn').addClass("paused").removeClass("animation");
+				setTimeout(function(){
+					$('.fm-tit,.d-btn').removeClass('paused')
+					TS.an($('.fm-tit'),500),TS.an($('.d-btn'),1000)
+				})				
+			},
+			section2:function(){
+				var t=this.top('.section2');
+				this.scrollTop(t)
+				 $(".op,.tx,.cont2").addClass("paused").removeClass("animation");
+				 c.css({top: 1e3,opacity: 0},100)
+				 setTimeout(function() {
+				 	c.animate({top: 280,opacity: 1}, {easing: "easeInOutCirc",duration: 1e3}),
+		           $(".op").addClass("animation"), $(".op,.tx").removeClass("paused"), TS.an($(".tx6"), 1e3), TS.an($(".tx11"), 1e3), TS.an($(".tx10"), 1e3), TS.an($(".tx2"), 1e3), TS.an($(".tx12"), 1e3), TS.an($(".tx1"), 1600), TS.an($(".tx3"), 1600), TS.an($(".tx4"), 1600), TS.an($(".tx5"), 1600), TS.an($(".tx7"), 1600), TS.an($(".tx8"), 1600), TS.an($(".tx9"), 1600), TS.an($(".tx13"), 1600), TS.an($(".tx14"), 1600)
+		        }, 800)
+			},
+			section3:function(){
+				var t=this.top('.section3'),mm=null;
+				this.scrollTop(t)
+				$('.pt,.ht').addClass("paused").removeClass("animation");
+				clearTimeout(mm)
+				mm=setTimeout(function(){
+					$.each($('.pt,.ht'),function(i,n){
+						$(n).removeClass('paused'),
+						TS.an($(n), i*300)
+					})
+				},800)
+			},
+			section4:function(){
+				var t=this.top('.section4'),ti=null;
+				this.scrollTop(t)
+				var div=$('.map').children('div');
+				for (var i = 0; i < div.length; i++) {
+					div.eq(i).removeClass('animation'+parseInt(i+1))
+				};
+				clearTimeout(ti)
+				ti=setTimeout(function(){
+					for (var i = 0; i < div.length; i++) {
+						TS.an1(div.eq(i),('animation'+parseInt(i+1)),i*300);
+					};
+				},500)
+			},
+			section5:function(){
+				var t=this.top('.section5');
+				this.scrollTop(t)
+			},
+			scrollTop:function(n){
+				$('html,body').stop().animate({scrollTop:n},600);
+			},
+			up:function(){
+				if (index<=1){
+					return false
+					index=1
+				}else{
+					index--
+				}
+				this.go(index);
+				this.nav(index)
+				console.log('上')
+			},
+			down:function(){
+				if (index>=len){
+					return false
+					index=len
+				}else{
+					index++
+				}
+				this.go(index);
+				this.nav(index)
+				console.log('下')
+			},
+			go:function(num){
+				switch(num){
+					case 1:
+						TS.section1();
+						break;
+					case 2:
+						TS.section2();
+						break;
+					case 3:
+						TS.section3();
+						break;
+					case 4:
+						TS.section4();
+						break;
+					case 5:
+						TS.section5();
+						break;
+				}
+			},
+			nav:function(n){
+				$('#navLi').find('li').removeClass('current'),
+				$('#navLi').find('li').eq(n-1).addClass('current')
+			},
+			top:function(obj){
+				return $(obj).offset().top
+			}
+		}
+
+		var li=$('#navLi').find('li');
+		li.on('click',function(){
+			index=li.index(this)+1
+			TS.go(index);
+			TS.nav(index)
+		}),$(document).on('keyup',function(e){
+			console.log(e.keyCode);
+			e.preventDefault()
+			var code=e.keyCode;
+			if (code == 40 || code==39) {
+				TS.down()
+			}else if(code == 38 || code==37){
+				TS.up()
+			}
+		}),TS.section1()
+
+		
+
+	</script>
+</body>
+</html>
