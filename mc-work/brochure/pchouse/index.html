@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta content="telephone=no" name="format-detection">
+
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="changyuefeng2012@gmail.com">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/idangerous.swiper.css">
+<link rel="stylesheet" href="css/css.css">
+</head>
+
+<!--设置图片 -->
+<style type="text/css">
+
+.home { background:url(images/g1.png) 0 0 no-repeat; background-size:100% 100%}
+
+.page01 { background:url(images/g2.png) 0 0 no-repeat; background-size:100% 100%}
+.page02 { background:url(images/g3.png) 0 0 no-repeat; background-size:100% 100%}
+.page03 { background:url(images/g4.png) 0 0 no-repeat; background-size:100% 100%}
+.page04 { background:url(images/g5.png) 0 0 no-repeat; background-size:100% 100%}
+.page05 { background:url(images/g6.png) 0 0 no-repeat; background-size:100% 100%}
+.page06 { background:url(images/g7.png) 0 0 no-repeat; background-size:100% 100%}
+.page07 { background:url(images/g8.png) 0 0 no-repeat; background-size:100% 100%}
+.page08 { background:url(images/g9.png) 0 0 no-repeat; background-size:100% 100%}
+
+.reg { background:url(images/reg.png) 0 0 no-repeat; background-size:100% 100%}
+
+
+.navigation { background:url(images/g10.png) 0 0 no-repeat; background-size:100% 100%}
+
+@-webkit-keyframes g1-fadeIn {
+    0% {opacity: 0; /*初始状态 透明度为0*/}
+    50% {opacity: 0; /*中间状态 透明度为0*/ }
+    100% { opacity: 1; /*结尾状态 透明度为1*/}
+}
+
+.g1-delay1s{
+	-webkit-animation-name: g1-fadeIn; /*动画名称*/
+    -webkit-animation-duration: 1s; /*动画持续时间*/
+    -webkit-animation-iteration-count: 1 ;/*动画次数*/
+    -webkit-animation-delay: 0s; /*延迟时间*/
+}
+
+.balei-1 {left:28%; margin:0 auto; position:absolute; top:30%; width:20%;opacity:0;}
+.balei-2 {left:31%; margin:0 auto; position:absolute; top:45%; width:20%;opacity:0; z-index:20;}
+.balei-3 {left:28%; margin:0 auto; position:absolute; top:60%; width:20%;opacity:0;}
+.balei {
+	width:20%;
+    margin-left:-21.3%;
+    animation:baleiAction 2s 1 forwards;
+    -moz-animation:baleiAction 2s 1 forwards; /* Firefox */
+    -webkit-animation:baleiAction 2s 1 forwards; /* Safari and Chrome */
+    -o-animation:baleiAction 2s 1 forwards; /* Opera */
+}
+
+
+@-webkit-keyframes baleiAction { from { margin-left:-21.3%; opacity:0;} to { margin-left:10%; opacity:1;} }
+
+@-webkit-keyframes g2-fadeIn {from { margin-left:-54%; transform:rotate(0deg); opacity:1; } to { margin-left:0%; transform:rotate(-5deg); opacity:1; }}
+#mo{background-image: url(images/gend.png);}
+#inp{background-image: url(images/yuyue.png);background-color: #F2F2F2;background-size: 50%;background-repeat: no-repeat;background-position: center center;}
+
+</style>
+
+<body>
+<div id="ivy_div" style="display: none;"></div>
+
+<div class="loading" style="display: none;"><img src="icon/loading.gif" alt=""></div>
+
+<div class="g-doc swiper-container">
+	<div class="swiper-wrapper" style="width: 100%; height: 100%;">
+		<div class="swiper-slide swiper-slide-visible swiper-slide-active home" style="width: 100%; height: 100%;">
+			<div class="home-txt-img g1-delay1s"><img src="images/g1-1.png" width="100%" height="100%" class=""></div>
+			<div class="down" ><img src="icon/down.png" alt=""></div>	
+		</div>
+		<div class="swiper-slide page01" style="width: 100%; height: 100%;">
+			<div class="pic01"><img class="loadPic" img-url="images/g2-1.png" alt=""></div>
+		</div>
+        <div class="swiper-slide page02" style="width: 100%; height: 100%;">
+            <div class="speaker01" style="width:45% ;z-index:20"><img class="loadPic" src="" img-url="images/g3-2.png" alt=""></div>
+            <div class="pic01 pic022"><img class="loadPic" src="" img-url="images/g3-1.png" alt=""></div>
+        </div>
+        <div class="swiper-slide page03" style="width: 100%; height: 100%;">
+            <div class="pic01 pic03" style="width:45%"><img class="loadPic" src="" img-url="images/g4-1.png" alt=""></div>
+            <div class="pic01 pic04"  style="width:45%"><img class="loadPic" src="" img-url="images/g4-2.png"  alt=""></div>
+        </div>
+        <div class="swiper-slide page04" style="width: 100%; height: 100%;">
+            <div class="pic01 speaker03" style="width:45%"><img class="loadPic" src="" img-url="images/g5-2.png" alt=""></div>
+            <div class="pic01 pic06" style="width:45%"><img class="loadPic" src="" img-url="images/g5-1.png" alt=""></div>
+        </div>
+        <div class="swiper-slide page05" style="width: 100%; height: 100%;">
+            <div class="pic01 pic08"><img class="loadPic"  img-url="images/g6-1.png" alt="" width="160%"></div>
+        </div>
+        <div class="swiper-slide page06" style="width: 100%; height: 100%;">
+            <div class="pic01 speaker04" style="postion:absolute;top:0;"><img style="width:100%;position:absolute;left:-5%;top:4%;" class="loadPic" src="" img-url="images/g7-1.png" alt=""></div>
+        </div>
+        
+        <div class="swiper-slide page07" style="width: 100%; height: 100%;">
+            <div class="pic01 balei balei-1"><img class="loadPic" src="" img-url="images/g8-1.png" width="210%" alt=""></div>
+            <div class="pic01 balei balei-2"><img class="loadPic" src="" img-url="images/g8-2.png" width="210%" alt=""></div>
+            <div class="pic01 balei balei-3"><img class="loadPic" src="" img-url="images/g8-3.png" width="210%" alt=""></div>
+        </div>
+        
+        <div class="swiper-slide page08" style="width: 100%; height: 100%;">
+            <div class="pic01 speaker04" style="width:50%"><img class="loadPic" src="" img-url="images/g9-1.png" alt="" ></div>
+            <div class="pic01 speaker05"><img class="loadPic" src="" img-url="images/g9-2.png" alt=""></div>
+        </div>
+        
+
+
+
+        <div class="swiper-slide navigation" style="width: 100%; height: 100%;">
+            <div class="coorAll">
+                <div class="coorBor1"></div>
+
+                <div class="coor"><img class="loadPic" src="" img-url="icon/coor.png" alt=""></div>
+                <div class="coorBor"></div>
+            </div>
+        </div>
+        <div class="swiper-slide reg" style="width: 100%; height: 100%;" id="mo">
+            <form>
+            <div class="dReg clearfix">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody><tr>
+                    <td>姓名</td>
+                    <td><input class="input" name="username" title="请填写“姓名”~2000:!" style="border-radius: 6px;"></td>
+                  </tr>
+                  <tr>
+                    <td>电话</td>
+                    <td><input class="input" name="phone" title="请填写“电话”~2000:!" style="border-radius: 6px;"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                        <input value=""  class="submit" id="inp">
+                    </td>
+                  </tr>
+                </tbody></table>
+            </div>
+        </form>
+        </div>
+	</div>
+</div>
+
+<div id="musicPlayer" class="musicPlayer musicAuto"></div>
+<audio id="music" loop="loop" src=""></audio> 
+
+<script src="js/jquery.min.js"></script>
+<script src="js/idangerous.swiper-2.0.min.js"></script>
+<script src="js/main.js"></script>
+
+
+<script type="text/javascript" charset="utf-8" async defer>
+
+function checkMobile(sMobile){
+            if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(sMobile))){ 
+                return false;
+            }
+            return true;
+        }
+$('#inp').click(function(){
+
+	var phone=$('input[name="phone"]').val();
+	var username=$('input[name="username"]').val();
+    
+    if( !checkMobile(phone) ){
+        alert('请填写正确的手机号码！')
+        return
+    }
+    if(!username){
+        alert('请填写姓名！！')
+        return
+    }
+   if( username &&  phone){
+         $.post("http://test.mc2113.cn/plugin/activity/apis.htm?aid=10&method=addActivityResult&backType=json", { "username": username,"phone":phone},
+                function(data){
+                console.log(data);
+                if(data.code=="200"){
+                	window.location.href='yaoqinghan.html?'+'username='+encodeURI(username)}
+                else{alert(data.data)} 
+     }, "json");
+    }
+
+})
+</script>
+<script>
+
+
+var imgUrl = "http://style.mc2113.com/dist/app/brochure/pchouse/images/g1.png";
+var lineLink = "http://wx.mc2050.com/cms/1000000000/guobao.html";
+var descContent = '寻找消失的古文明，甲骨文首次到访苏州，20件国宝齐亮相';
+var shareTitle = '2014绿地苏州国宝展邀请函';
+var appid = '';
+ 
+function shareFriend() {
+    WeixinJSBridge.invoke('sendAppMessage',{
+        "appid": appid,
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+    }, function(res) {
+        //_report('send_msg', res.err_msg);
+    })
+}
+function shareTimeline() {
+    WeixinJSBridge.invoke('shareTimeline',{
+        "img_url": imgUrl,
+        "img_width": "200",
+        "img_height": "200",
+        "link": lineLink,
+        "desc": descContent,
+        "title": shareTitle
+    }, function(res) {
+           //_report('timeline', res.err_msg);
+    });
+}
+function shareWeibo() {
+    WeixinJSBridge.invoke('shareWeibo',{
+        "content": descContent,
+        "url": lineLink,
+    }, function(res) {
+        //_report('weibo', res.err_msg);
+    });
+}
+// 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    // 发送给好友
+    WeixinJSBridge.on('menu:share:appmessage', function(argv){
+        shareFriend();
+    });
+    // 分享到朋友圈
+    WeixinJSBridge.on('menu:share:timeline', function(argv){
+        shareTimeline();
+    });
+    // 分享到微博
+    WeixinJSBridge.on('menu:share:weibo', function(argv){
+        shareWeibo();
+    });
+}, false);
+
+
+
+</script>
+  <div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5904ee18a9ce4233a3f2bcafa5f62b65' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+
+</body></html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta content="email=no" name="format-detection">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="Description" content="">
+		<meta name="Keywords" content=" - ">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/public.css">
+		<style type="text/css">
+			section {
+				padding: 0;
+				margin: 0 auto;
+				width: 320px;
+				height: 480px;
+				position: relative;
+				text-align: center;
+				background-color: red;
+			}
+			#contain {
+				background-image: url(images/beijing_6.png);
+				background-size: 100% 100%;
+				position: relative;
+				z-index: 10;
+			}
+			#contain span {
+				display: block;
+				width: 98px;
+				height: 90px;
+				position: absolute;
+			}
+			#contain span:nth-of-type(1) {
+				-background-image: url(images/chengzhang.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				left: 0;
+				top: 0;
+				z-index: 1000;
+			}
+			
+			#mask {
+				position: absolute;
+				transition: all 2s;
+				background-color: rgba(39, 26, 11, 0.57);
+				z-index: 2000;
+				-opacity: 0.5 !important;
+				height: 100%;
+				width: 100%;
+				text-align: center;
+			}
+			#mask1 {
+				background-image: url(images/xialabei3.png);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 100%;
+				z-index: 4000;
+			}
+			#mask1 #content {
+				padding-top: 0;
+				background-color: #ffffff;
+				width: 260px;
+				height: 52.8958%;
+				border-radius: 6px;
+				position: absolute;
+				left: 50%;
+				margin-left: -140px;
+				margin-top: 25.208%;
+				overflow: hidden;
+				line-height: 24px;
+				font-size: 24px;
+				color: #000000;
+				padding: 10px;
+			}
+			#mask1 span {
+				display: block;
+				position: absolute;
+			}
+			#mask1 #button {
+				position: absolute;
+				left: 0;
+				bottom: 5.075%;
+				width: 100%;
+				height: 105px;
+				vertical-align: middle;
+			}
+			#mask1 #button span {
+				position: absolute;
+			}
+			#mask1 span:nth-of-type(1) {
+				left: 50%;
+				margin-left: -49px;
+				top: 7.3958%;
+			}
+
+			#mask1 #span2 {
+				background-image: url(images/fanhui.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				left: 20.3%;
+				display: block;
+				line-height: 75px;
+				top: 0 !important;
+				z-index: 1090;
+				width: 60px;
+				height: 60px;
+				margin-top: 15px;
+				-margin-left: -68px;
+			}
+			#mask1 #span3 {
+				background-image: url(images/share_btn.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				left: 50%;
+				top: 0 !important;
+				z-index: 1200;
+				width: 80px;
+				height: 80px;
+				margin-left: -40px;
+			}
+			#mask1 #span4 {
+				background-image: url(images/rank_btn.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				left: 84.7%;
+				top: 0 !important;
+				z-index: 1210;
+				width: 60px;
+				height: 60px;
+				margin-top: 15px;
+				margin-left: -30px;
+			}
+			.dreamer_area {
+				position: relative;
+				width: 100%;
+				height: 8%;
+				background-image: url(images/dreamer_line_bk.png);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				margin: auto;
+				font-size: 15px;
+				text-align: center;
+				vertical-align: middle;
+				overflow: hidden;
+				text-overflow: clip;
+			}
+			.content_wrapper {
+				margin: 0px auto;
+				margin-top: 17%;
+				width: 75%;
+				height: 100%;
+			}
+			.content_area {
+				text-indent: 2em;
+				text-align: left;
+				font-size: 15px;
+				margin-top: 10px;
+				height: 62.5%;
+				overflow: auto;
+				-text-overflow: clip;
+			}
+			#zhezhao{position: absolute;z-index: 5000;width: 100%;height: 100%;background-image: url(images/guanzhu.png);}
+		</style>
+	</head>
+
+	<body>
+		<section id="contain">
+			<div id="mask">
+				<div id="mask1">
+					<span id="zhatian"></span>
+					
+					<div id="content">
+						<div class="content_wrapper">
+							<div class="dreamer_area">
+								梦想家编号:
+							</div>
+							<div class="content_area">
+								
+							</div>
+						</div>
+
+					</div>
+					<div id="button">
+						<span id="span2">
+							
+						</span>
+						<span id="span3">
+							
+						</span>
+						<span id="span4">
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div id="zhezhao" style="display: none;"></div>
+		</section>
+
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+
+		<script type="text/javascript">
+		$(function(){
+			//console.log(gaga[1]);
+			function yanzheng(gg){
+					if( gg==0 ){
+				$('#zhatian').css('background-image','url(images/chengzhang.png)')
+				return
+			}else if(gg==1){
+				$('#zhatian').css('background-image','url(images/jiankang.png)')
+					return
+			}else if(gg==2){
+				$('#zhatian').css('background-image','url(images/youwo.png)')
+					return
+			}else if(gg==3){
+				$('#zhatian').css('background-image','url(images/chunshu.png)')
+					return
+			}else if(gg==4){
+				$('#zhatian').css('background-image','url(images/youlin.png)')
+					return
+			}else{
+				alert('页面加载有误,请重试！')
+			}
+			}
+			$.get('a.php',function(response){
+       		responsee=JSON.parse( JSON.parse(response) );
+       			if( responsee.data.code==200 ){
+       				yanzheng( responsee.type );
+       				var htmll=$('.dreamer_area').html();
+       				$('.dreamer_area').html( htmll+responsee.code);
+       				$('.content_area').html( responsee.content );
+       				
+       			}
+       
+        	})
+			
+			
+			
+			
+			
+			$('#span2').tap(function(){
+				
+				window.location.href="./index.html";
+				
+			})
+				$('#span4').tap(function(){
+				window.location.href="./rankLike.html";
+				
+			})
+		})	
+			
+		</script>
+	</body>
+
+</html>

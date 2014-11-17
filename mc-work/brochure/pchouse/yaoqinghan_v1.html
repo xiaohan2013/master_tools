@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="Description" content="">
+    <meta name="Keywords" content=" - ">
+    <style type="text/css">
+      body{margin: 0;padding: 0;background-color: #26526F}
+      #contain{padding:0;margin: 0 auto;width: 320px;height: 480px;position: relative;text-align: center;background-image: url(images/yuefenggaga.jpg);background-size: cover;}
+      #name{display:block;width:86px;text-align:center;position: absolute;color: #ffffff;font-weight: bold;left: 50%;top: 68%;overflow: hidden;}
+    </style>
+</head>
+<body>
+  <section id="contain">
+    <span id="name"></span>
+  </section>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    var n_width=$('#name')[0].offsetWidth/2;
+    console.log(n_width);
+    var n_string=window.location.search;
+    var login_name=n_string.substr(10);
+    var login_name = decodeURI(login_name); 
+    $('#name').html( login_name );
+    $('#name').css('margin-left', -n_width );
+  })
+  </script>
+  <div style="display:none;">
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5904ee18a9ce4233a3f2bcafa5f62b65' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+  
+</body>
+</html>
