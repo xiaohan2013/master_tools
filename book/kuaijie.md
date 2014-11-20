@@ -31,11 +31,39 @@
 //                  不见满街漂亮妹，哪个归得程序员？
 */
 ===========================================================================================================
-//元素设置全局话
-$.each( $('section'),function(i,item){
-    $(this).width( $(window).width() );
-    $(this).height( $(window).height() );
-  } )
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="Description" content="">
+    <meta name="Keywords" content=" - ">
+</head>
+<body>
+    
+</body>
+</html>
 
+===========================================================================================================
+//事件处理
+function addEvent(eventTarget, eventType, eventHandler) {
+     if (eventTarget.addEventListener) {
+         eventTarget.addEventListener(eventType, eventHandler, false);
+     } else {
+         if (eventTarget.attachEvent) {
+            eventType = "on" + eventType;
+            eventTarget.attachEvent(eventType, eventHandler);
+         } else {
+             eventTarget["on" + eventType] = eventHandler;
+         }
+    }
+}
+===========================================================================================================
 
