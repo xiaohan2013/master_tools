@@ -1,0 +1,31 @@
+<!DOCTYPE <html>
+<html>
+<body>
+<canvas id="heiha" width="500" height="500">
+</canvas>
+<img id="output" / style="display: none">
+
+<script>
+    var source = "http://style.mc2113.com/dist/game/sq/images/d0.png";
+
+    function imgCross(id){
+     var img = new Image();
+     img.crossOrigin = 'Anonymous';
+     img.onload=function(){
+        var canvas=document.getElementById(id);
+        var ctx=canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        var url = canvas.toDataURL();
+        var output = document.getElementById("output");
+        output.src = url;
+     }
+      img.src = source;
+}
+	
+	imgCross( "heiha" )
+
+    
+</script>
+</body>
+</html>
+
