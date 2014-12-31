@@ -108,7 +108,7 @@ color-index：设备颜色索引中的颜色数，必须是非负整数。
 <meta name="viewport" content="initial-scale=1, user-scalable=no" /> 
  
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
- 
+<meta name="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=no">
 width - viewport的宽度 height - viewport的高度
 initial-scale - 初始的缩放比例
 minimum-scale - 允许用户缩放到的最小比例
