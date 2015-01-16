@@ -1,0 +1,132 @@
+.gm-page-nav {
+    background: rgba(255, 255, 255, 0.9);
+    height: 52.5px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    border-top: 2px solid #EAEAEA;
+
+}
+#game-foot .btn-bottom span {
+    display: inline-block;
+    margin-top: 25.5px;
+    font-size: 12px;
+    color: #818181;
+    width: 55px;
+    text-align: center;
+}
+
+#game-foot .btn-bottom {
+    background: url(http://style.mc2113.com/dist/lib/mc_ui/images/sprite.png) no-repeat top left;
+    background-size: 25px 369px;
+    /*padding-bottom:4px;*/
+    margin-bottom: 4px;
+}
+
+#game-foot .btn-rule {
+    background-position: 0 -97px;
+    width: 21.5px;
+    height: 24.5px;
+    display: inline-block;
+    position: absolute;
+    bottom: 17.5px;
+    left: 6.40625%;
+}
+
+#game-foot .btn-rule-select {
+    background-position: 0 -146.5px;
+}
+
+#game-foot .btn-rank {
+    background-position: 0 -295px;
+    width: 26.5px;
+    height: 24.5px;
+    display: inline-block;
+    position: absolute;
+    bottom: 17.5px;
+    left: 25.46875%;
+}
+
+#game-foot .btn-rank-select {
+    background-position: 0 -344.5px;
+    width: 25px;
+    height: 24.5px;
+}
+
+#game-foot .btn-prize {
+    background-position: 0 -196px;
+    width: 21.5px;
+    height: 24.5px;
+    display: inline-block;
+    position: absolute;
+    bottom: 17.5px;
+    left: 65%;
+}
+
+#game-foot .btn-prize-select {
+    background-position: 0 -245.5px;
+    width: 20.5px;
+    height: 24.5px;
+}
+
+#game-foot .btn-share {
+    background-position: 0 0;
+    width: 25px;
+    height: 23.5px;
+    display: inline-block;
+    position: absolute;
+    bottom: 17.5px;
+    left: 84.21875%;
+}
+
+#game-foot .btn-share-select {
+    background-position: 0 -48px;
+    width: 25px;
+    height: 23.5px;
+}
+
+#game-foot .btn-start {
+	border-radius: 50%;
+	overflow: hidden;
+    background-position: 50% top;
+    background-repeat:no-repeat;
+    background-size: 61px 61px;
+    height: 60.5px;
+    width: 60.5px;
+    display: inline-block;
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -30.25px;
+    border: 2px solid #ffffff;
+}
+#foot_mask{
+	display: none;
+	width: 100%;
+	position: absolute;
+	z-index: 9000;
+	left: 0;
+	top: 0;
+	right: 0;
+	background-image:url(http://style.mc2113.com/dist/lib/mc_ui/images/foot_mask.png?r=1226);
+	background-size:100%;
+	background-position:center top;
+	background-repeat:no-repeat;
+}
+
+#foot_limit_share_mask{
+	display: none;
+	width: 100%;
+	position: absolute;
+	z-index: 9000;
+	left: 0;
+	top: 0;
+	right: 0;
+	background-image:url(http://style.mc2113.com/dist/lib/mc_ui/images/foot_limit_mask.png?r=1226);
+	background-size:100% 100%;
+	background-position:center top;
+	background-repeat:no-repeat;
+}
