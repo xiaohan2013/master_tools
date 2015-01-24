@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,user-scalable=no,initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title></title>
+
+<!-- <link rel="stylesheet" type="text/css"	href="http://style.mc2113.com/dist/app/page/duijiang/css/merge.css" /> -->
+<link rel="stylesheet" type="text/css"	href="http://style.mc2113.com/dist/app/page/duijiang/css/merge.css" />
+<script type="text/javascript"
+	src="http://style.mc2113.com/dist/lib/js/zepto/gmu/zepto.js"></script>
+
+<script type="text/javascript"
+	src="http://style.mc2113.com/dist/app/page/duijiang/js/merge.js"></script>
+
+</head>
+<body>
+	<p id="djjl">商家兑奖记录</p>
+	<div class="ui-refresh">
+		<ul class="data-list data-list-radiuss">
+			<li><a> <strong>4</strong> 
+				
+					<img class="headingImage" data-src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCsHFDgWFFv8By15zKRweicezFQ0KKSt4C8Me5ic015LsZ0omXicFz8Wa2dzLfDkp5STVVJib1EA8M6bg/0" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCsHFDgWFFv8By15zKRweicezFQ0KKSt4C8Me5ic015LsZ0omXicFz8Wa2dzLfDkp5STVVJib1EA8M6bg/0">
+				 
+				<dl>
+					<dt></dt>
+					<dt>黄贱强3</dt>
+					<dd class="content shrink">卡丽兰手表一块&nbsp;&nbsp;</dd>
+					<span class="mobi shrink">YXCZ125487</span>
+					<span class="timing shrink">3分钟前</span>
+				</dl>
+		</a></li>
+		<li><a> <strong>4</strong> 
+				
+					<img class="headingImage" data-src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCsHFDgWFFv8By15zKRweicezFQ0KKSt4C8Me5ic015LsZ0omXicFz8Wa2dzLfDkp5STVVJib1EA8M6bg/0" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCsHFDgWFFv8By15zKRweicezFQ0KKSt4C8Me5ic015LsZ0omXicFz8Wa2dzLfDkp5STVVJib1EA8M6bg/0">
+				 
+				<dl>
+					<dt></dt>
+					<dt>黄贱强3</dt>
+					<dd class="content shrink">卡丽兰手表一块&nbsp;&nbsp;</dd>
+					<span class="fmobi shrink">未填写领奖信息</span>
+					<span class="timing shrink">10分钟前</span>
+				</dl>
+		</a></li>
+		
+		</ul>
+		<div class="huituid">返回首页</div>
+		<div class="ui-refresh-down"></div>
+		
+	</div>
+	
+	
+	
+	
+	<div id="liTpl" style="display: none;">
+		<li><a> <strong>{{rankId}}</strong> 
+				{{if avatar}}
+					<img class="headingImage" data-src="{{avatar}}" />
+				{{/if}} 
+				<dl>
+					<dt></dt>
+					<dt>{{nickName}}</dt>
+					<dd class="content">最佳时间:{{score}}</dd>
+				</dl>
+		</a></li>
+	</div>
+
+	<div id="activityTpl" style="display: none;">
+		<li><a> <strong>{{rankId}}</strong> 
+				{{if avatar}}
+					<img  class="headingImage" data-src="{{avatar}}" />
+				{{/if}} 
+				<dl>
+					<dt></dt>
+					<dt>{{nickName}}</dt>
+					<dd class="content">人气:{{popular}}  </dd>
+				</dl>
+		</a></li>
+	</div>
+	<div id="fh"></div>
+	<script type="text/javascript">
+    $(function(){
+    	
+        var currentPage = 0;
+		var totalPage = 1;
+        $('.ui-refresh').refresh({
+            load: function (dir, type) {
+                var me = this;
+                if (currentPage >= parseInt(totalPage)) {
+					me.disable('down');
+					me.afterDataLoading();
+					$('.ui-refresh-down').hide();
+					
+					return;
+				}
+				currentPage += 1;
+				
+        	
+				var params = "method=searchCommonScoreRank";
+				if($('#type').val()) {
+					if($('#type').val() == "local" || $('#type').val() == 'all'){
+						params="method=searchCommonPopular";	
+						params =  params + "&type=" + $('#type').val();
+					} else{
+						params="method=searchCommonScoreRank";
+						params =  params;
+					}
+				}
+				
+				if($('#game-id').val()) {
+						params =  params + "&gameId=" + $('#game-id').val();
+				}
+				params =  params + "&source=" + $("#source").val();
+				var dataList = $('.data-list');
+        		Zepto.getJSON('/plugin/ushare/social_api.htm?' + params +'&page=' + currentPage, function(data) {
+						if (data.code == "200") {
+							var retData = data.data;
+							if(!retData) {
+								$('.ui-refresh-down').hide();
+								if(currentPage == 1) {
+									dataList[dir == 'up' ? 'prepend' : 'append']("<li>暂时为空！</li>");
+								}
+								me.afterDataLoading();
+								return;
+							}
+							//总页数
+							totalPage = retData.totalPage;
+							if(totalPage <= 1){
+									$('.ui-refresh-down').hide();
+							}
+							
+							html = (function(retData) {
+								var litpl = [];
+								Zepto.each(retData.dataList, function() {
+									var dataTpl = this;
+									var type = $('#type').val();
+									
+										var temp;var score;var tempScore; 
+										temp = dataTpl;
+										score = parseInt(temp.score);
+										var sec = parseInt(score/1000);
+										var min = parseInt(sec/60);
+										var mills = score - sec*1000;
+										sec = sec - min*60;
+										tempScore = mills+"毫秒"
+										if(sec>0){
+											tempScore=sec+"秒"+tempScore;
+										}
+										if(min>0){
+											tempScore=min+"分"+tempScore;
+										}
+										temp.score = tempScore;
+										var tpl = template.render('liTpl', temp);
+										litpl.push(tpl);
+									
+								});
+								return litpl.join('');
+							})(retData);
+						}
+						dataList[dir == 'up' ? 'prepend' : 'append'](html);
+						$(".headingImage").each(function() {
+							if($(this).data("src") && $(this).data("src")!="{{avatar}}"){
+								$(this).attr("src",$(this).data("src"));
+							}
+						});
+						me.afterDataLoading();
+				});
+				
+				
+            }
+        });
+        
+        $('.ui-refresh-down').trigger("click");
+		
+    });
+</script>
+
+</body>
+</html>
