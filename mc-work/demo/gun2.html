@@ -1,0 +1,201 @@
+<html>
+    <head>
+    <title>CSS+JS实现可控的文字列表上下滚动效果丨芯晴网页特效丨CsrCode.Cn</title>
+    <style>
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {margin:0;padding:0; font-size:12px;}
+    li{ list-style:none;}
+    ul{ margin:0;}
+    a{ color:#0066CC; text-decoration:none;}
+    a:hover{ color:#FF0000; text-decoration: underline;}
+    .breakNewsblock {
+    margin:0 auto;
+    position:relative;
+    width:276px;
+    overflow:hidden;
+    }
+    .breakNewsblock h2 {
+    background:transparent url(/imagesforcode/201206/icon2.gif) no-repeat scroll 7px -307px;
+    color:#8F1D21;
+    float:left;
+    font-size:12px;
+    padding-left:25px;
+    }
+    .breakNewsblock h2 span{ float:right; padding-right:10px;}
+    #breakNews {
+    background:transparent url(/imagesforcode/201206/backbar.gif) no-repeat scroll center top;float:left;height:138px;
+    margin-top:5px;
+    padding:0 0 3px 2px;
+    width:275px;
+    }
+    #breakNews .list6 {color:#333333;float:left;height:115px;margin-top:11px;overflow:hidden;width:240px; padding-left:10px;
+    }
+    #breakNews .list6 li{ padding:3px 0;}
+    #breakNews .hit {float:right;height:24px; margin-top:23px; width:17px;}
+    #breakNews .hit span { display:block;float:left;height:13px; margin-bottom:6px;width:13px;}
+    </style>
+    <script language="javascript" type="text/javascript">
+    function ScrollText(content,btnPrevious,btnNext,autoStart,timeout,isSmoothScroll)
+    {
+    this.Speed = 10;
+    this.Timeout = timeout;
+    this.stopscroll =false;//是否停止滚动的标志位
+    this.isSmoothScroll= isSmoothScroll;//是否平滑连续滚动
+    this.LineHeight = 20;//默认高度。可以在外部根据需要设置
+    this.NextButton = this.$(btnNext);
+    this.PreviousButton = this.$(btnPrevious);
+    this.ScrollContent = this.$(content);
+    this.ScrollContent.innerHTML += this.ScrollContent.innerHTML;//为了平滑滚动再加一遍
+    if(this.PreviousButton)
+    {
+    this.PreviousButton.onclick = this.GetFunction(this,"Previous");
+    this.PreviousButton.onmouseover = this.GetFunction(this,"MouseOver");
+    this.PreviousButton.onmouseout = this.GetFunction(this,"MouseOut");
+    }
+    if(this.NextButton){
+    this.NextButton.onclick = this.GetFunction(this,"Next");
+    this.NextButton.onmouseover = this.GetFunction(this,"MouseOver");
+    this.NextButton.onmouseout = this.GetFunction(this,"MouseOut");
+    }
+    this.ScrollContent.onmouseover = this.GetFunction(this,"MouseOver");
+    this.ScrollContent.onmouseout = this.GetFunction(this,"MouseOut");
+    if(autoStart)
+    {
+    this.Start();
+    }
+    }
+    ScrollText.prototype = {
+    $:function(element)
+    {
+    return document.getElementById(element);
+    },
+    Previous:function()
+    {
+    this.stopscroll = true;
+    this.Scroll("up");
+    },
+    Next:function()
+    {
+    this.stopscroll = true;
+    this.Scroll("down");
+    },
+    Start:function()
+    {
+    if(this.isSmoothScroll)
+    {
+    this.AutoScrollTimer = setInterval(this.GetFunction(this,"SmoothScroll"), this.Timeout);
+    }
+    else
+    {
+    this.AutoScrollTimer = setInterval(this.GetFunction(this,"AutoScroll"), this.Timeout);
+    }
+    },
+    Stop:function()
+    {
+    clearTimeout(this.AutoScrollTimer);
+    this.DelayTimerStop = 0;
+    },
+    MouseOver:function()
+    {
+    this.stopscroll = true;
+    },
+    MouseOut:function()
+    {
+    this.stopscroll = false;
+    },
+    AutoScroll:function()
+    {
+    if(this.stopscroll)
+    {
+    return;
+    }
+    this.ScrollContent.scrollTop++;
+    if(parseInt(this.ScrollContent.scrollTop) % this.LineHeight != 0)
+    {
+    this.ScrollTimer = setTimeout(this.GetFunction(this,"AutoScroll"), this.Speed);
+    }
+    else
+    {
+    if(parseInt(this.ScrollContent.scrollTop) >= parseInt(this.ScrollContent.scrollHeight) / 2)
+    {
+    this.ScrollContent.scrollTop = 0;
+    }
+    clearTimeout(this.ScrollTimer);
+    //this.AutoScrollTimer = setTimeout(this.GetFunction(this,"AutoScroll"), this.Timeout);
+    }
+    },
+    SmoothScroll:function()
+    {
+    if(this.stopscroll)
+    {
+    return;
+    }
+    this.ScrollContent.scrollTop++;
+    if(parseInt(this.ScrollContent.scrollTop) >= parseInt(this.ScrollContent.scrollHeight) / 2)
+    {
+    this.ScrollContent.scrollTop = 0;
+    }
+    },
+    Scroll:function(direction)
+    {
+    if(direction=="up")
+    {
+    this.ScrollContent.scrollTop--;
+    }
+    else
+    {
+    this.ScrollContent.scrollTop++;
+    }
+    if(parseInt(this.ScrollContent.scrollTop) >= parseInt(this.ScrollContent.scrollHeight) / 2)
+    {
+    this.ScrollContent.scrollTop = 0;
+    }
+    else if(parseInt(this.ScrollContent.scrollTop)<=0)
+    {
+    this.ScrollContent.scrollTop = parseInt(this.ScrollContent.scrollHeight) / 2;
+    }
+    if(parseInt(this.ScrollContent.scrollTop) % this.LineHeight != 0)
+    {
+    this.ScrollTimer = setTimeout(this.GetFunction(this,"Scroll",direction), this.Speed);
+    }
+    },
+    GetFunction:function(variable,method,param)
+    {
+    return function()
+    {
+    variable[method](param);
+    }
+    }
+    }
+    function ignoreError() {
+    return true;
+    }
+    window.onerror = ignoreError;
+    </script>
+    </head>
+    <body>
+    <div class="breakNewsblock">
+    <h2><a target="_blank" href="#">即时新闻</a></h2>
+    <div id="breakNews">
+    <ul id="breakNewsList" class="list6">
+    <li><a href="#" target="_blank">固定元素与浮动元素相结合的CSS范例</a></li>
+    <li><a href="#" target="_blank">Float 左对齐与右对齐交叉布局范例代码</a></li>
+    <li><a href="#" target="_blank">一个CSS居右浮动的实例</a></li>
+    <li><a href="#" target="_blank">响应鼠标三态变化的隔行变色表格</a></li>
+    <li><a href="#" target="_blank">响应鼠标滚动的jQuery动感菜单</a></li>
+    <li><a href="#" target="_blank">方法简单效果好的纯CSS圆角</a></li>
+    <li><a href="#" target="_blank">JavaScript 列出每个星期7天的具体日期</a></li>
+    </ul>
+    <div class="hit">
+    <span><a style="cursor: pointer;"><img width="11" height="10" id="pre2" alt="上一条" src="/imagesforcode/201206/none.gif"/></a></span>
+    <span><a style="cursor: pointer;"><img width="11" height="10" id="next2" alt="下一条" src="/imagesforcode/201206/none.gif"/></a></span>
+    </div>
+    </div>
+    </div>
+    <script language="javascript" type="text/javascript">
+    var scroll2 = new ScrollText("breakNewsList","pre2","next2",true,70,true);
+    scroll2.LineHeight = 24;
+    </script>
+    </body>
+    </html>
+    <br><br><hr><p align="center"><font color=black>本特效由 <a target="_blank" href="http://www.CsrCode.cn" target="_blank">芯晴网页特效</a>丨CsrCode.Cn 收集于互联网，只为兴趣与学习交流，不作商业用途。来源：网页代码站</font></p>
+    

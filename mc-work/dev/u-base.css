@@ -1,0 +1,333 @@
+/* Reset CSS
+ * --------------------------------------- */
+ *{box-sizing: border-box;-webkit-box-sizing: border-box}
+ html { font-family: "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+a{
+	text-decoration:none;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+	font-weight: bold;
+}
+ol,ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+caption,th {
+    text-align: left;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin:0;
+    padding:0;
+    color:#444;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym { border: 0;
+}
+html,body{height: 100%;min-width: 1000px;}
+.left{float:left;}
+.right{float: right;}
+.clear:before,.clear:after{content:" ";display:table;clear:both}
+/*===========================================================silder*/
+.shadow {
+    width: 100%;
+    height: 168px;
+    position: relative;
+    margin-top: -110px;
+    background: transparent url(../images/shadow.png) no-repeat bottom center;
+    background-size: 100% 100%; /* stretches it */
+    z-index: -1;
+    display: none;
+}
+
+.sb-description h3 {
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.sb-description h3 a {
+    color: #4a3c27;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+}
+
+.nav-arrows {
+    display: none;
+}
+
+.nav-arrows a {
+    width: 42px;
+    height: 42px;
+    background: #cbbfae url(../images/nav.png) no-repeat top left;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    text-indent: -9000px;
+    cursor: pointer;
+    margin-top: -21px;
+    opacity: 0.9;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+
+.nav-arrows a:first-child{
+    left: auto;
+    right: 2px;
+    background-position: top right;
+}
+
+.nav-arrows a:hover {
+    opacity: 1;
+}
+
+.nav-dots {
+    text-align: center;
+    position: absolute;
+    bottom: -5px;
+    height: 30px;
+    width: 100%;
+    left: 0;
+    display: none;
+}
+
+.nav-dots span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 3px;
+    background: #cbbfae;
+    cursor: pointer;
+    box-shadow: 
+        0 1px 1px rgba(255,255,255,0.6), 
+        inset 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.nav-dots span.nav-dot-current {
+    box-shadow: 
+        0 1px 1px rgba(255,255,255,0.6), 
+        inset 0 1px 1px rgba(0,0,0,0.1), 
+        inset 0 0 0 3px #cbbfae,
+        inset 0 0 0 8px #fff;
+}
+
+.nav-options {
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    right: 70px;
+    bottom: 0px;
+    display: none;
+}
+
+.nav-options span {
+    width: 30px;
+    height: 30px;
+    background: #cbbfae url(../images/options.png) no-repeat top left;
+    text-indent: -9000px;
+    cursor: pointer;
+    opacity: 0.7;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.nav-options span:first-child{
+    background-position: -30px 0px;
+    margin-right: 3px;
+}
+
+.nav-options span:hover {
+    opacity: 1;
+}
+/*slide end*/
+/* content CSS
+ * --------------------------------------- */
+.head{background-color: #f8f8f7;}
+#head{width:1000px;height: 100px;background-color: #f8f8f7;position: relative;margin-left:auto;margin-right:auto;overflow: hidden;}
+#head img{margin-top: 11px;cursor: pointer;}
+#head .nav{width:480px;position: absolute;left: 50%;margin-left: -190px;top: 70px;}
+#head .nav span{float: left;font-size: 18px;font-family: "Microsoft YaHei";margin-left: 15px;margin-right: 15px;}
+#head .nav li.normal{float:left;font-size: 18px;font-family: "Microsoft YaHei";height: 30px;padding-bottom: 13px;cursor: pointer;}
+#head .nav li.normal a{color: #000000;}
+#head .nav li.normal:hover a{color: #089acf;}
+#head .nav li.active{color: #089acf;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/hengxian.png);background-repeat: no-repeat;background-position: center bottom;}
+#head .nav li.active a{color: #089acf;}
+#head .login,#head .reg,#head .center{position: absolute;width: 50px;height: 24px;color: #ffffff;font-family: "Microsoft YaHei";text-align: center;}
+#head .login{right: 70px;top: 62px;background-color: #87bf42;}
+#head .login:hover{background-color: #ffffff;color: #87bf42;}
+#head .reg{right: 14px;top: 62px;background-color: #149bd8;}
+#head .reg:hover{background-color: #ffffff;color: #149bd8;}
+#head .center{right: 14px;top: 62px;background-color: #87bf42;display: none;}
+#lunbo{position:relative;height: 427px;width: 100%;overflow: hidden;}
+#lunbo ul.lunbo{height: 427px;position: absolute;}
+#lunbo ul.lunbo li{height: 427px;width: 100%;float: left;text-align: center;position: relative;}
+#lunbo ul.lunbo li img{height: 100%;}
+#lunbo .tiyan{width: 205px;height: 64px;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/tiyan.png);position: absolute;top: 260px;left: 50%;margin-left: -102.5px;cursor: pointer;}
+#lunbo .chouduan{width: 302px;height: 118px;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/zhifu/chouduan.png);position: absolute;top: 210px;left: 50%;margin-left: -170px;cursor: pointer;
+}
+#leftarrow,#rightarrow{position: absolute;width: 29px;height: 56px;top:50%;margin-top: -28px;cursor: pointer;}
+#leftarrow{left:10.9375%;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/left_arrow.png);}
+#rightarrow{right:10.9375%;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/right_arrow.png);}
+#anli{height: 480px;width: 100%;overflow: hidden;background-color: #ededed;padding-left: 10.9375%;padding-right: 10.9375%;}
+#anli ul{width: 972px;height: 362px;margin-left: auto;margin-right: auto;overflow: hidden;}
+#anli ul li{width: 230px;height: 364px;float: left;margin-right: 12px;padding: 6px;background-color: #ffffff;}
+#anli .p{height: 292px;}
+#anli .p .pimg{height: 100%;overflow: hidden;position: relative;}
+#anli .p .pimg img{width: 100%;}
+#anli .p .pimg  .p2{position: absolute;width:100%;height:292px;background-color: rgba(0, 0, 0, 0.6);left: 0;top: 0;text-align: center;display: none;}
+#anli .p .pimg:hover .p2{display: block;}
+#anli .p .pimg  .p2 img{width: 177px;margin: 40px auto 14px;display: inherit;}
+#anli .p .pimg  .p2 span{font-size: 18px;color: #ffffff;font-family: "Microsoft YaHei";}
+#anli .pt{font-size: 17px;color: #505050;font-family: "Microsoft YaHei";margin-top: 10px;font-weight: bold;}
+#anli span{font-size: 12px;color: #505050;font-family: "Microsoft YaHei"}
+#logos{height: 258px;width: 1000px;margin-left: auto;margin-right: auto;background-color: #ffffff;font-family: "Microsoft YaHei";text-align: center;position: relative;}
+#logos h2{font-size: 24px;padding-top: 10px;}
+#logos span{font-size: 14px;}
+#logos .lefta{position: absolute;width: 29px;height: 56px;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/left_arrow2.png);left: 0;top: 132px;cursor: pointer;}
+#logos .righta{position: absolute;width: 29px;height: 56px;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/right_arrow2.png);right: 0;top: 132px;cursor: pointer;}
+#logos .logos{position: relative;overflow: hidden;height: 64px;width: 820px;margin-left: auto;
+margin-right: auto;margin-top: 36px;}
+#logos .logos ul{position: absolute;left: 0;}
+#logos .logos ul li{float: left;}
+#logos .logos ul li img{float: left;}
+#foot{height: 122px;line-height:122px;background-color: #5a5a5a;font-size: 14px;color: #ffffff;font-family: "Microsoft YaHei";text-align: center;}
+h2{font-size: 24px;color: #505050;font-family: "Microsoft YaHei";text-align: center;height: 66px;line-height: 66px;}
+.unselect {
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -khtml-user-select: none;  
+    -ms-user-select: none;    
+
+    /* 以下两个属性目前并未支持，写在这里为了减少风险 */
+    -o-user-select: none;
+    user-select: none;  
+}
+/*轮播图*/
+#yuan{position: absolute;
+z-index: 4;
+left: 50%;
+opacity: 1;
+background-color: rgb(0,0,0);
+filter:alpha(opacity=30);
+background-color: rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+-webkit-border-radius: 20px;
+margin-left: -92px;
+bottom: 30px;
+width: 184px;
+height: 33px;
+line-height: 36px;
+text-align: center;
+}
+#yuan ul li{
+    display: inline-block;
+width: 18px;
+height: 18px;
+margin-left: 3px;
+position: relative;
+}
+#yuan ul li a{
+    display: block;
+position: relative;
+z-index: 1;
+width: 100%;
+height: 100%;
+cursor: pointer;
+text-decoration: none;
+}
+#yuan ul li a span{
+    top: 2px;
+left: 2px;
+width: 16px;
+height: 16px;
+background: rgba(255, 255, 255, 1);
+border-radius: 50%;
+position: absolute;
+z-index: 1;
+cursor: pointer;
+}
+#yuan ul li.active  a span{
+    background: #006789;
+}
+/*轮播图end*/
+/*帮助*/
+    #help-content{width: 1000px;margin-left: auto;margin-right: auto;background-color: #ffffff;overflow: hidden;}
+    .help-content-left{width: 600px;height: 440px;margin-top: 34px;background-color: #f4f4f4;padding-left: 32px;padding-right: 32px;}
+    .help-content-left .stepp{font-size: 18px;font-family: "Microsoft YaHei";height: 78px;line-height: 78px;border-bottom: 1px solid #dfdfdf;}
+    .help-content-left .step{width: 524px;height: 88px;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/step_tiao.png);background-repeat: no-repeat;background-position: center 80px;padding-top: 30px;}
+    .help-content-left .step li{width: 58px;height: 85px;font-size: 14px;font-family: "Microsoft YaHei";color: #9cc2d3;margin-left: 95px;position: relative;}
+    .help-content-left .step li p{width: 52px;height: 52px;border-radius:50%;-webkit-border-radius: 50%;text-align: center;line-height: 52px; background-color: #9cc2d3;color: #ffffff;font-size: 32px;margin-top: 8px;cursor: pointer;}
+    .help-content-left .step li.active{color: #0da3e7;}
+    .help-content-left .step li.active .sanjiao{position: absolute;width: 0;height: 0;border-left: 18px solid transparent;border-right: 18px solid transparent;border-bottom: 20px solid #ffffff;top: 90px;
+left: 8px;}
+    .help-content-left .step li.active p{background-color: #0da3e7;}
+     .help-content-left .step li p i{margin-left: -6px;}
+    .help-content-left .step .step1{margin-left: 6px;}
+    .step-content{width: 524px;height: 174px;background-color: #ffffff;border-radius: 10px;-webkit-border-radius: 10px;margin-top: 50px;font-size: 14px;font-family: "Microsoft YaHei";}
+    .step-content p{padding-top: 10px;padding-left: 25px;}
+    .step-content1{display: block;}
+    .step-content2{display: none;}
+    .step-content3{display: none;}
+    .step-content4{display: none;}
+    .helpmore{font-size: 14px;font-family: "Microsoft YaHei";text-align: right;height: 40px;
+line-height: 40px;}
+    .help-content-right{width: 320px;height: 440px;font-size: 14px;font-family: "Microsoft YaHei";margin-top: 34px;}
+    .help-content-right h2{font-size: 18px;text-align: left;height: 25px;
+line-height: 25px;}
+    .help-content-right ul li{margin-top: 6px;}
+    .help-content-right ul li a{color: #000000;}
+    .help-content-right ul li:hover a{color:#089acf;}
+    .help-content-right p{text-align: right;}
+    .help-content-right p a{font-size: 14px;font-family: "Microsoft YaHei";color: #0da3e7;}
+/*帮助end*/
+/*connect*/
+    #connect-content{position: relative;}
+    #connect-content .lianzi{position: absolute;width: 627px;height: 593px;left: 50%;margin-left: -313.5px;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/lianzi.png);background-position:center center;filter:alpha(opacity=0);opacity:0;}
+    #connect-content .lianzi .connect{width: 625px;height: 538px;position: absolute;top: 52px;box-shadow: 0px 0px 10px #5a5a5a;display: none;}
+    #connect-content .lianzi .connect span{position: absolute;}
+    #connect-content .lianzi .connect .dianhua{width: 265px;height: 38px;line-height: 38px;left: 50%;margin-left: -132.5px;font-size: 29.46px;font-family: Arial;font-weight: bold;background:url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/dianhua.png) left center no-repeat;padding-left: 43px;top: 55px; }
+    #connect-content .lianzi .connect .youxiang{width: 265px;height: 38px;line-height: 38px;left: 50%;margin-left: -132.5px;font-size: 22.62px;font-family: Arial;font-weight: bold;background:url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/youxiang.png) left center no-repeat;padding-left: 48px;top: 118px;}
+    #connect-content .lianzi .connect .dizhi{width: 492px;height: 38px;line-height: 38px;left: 50%;margin-left: -246px;font-size: 18.42px;font-family: Arial;font-weight: bold;background:url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/dizhi.png) left center no-repeat;padding-left: 40px;top: 172px;}
+    #connect-content .lianzi .connect .erwei{width: 219px;height: 219px;line-height: 38px;left: 50%;margin-left: -109.5px;font-size: 18.42px;font-family: Arial;font-weight: bold;background:url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/erwei.png) left center no-repeat;top: 222px;}
+    #connect-content .lianzi .connect .wenzi{width: 132px;height: 20px;line-height: 20px;left: 50%;margin-left: -66px;font-size: 18.42px;font-family: "Microsoft YaHei";top: 445px;text-align: center;}
+/*connect*/
+/*join*/
+    #join-content{width: 1000px;margin-left: auto;margin-right: auto;padding-top: 32px;}
+    .join-left{width: 355px;height: 377px;background-color: #f4f4f4;padding-left: 30px;padding-right: 30px;}
+    .join-left h2{text-align: left;border-bottom: 1px solid #dfdfdf;font-size: 18.42px;font-family: "Microsoft YaHei";}
+    .join-left li{height: 42px;line-height: 42px;font-size: 14px;font-family: "Microsoft YaHei";border-bottom: 1px solid #dfdfdf;padding-left: 40px;cursor: pointer;}
+    .join-left li.active{background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/job.png);background-position: 10px center;background-repeat: no-repeat;color: #59b5ea;}
+    .join-leftt{width: 355px;min-height: 377px;background-color: #f4f4f4;padding-left: 30px;padding-right: 30px;}
+    .join-leftt h2{text-align: left;border-bottom: 1px solid #dfdfdf;font-size: 18.42px;font-family: "Microsoft YaHei";}
+    .join-leftt li{border-bottom: 1px solid #dfdfdf;position: relative;}
+    .join-leftt li a{height: 42px;line-height: 42px;font-size: 14px;font-family: "Microsoft YaHei";padding-left: 30px;cursor: pointer;}
+    .join-leftt li .border{display:none;}
+    .join-leftt li .border li{border: none;height: 42px;line-height: 42px;font-size: 14px;font-family: "Microsoft YaHei";padding-left: 30px;cursor: pointer;background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/job.png);background-position: 10px center;background-repeat: no-repeat;}
+    .join-leftt li .border li:hover{color: #089acf;}
+    .join-leftt li a.active{background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/jian.png);background-position: 10px center;background-repeat: no-repeat;color: #0da3e7;}
+    .join-leftt a.jia{background-image: url(http://style.mc2113.com/dist/mc_pc/images/houtai/images/jia.png);background-position: 10px center;background-repeat: no-repeat;}
+    .join-right{width:599px;height:528px;background-color: #f4f4f4;padding-left: 24px;padding-right: 24px;overflow: auto;margin-right: 25px;position: relative;}
+    .join-right h2{text-align: left;border-bottom: 1px solid #dfdfdf;font-size: 18.42px;font-family: "Microsoft YaHei";}
+    .join-right h3{height: 56px;line-height: 56px;font-size: 16px;font-family: "Microsoft YaHei";font-weight: bold;}
+    .join-right p{font-size: 14px;font-family: "Microsoft YaHei";line-height: 28px;}
+    .join-right .job{position:absolute;}
+/*join*/
