@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="hahnzhu" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>Demo</title>
+	<link rel="stylesheet" href="http://style.mc2113.com/dist/app/family/css/parallax.css">
+	<link rel="stylesheet" href="http://style.mc2113.com/dist/app/family/css/parallax-animation.css">
+	<style>
+	/* custom */
+	section[data-id="1"] {
+		background-image: url(http://style.mc2113.com/dist/app/family/img/sec1.png);
+		background-size: 100%;
+		background-position: center top;
+	}
+	section[data-id="2"] {
+		background-image: url(http://style.mc2113.com/dist/app/family/img/sec2.png);
+		background-size: 100%;
+		background-position: center top;
+	}
+	section[data-id="3"] {
+		background-image: url(http://style.mc2113.com/dist/app/family/img/sec3.png);
+		background-size: 100%;
+		background-position: center top;
+	}
+	section[data-id="4"] {
+		background-image: url(http://style.mc2113.com/dist/app/family/img/sec4.png);
+		background-size: 100%;
+		background-position: center top;
+		
+	}
+	section[data-id="5"] {
+		background-image: url(http://style.mc2113.com/dist/app/family/img/sec5.png);
+		background-size: 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-color: #010d1a;
+	}
+	section[data-id="6"] {
+		background-image: url(http://style.mc2113.com/dist/app/family/img/sec6.png);
+		background-size: 100%;
+		background-position: center top;
+	}
+	.dream{
+		width: 123px;
+		height: 150px;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/dream.png);
+		background-size:contain;
+		background-position: center top;
+		position: absolute;
+		top: 40px;
+	}
+	.xinyang{
+		width: 123px;
+		height: 150px;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/xinyang.png);
+		background-size: contain;
+		background-position: center top;
+		position: absolute;
+		left: 50%;
+		margin-left: -61.5px;
+		top: 40px;
+	}
+	.xin{
+		width: 62px;
+		height: 35.5px;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/xin.png);
+		background-size: contain;
+		background-position: center top;
+		position: absolute;
+		  bottom: 18%;
+  left: 8%;
+	}
+	.xiangyu{
+			width: 220px;
+		height: 102.5px;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/xiangyu.png);
+		background-size: contain;
+		background-position: center top;
+		position: absolute;
+		left: 0;
+		top: 40px;
+	}
+	.zhuanshu{
+				width: 244px;
+		height: 114.5px;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/zhuanshu.png);
+		background-size: contain;
+		background-position: center top;
+		position: absolute;
+		left: 0;
+		top: 40px;
+	}
+	.jianzheng{
+				width: 127.5px;
+		height: 93.5px;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/jianzheng.png);
+		background-size: contain;
+		background-position: center top;
+		position: absolute;
+		right: 10%;
+  bottom: 30%;
+	}
+	.zhiyao{
+			width: 161.5px;
+		height: 80.5px;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/zhiyao.png);
+		background-size: contain;
+		background-position: center top;
+		position: absolute;
+		left: 50%;
+		margin-left: -80.75px;
+		top: 40px;
+	}
+	.box1 {
+		width: 100px;
+		height: 200px;
+		background-color: #ecf0f1;
+		position: absolute;
+		left: 160px; top: 126px;
+	}
+	.box2 {
+		width: 200px;
+		height: 100px;
+		background-color: #8e44ad;
+		position: absolute;
+		left: 60px; top: 226px;
+	}
+	.box3 {
+		width: 100px;
+		height: 100px;
+		background-color: #34495e;
+		position: absolute;
+		left: 160px; top: 226px;
+	}
+	.box4 {
+		width: 50px;
+		height: 50px;
+		background-color: #e74c3c;
+		position: absolute;
+		left: 185px; top: 250px;
+	}
+	.logo{
+		width: 50px;
+		height: 32px;
+		position: fixed;
+		background-image: url(http://style.mc2113.com/dist/app/family/img/logo.png);
+		background-size: 100%;
+		background-position: center top;
+		top: 3%;
+  right: 6%;
+  z-index: 2000;
+	}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="pages">
+
+		<!-- 第一屏 -->
+		<section class="page">
+			<div class="dream" data-animation="slideToBottom" data-delay="600" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+		</section>
+
+        <!-- 第二屏 -->
+		<section class="page">
+			<h2></h2>
+			<div class="xinyang" data-animation="followSlide" data-duration="1000"></div>
+			<div class="xin" data-animation="followSlide" data-delay="600" data-duration="1000"></div>
+		</section>
+
+        <!-- 第三屏 -->
+		<section class="page">
+			<div class="xiangyu" data-animation="fadeInToBottom"></div>
+			<div class="xin" data-animation="fadeInToTop" data-delay="600"></div>
+		</section>
+
+		<!-- 第四屏 -->
+		<section class="page">
+			<div class="zhuanshu" data-animation="fadeIn"></div>
+			<div class="xin" data-animation="fadeIn" data-delay="800"></div>
+		</section>
+
+		<section class="page">
+			<div class="jianzheng" data-animation="slideToBottom"></div>
+			<div class="xin" data-animation="fadeIn" data-delay="800"></div>
+		</section>
+		<section class="page">
+			<div class="zhiyao" data-animation="fadeIn"></div>
+			<div class="xin" data-animation="slideToBottom" data-delay="800"></div>
+		</section>
+		
+	</div>
+</div>
+<div class="logo"></div>
+<script src="http://style.mc2113.com/dist/app/family/js/zepto.min.js"></script>
+<script src="http://style.mc2113.com/dist/app/family/js/parallax.js"></script>
+<script>
+	
+	$('.pages').parallax({
+		direction: 'horizontal', 	// horizontal vertical (水平翻页)
+		swipeAnim: 'cover', 	// cover (切换效果)
+		drag:      true,		// 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+		loading:   true,		// 有无加载页
+		indicator: false,		// 有无指示点
+		arrow:     false,		// 有无指示箭头
+		/*
+		 * 翻页后立即执行
+		 * {int} 		index: 第几页
+		 * {DOMElement} element: 当前页节点
+		 * {String}		directation: forward(前翻)、backward(后翻)、stay(保持原页)
+		 */
+		onchange: function(index, element, direction) {
+			// code here...
+			// console.log(index, element, direction);
+		},
+		/*
+		 * 横竖屏检测
+		 * {String}		orientation: landscape、protrait
+		 */
+		orientationchange: function(orientation) {
+			// console.log(orientation);
+		}
+	});
+
+
+</script>
+</body>
+</html>

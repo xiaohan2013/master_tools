@@ -52,8 +52,8 @@ body,html{height:100%;min-width:1000px}
 #lunbo .tiyan{width:205px;height:64px;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/tiyan.png);position:absolute;top:260px;left:50%;margin-left:-102.5px;cursor:pointer}
 #lunbo .chouduan{width:302px;height:118px;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/zhifu/chouduan.png);position:absolute;top:210px;left:50%;margin-left:-170px;cursor:pointer}
 #leftarrow,#rightarrow{position:absolute;width:29px;height:56px;top:50%;margin-top:-28px;cursor:pointer}
-#leftarrow{left:10.9375%;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/left_arrow.png)}
-#rightarrow{right:10.9375%;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/right_arrow.png)}
+#leftarrow{left:10.9375%;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/heihas.png);background-position:0 -53px}
+#rightarrow{right:10.9375%;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/heihas.png);background-position:0 -265px}
 #anli{height:480px;width:100%;overflow:hidden;background-color:#ededed;padding-left:10.9375%;padding-right:10.9375%}
 #anli ul{width:972px;height:362px;margin-left:auto;margin-right:auto;overflow:hidden}
 #anli ul li{width:230px;height:364px;float:left;margin-right:12px;padding:6px;background-color:#fff}
@@ -69,8 +69,8 @@ body,html{height:100%;min-width:1000px}
 #logos{height:258px;width:1000px;margin-left:auto;margin-right:auto;background-color:#fff;font-family:"Microsoft YaHei";text-align:center;position:relative}
 #logos h2{font-size:24px;padding-top:10px}
 #logos span{font-size:14px}
-#logos .lefta{position:absolute;width:29px;height:56px;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/left_arrow2.png);left:0;top:132px;cursor:pointer}
-#logos .righta{position:absolute;width:29px;height:56px;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/right_arrow2.png);right:0;top:132px;cursor:pointer}
+#logos .lefta{position:absolute;width:29px;height:56px;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/heihas.png);background-position:0 -159px;left:0;top:132px;cursor:pointer}
+#logos .righta{position:absolute;width:29px;height:56px;background-image:url(http://style.mc2113.com/dist/mc_pc/images/houtai/heihas.png);background-position:0 -371px;right:0;top:132px;cursor:pointer}
 #logos .logos{position:relative;overflow:hidden;height:64px;width:820px;margin-left:auto;margin-right:auto;margin-top:36px}
 #logos .logos ul{position:absolute;left:0}
 #logos .logos ul li,#logos .logos ul li img{float:left}

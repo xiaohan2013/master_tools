@@ -7,6 +7,8 @@ var rename = require('gulp-rename');
 var mincss = require('gulp-minify-css');
 var minhtml = require('gulp-htmlmin');
 var sourcemaps = require('gulp-sourcemaps');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 // 语法检查
 gulp.task('jshint', function () {
@@ -42,6 +44,15 @@ gulp.task('workmchtml', function() {
   gulp.src('mc-work/dev/*.html')
     .pipe(minhtml({collapseWhitespace: true}))
     .pipe(gulp.dest('mc-work/pro'))
+});
+gulp.task('workmcpng', function () {
+    return gulp.src('mc-work/dev/xiaojun/*.png')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('mc-work/pro/xiaojun'));
 });
 // 合并文件之后压缩代码
 gulp.task('minify_sea', function (){
