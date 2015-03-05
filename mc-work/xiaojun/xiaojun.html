@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="hahnzhu" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>demo</title>
+	<link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax.css">
+	<link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax-animation.css">
+	<style>
+	/* custom */
+	section[data-id="1"] {
+		background-size: 100% 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		  background-color: #86c441;
+	}
+	section[data-id="2"] {
+		background-size: 100% 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		  background-color: #86c441;
+	}
+	section[data-id="3"] {
+		background-size: 100% 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		  background-color: #86c441;
+	}
+	section[data-id="4"] {
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center top;
+		  background-color: #86c441;
+	}
+	section[data-id="5"] {
+		background-size: 100% 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		  background-color: #eae9ba;
+	}
+	section[data-id="6"] {
+	
+		background-size: 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-repeat: no-repeat;
+		background-color: #eae9ba;
+	}
+	section[data-id="7"] {
+	background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/sec7.png);
+		background-size: 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		  background-color: #ebd399;
+	}
+	section[data-id="8"] {
+		background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/sec8.png);
+		background-size: 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-color: #86c441;
+	}
+	img{width: 100%;}
+	.music{
+		position: fixed;
+		display: block;
+  width: 24px;
+  height: 24px;
+  left: 18px;
+  top: 5px;
+  background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicc.png) no-repeat  center center;
+    background-size: contain;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  z-index: 2000;
+	}
+	.sound_running{
+		-webkit-animation: music 1s linear infinite;
+  animation: music 1s linear infinite;
+	}
+	.sound_paused{
+		background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicStop.png) no-repeat  center center;background-size: contain;
+	}
+	@keyframes music{
+		0% {transform:rotate(0);}
+		100% {transform:rotate(360deg);}}
+	@-webkit-keyframes music 
+	{0% {-webkit-transform:rotate(0);}
+	100% {-webkit-transform:rotate(360deg);}}
+	.paodao{
+		width: 0px;
+		height: 173.5px;
+		position: absolute;
+		right: 0;
+		top: 65%;
+		/*background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/paodao.png);
+		background-size: 100% 100%;
+		background-position: center center;*/
+		overflow: hidden;
+		transition: width 1.2s ease .5s;
+	}
+	.chuhan{
+		width: 203px;
+		height: 224.5px;
+		position: absolute;
+		top: 50%;
+	}
+	.zhidao{
+		width: 178px;
+		height: 121.5px;
+		position: absolute;
+		  right: 6%;
+  top: 10%;
+	}
+	.baochi{
+		width: 257.5px;
+		height: 215px;
+		position: absolute;
+		left: 50%;
+		margin-left: -128.75px;
+		top: 25%;
+		background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/baochi.png);
+		background-size: 100% 100%;
+		background-position: center center;
+		overflow: hidden;
+	}
+	.wenzishuo{
+		width: 192.5px;
+		height: 24px;
+		position: absolute;
+		left: 50%;
+		margin-left: -96.25px;
+		top: 15%;
+		background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/wenzishuo.png);
+		background-size: 100% 100%;
+		background-position: center center;
+		overflow: hidden;
+	}
+	.wenzihuoli{
+		width: 230.5px;
+		height: 185.5px;
+		position: absolute;
+		left: 50%;
+		margin-left: -115.25px;
+		top: 25%;
+		background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/wenzihuoli.png);
+		background-size: 100% 100%;
+		background-position: center center;
+		overflow: hidden;
+	}
+	.jiaoshou{
+	  width: 188.5px;
+  height: 204.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -43.25px;
+  top: 48%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/jiaoshou.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+	}
+	.yuan5{
+  width: 284px;
+  height: 284px;
+  position: absolute;
+  left: 50%;
+  margin-left: -142px;
+  top: 20%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yuan5.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+	}
+	.yuan1{
+		    width: 137.5px;
+  height: 137.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -145.75px;
+  top: 10%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yuan1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+	}
+	.yuan2{
+  width: 127px;
+  height: 127px;
+  position: absolute;
+  left: 50%;
+  margin-left: 45.5px;
+  top: 28%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yuan2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+	}
+	.yuan3{
+		  width: 167px;
+  height: 167px;
+  position: absolute;
+  left: 50%;
+  margin-left: -180.5px;
+  top: 46%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yuan3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+	}
+	.yinpin{
+		  width: 97px;
+  height: 323px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 17%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+	}
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+          animation-name: rollIn;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation-name: swing;
+          animation-name: swing;
+}
+.diyi{
+		  width:  174.5px;
+  height: 73.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -87.25px;
+bottom: 12%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/diyi.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+	}
+.woshi{
+	  width: 195.5px;
+  height: 170.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -136.25px;
+  top: 4%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/woshi.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.woshijun{
+	  width: 222.5px;
+  height: 334.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -13.25px;
+  bottom: 5%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/woshijun.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  opacity: 0;
+  overflow: hidden;
+}
+.jieshao{
+	  width: 175.5px;
+  height: 161.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -156.25px;
+  bottom: 7%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/jieshao.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.techang5{
+	width: 284px;
+  height: 284px;
+  position: absolute;
+  left: 50%;
+  margin-left: -142px;
+  top: 25%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/techang5.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.techang1{
+	width: 127px;
+  height: 127px;
+  position: absolute;
+  left: 50%;
+    margin-left: 40.5px;
+  top: 0%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/techang1.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.techang2{
+	width: 167px;
+  height: 167px;
+  position: absolute;
+  left: 50%;
+  margin-left: -178.5px;
+  top: 20%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/techang2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.techang3{
+	  width: 137.5px;
+  height: 137.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: 25.25px;
+  top: 46%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/techang3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.techang{
+	  width: 253px;
+  height: 253px;
+  position: absolute;
+  left: 50%;
+  margin-left: -225.5px;
+  bottom: -8%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/techang.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.xiaojun1{
+	width: 73px;
+  height: 86.5px;
+  position: absolute;
+  left: 50%;
+    margin-left: 1.5px;
+  top: 15%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/xiaojun1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.xiaojun2{
+	  width: 89px;
+  height: 89px;
+  position: absolute;
+  left: 50%;
+  margin-left: -113.5px;
+  top: 42%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/xiaojun2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.tizhong{
+	   width: 107px;
+  height: 153px;
+  position: absolute;
+  left: 50%;
+  margin-left: 40.5px;
+  bottom: 52px;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/tizhong.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="pages">
+	 	<section class="page">
+	 		<div class="paodao"><img src="http://style.mc2113.com/dist/app/xiaojun/img/paodao.png" /></div>
+	 		<div class="chuhan" data-animation="fadeInToBottom" data-duration="2000" data-delay="600" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"><img src="http://style.mc2113.com/dist/app/xiaojun/img/chuhan.png" /></div>
+	 		<div class="zhidao"  data-animation="fadeInToTop" data-duration="2000"><img src="http://style.mc2113.com/dist/app/xiaojun/img/zhidao.png" /></div>
+		</section>
+
+		<section class="page">
+			<div class="baochi" data-animation="fadeInToBottom" data-duration="2000" data-delay="600" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+		</section>
+
+
+		<section class="page">
+			<div class="wenzishuo" data-animation="slideToLeft"></div>
+			<div class="wenzihuoli"  data-animation="fadeInToTop" data-duration="2000"></div>
+			<div class="jiaoshou" data-animation="slideToRight"></div>
+		</section>
+
+
+		<section class="page">
+			<div class="yuan5"></div>
+			<div class="yuan1" data-duration="500" data-animation="slideToBottom" data-delay="600"></div>
+			<div class="yuan2" data-duration="500" data-animation="slideToLeft" data-delay="1200"></div>
+			<div class="yuan3" data-duration="500" data-animation="slideToTop" data-delay="1800"></div>
+			<div class="diyi" data-duration="500" data-animation="fadeIn" data-delay="2400"></div>
+			<div class="yinpin animated  hinge"></div>
+		</section>
+
+
+		<section class="page">
+			<div class="woshi" data-duration="3000" data-animation="fadeInToTop"></div>
+			<div class="woshijun animated  hinge"  data-duration="2000"></div>
+			<div class="jieshao" data-duration="3000" data-animation="fadeInBottom"></div>
+		</section>
+
+		<section class="page">
+			<div class="techang5"></div>
+			<div class="techang1" data-duration="2000" data-animation="slideToLeft" data-delay="300"></div>
+			<div class="xiaojun1" data-duration="5000" data-animation="fadeInToTop"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+			<div class="techang2" data-duration="2000" data-animation="slideToRight" data-delay="800"></div>
+			<div class="xiaojun2" data-duration="5000" data-animation="fadeInToBottom"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+			<div class="techang3" data-duration="2000" data-animation="slideToLeft" data-delay="1300"></div>
+			<div class="techang" data-duration="2000" data-animation="slideToRight" data-delay="1600"></div>
+			<div class="tizhong" data-duration="5000" data-animation="fadeIn"></div>
+		</section>
+		
+		<section class="page">
+			
+		</section>
+		<section class="page">
+		
+		</section>
+		
+	</div>
+	<audio class="audio" src="" autoplay="autoplay" loop="loop" ></audio>
+</div>
+<div class="logo"></div>
+<span class="music sound_paused" style="display:none;"></span>
+<script src="http://style.mc2113.com/dist/app/family/js/zepto.min.js"></script>
+<!--<script src="http://style.mc2113.com/dist/lib/js/zepto/zepto.min_v2.js"></script>-->
+<script src="http://style.mc2113.com/dist/app/family/js/parallax.js"></script>
+<script>
+var murl='http://style.mc2113.com/dist/app/xiaojun/img/33.mp3';
+	var muc=$('.music');
+		$('.music').click(function(e){
+		if( muc.hasClass('sound_paused') ){
+			muc.removeClass('sound_paused');
+			muc.addClass('sound_running');
+			if(!/mp3/.test($('.audio').attr('src'))){
+				$('.audio').attr('src',murl);
+			}	
+			$('.audio')[0].play();
+		}else if( muc.hasClass('sound_running') ){
+			muc.removeClass('sound_running');
+			muc.addClass('sound_paused');
+			$('.audio')[0].pause();
+		}
+		
+		return false;
+	});
+</script>
+<script>
+	
+	$('.pages').parallax({
+		direction: 'vertical', 	// horizontal vertical (水平翻页)
+		swipeAnim: 'cover', 	// cover (切换效果)
+		drag:      true,		// 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+		loading:   true,		// 有无加载页
+		indicator: false,		// 有无指示点
+		arrow:     false,		// 有无指示箭头
+		/*
+		 * 翻页后立即执行
+		 * {int} 		index: 第几页
+		 * {DOMElement} element: 当前页节点
+		 * {String}		directation: forward(前翻)、backward(后翻)、stay(保持原页)
+		 */
+		onchange: function(index, element, direction) {
+			// code here...
+			// console.log(index, element, direction);
+			if( index==0 ){$('.paodao').width( $(window).width() );}else{$('.paodao').width( 0 );}
+			if( index==3 ){$('.yinpin').addClass('swing') ;}else{$('.yinpin').removeClass('swing');}
+			if( index==4 ){$('.woshijun').addClass('rollIn') ;}else{$('.woshijun').removeClass('rollIn');}
+			
+			
+		},
+		/*
+		 * 横竖屏检测
+		 * {String}		orientation: landscape、protrait
+		 */
+		orientationchange: function(orientation) {
+			// console.log(orientation);
+		}
+	});
+
+
+</script>
+<script>
+	mc = window.mc = {
+			    "conf": {
+				    "shareTitle": "!",
+				    "shareIcon": "http://style.mc2113.com/dist/app/xiaojun/img/xiaojun1.png",
+				    "titlePic": "http://style.mc2113.com/dist/app/xiaojun/img/xiaojun1.png",
+				    "shareDesc": ""
+				  },
+			    "refUrl": {
+			        "share": "http://wx.mc2050.com/cms/1000000000/xiaojun.html"
+			    }
+			  }
+			  $(document).ready(function(){
+					
+					$(document).one('touchstart', function (e) {
+							muc.removeClass('sound_paused');
+							muc.addClass('sound_running');
+							if(!/mp3/.test($('.audio').attr('src'))){
+								$('.audio').attr('src',murl);
+								$('.music').show();
+							}	
+							$('.audio')[0].play();
+					return false;
+					});
+					$(document).trigger('touchstart');
+					});
+</script>
+<script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+<script src="http://style.mc2113.com/dist/lib/mc_ui/widget/js/mc_game_share_v3.js"></script>
+</body>
+</html>

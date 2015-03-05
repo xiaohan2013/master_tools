@@ -54,6 +54,15 @@ gulp.task('workmcpng', function () {
         }))
         .pipe(gulp.dest('mc-work/pro/xiaojun'));
 });
+gulp.task('workmcjpg', function () {
+    return gulp.src('mc-work/dev/xiaojun/*.jpg')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('mc-work/pro/xiaojun'));
+});
 // 合并文件之后压缩代码
 gulp.task('minify_sea', function (){
      return gulp.src('develop/js/ajax.js')
