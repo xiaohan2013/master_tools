@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="hahnzhu" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>唯定制，不可复制</title>
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax.css">
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax-animation.css">
+  <style>
+  /* custom */
+  section[data-id="1"] {
+   background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec01.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="2"] {
+  background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec02.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+      
+  }
+  section[data-id="3"] {
+     background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec03.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="4"] {
+     background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec04.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+  }
+  section[data-id="5"] {
+     background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec05.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+  section[data-id="6"] {
+   background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec06.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    
+  }
+    section[data-id="7"] {
+   background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec07.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    
+  }
+    section[data-id="8"] {
+   background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec08.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    
+  }
+  img{width: 100%;}
+  .music{
+    position: fixed;
+    display: block;
+  width: 24px;
+  height: 24px;
+  left: 18px;
+  top: 5px;
+  background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicc.png) no-repeat  center center;
+    background-size: contain;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  z-index: 2000;
+  }
+  .sound_running{
+    -webkit-animation: music 1s linear infinite;
+  animation: music 1s linear infinite;
+  }
+  .sound_paused{
+    background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicStop.png) no-repeat  center center;background-size: contain;
+  }
+  @keyframes music{
+    0% {transform:rotate(0);}
+    100% {transform:rotate(360deg);}}
+  @-webkit-keyframes music 
+  {0% {-webkit-transform:rotate(0);}
+  100% {-webkit-transform:rotate(360deg);}}
+  .yinpin{
+      width: 97px;
+  height: 291px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 17%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+          animation-name: rollIn;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation-name: swing;
+          animation-name: swing;
+}
+.breathe {
+  display: block;
+    box-shadow: 0 1px 8px #2fc2f7;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    width: 197.5px;
+    height: 197px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/faguang2.png);
+    background-size: 100% 100%;
+    background-position: center;
+      position: absolute;
+  left: 50%;
+  margin-left: -98.75px;
+    top: 60px;
+  }
+
+@-webkit-keyframes breathe{0%{box-shadow:0 1px 8px rgba(255,255,255,.1)}100%{box-shadow:0 0 35px #098522}}
+
+  .yinpin{
+      width: 97px;
+  height: 283px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 35px;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.breathe{
+  top: 60px;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+          animation-name: fadeInLeft;
+}
+@-webkit-keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+            transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+            transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+            transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+            transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+          animation-name: bounceInDown;
+}
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+          animation-name: rotateIn;
+}
+.sec1t{
+    width: 138px;
+  height: 27px;
+  position: absolute;
+  left: 50%;
+  margin-left: -69px;
+  top: 50px;
+  background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec1-title.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec11{
+  width: 121px;
+  height: 170.5px;
+  position: absolute;
+ right: 0px;
+  top: 0px;
+  background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec1-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec13{
+  width: 195px;
+  position: absolute;
+  left: 50%;
+  margin-left: -97.5px;
+  top: 179px;
+ 
+}
+.sec14{
+  width: 227px;
+  position: absolute;
+ right: 0;
+ bottom: 0;
+ 
+}
+.logo{
+  width: 65.5px;
+  height: 24px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/logo.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec23{
+  width: 145px;
+  position: absolute;
+left: 50%;
+margin-left: -72.5px;
+  top: 156px;
+}
+.sec24{
+  width: 227px;
+  position: absolute;
+ right: 0;
+ bottom: 0;
+}
+.sec33{
+  width: 120px;
+  position: absolute;
+left: 50%;
+margin-left: -60px;
+  top: 156px;
+}
+.sec34{
+width: 227px;
+  position: absolute;
+ right: 0;
+ bottom: 0;
+}
+
+
+.sec41{
+   width: 147px;
+  height: 172px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-image: url(http://style.mc2113.com/dist/app/shuzhi/img/sec4-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.sec43{
+  width: 21px;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  top: 106px;
+}
+.sec44{
+  width: 227px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.sec55{
+width: 29px;
+  position: absolute;
+  left: 50%;
+  margin-left: -14.5px;
+  top: 106px;
+}
+.sec5t{
+    width: 152px;
+  position: absolute;
+  left: 50%;
+  margin-left: -76px;
+  bottom: 64px;
+}
+
+.sec61{
+width: 258px;
+  position: absolute;
+  left: 50%;
+  margin-left: -129px;
+  top: 46px;
+}
+.sec62{
+   width: 260px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+}
+.sec71{
+width: 215px;
+  position: absolute;
+  left: 50%;
+  margin-left: -107.5px;
+  top: 40px;
+}
+.sec72{
+   width: 260px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+}
+.sec81{
+width: 238px;
+  position: absolute;
+  left: 50%;
+  margin-left: -119px;
+  top: 46px;
+}
+.sec82{
+   width: 261px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+}
+.sec83{
+   width: 30.5px;
+  position: absolute;
+  right: 35px;
+  bottom: 190px;
+}
+.sec84{
+   width: 26.5px;
+  position: absolute;
+  left: 18px;
+  bottom: 149px;
+}
+  </style>
+  <script>
+  if ("wView" in window) {
+    window.wView.allowsInlineMediaPlayback = "YES";
+    window.wView.mediaPlaybackRequiresUserAction = "NO";
+  }
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="pages">
+    <section class="page">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec01-1.png" class="sec13" data-animation="fadeInToRight" data-duration="2000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec01-2.png" class="sec14" data-animation="fadeInToRight" data-duration="2000" data-delay="1800">
+    </section>
+
+    <section class="page">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec02-1.png" class="sec23" data-animation="fadeInToRight" data-duration="2000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec02-2.png" class="sec24" data-animation="fadeInToRight" data-duration="2000" data-delay="1800">
+    </section>
+
+
+    <section class="page">
+     
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec03-1.png" class="sec33" data-animation="slideToRight" data-duration="1000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec03-2.png" class="sec34" data-animation="slideToRight" data-duration="2000" data-delay="1800">
+    </section>
+
+
+    <section class="page">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec04-1.png" class="sec43" data-animation="slideToLeft" data-duration="1000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec04-2.png" class="sec44" data-animation="slideToLeft" data-duration="2000" data-delay="1800">
+    </section>
+
+
+    <section class="page">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec05-1.png" class="sec55" data-animation="followSlide" data-duration="1000" data-delay="600">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec05-2.png" class="sec5t" data-duration="1000" data-animation="followSlide" data-delay="2600">
+    </section>
+
+    <section class="page">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec06-1.png" class="sec61" data-animation="followSlide" data-duration="1000" data-delay="600">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec06-2.png" class="sec62" data-duration="1000" data-animation="followSlide" data-delay="2600">
+    </section>
+
+     <section class="page">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec07-1.png" class="sec71" data-animation="followSlide" data-duration="1000" data-delay="600">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec07-2.png" class="sec72" data-duration="1000" data-animation="followSlide" data-delay="2600">
+    </section>
+     <section class="page">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec08-1.png" class="sec81" data-animation="followSlide" data-duration="1000" data-delay="600">
+      <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec08-2.png" class="sec82" data-duration="1000" data-animation="followSlide" data-delay="2600">
+       <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec08-3.png" class="sec83" data-duration="1000" data-animation="fadeIn" data-delay="2600">
+        <img src="http://style.mc2113.com/dist/app/shuzhi/img/sec08-4.png" class="sec84" data-duration="1000" data-animation="fadeIn" data-delay="2600">
+    </section>
+    
+    <!--<section class="page">
+      <a href="http://mp.weixin.qq.com/s?__biz=MzA3MTI2NjYyMA==&mid=203968610&idx=1&sn=6a94131bf6f0836a97e4dbc3967d9ac8#rd" class="breathe"></a>
+    </section>-->
+    
+  </div>
+  <audio class="audio sound_running" src="" autoplay="autoplay" loop="loop" ></audio>
+</div>
+
+<span class="sound_paused music"></span>
+<script src="http://style.mc2113.com/dist/app/family/js/zepto.min.js"></script>
+<!--<script src="http://style.mc2113.com/dist/lib/js/zepto/zepto.min_v2.js"></script>-->
+<script src="http://style.mc2113.com/dist/app/family/js/parallax.js"></script>
+<script>
+$('.paodao').width( $(window).width() );
+var murl='http://style.mc2113.com/dist/app/lujinb/img/gufeng.mp3';
+  var muc=$('.music');
+    $('.music').click(function(e){
+    if( muc.hasClass('sound_paused') ){
+      muc.removeClass('sound_paused');
+      muc.addClass('sound_running');
+     // if(!/mp3/.test($('.audio').attr('src'))){
+        $('.audio').attr('src',murl);
+     // } 
+      $('.audio')[0].play();
+    }else if( muc.hasClass('sound_running') ){
+      muc.removeClass('sound_running');
+      muc.addClass('sound_paused');
+      $('.audio')[0].pause();
+    }
+    
+    return false;
+  });
+</script>
+<script>
+  
+  $('.pages').parallax({
+    direction: 'vertical',  // horizontal vertical (水平翻页)
+    swipeAnim: 'cover',   // cover (切换效果)
+    drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+    loading:   true,    // 有无加载页
+    indicator: false,   // 有无指示点
+    arrow:     true,   // 有无指示箭头
+    /*
+     * 翻页后立即执行
+     * {int}    index: 第几页
+     * {DOMElement} element: 当前页节点
+     * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
+     */
+    onchange: function(index, element, direction) {
+      // code here...
+      // console.log(index, element, direction);
+      if( index==0 ){setTimeout(function(){$('.sec11w').width( 121 );},1000)}else{$('.sec11w').width( 0 );}
+      if( index==1 ){setTimeout(function(){$('.sec22w').width(168);},1000)}else{$('.sec22w').width(0) ;}
+      if( index==2 ){setTimeout(function(){$('.sec32w').width(236) ;},1000)}else{$('.sec32w').width( 0 );}
+      if( index==3 ){setTimeout(function(){$('.sec41w').width(236) ;},1000)}else{$('.sec41w').width( 0 );}
+      if( index==5 ){$('.sec63').addClass('acti').one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend transitionend', function(){$('.sec64').addClass('animated fadeInLeft')});}else{$('.sec63').removeClass('acti');$('.sec64').removeClass('fadeInLeft');}
+    },
+    /*
+     * 横竖屏检测
+     * {String}   orientation: landscape、protrait
+     */
+    orientationchange: function(orientation) {
+      // console.log(orientation);
+    }
+  });
+
+
+</script>
+<script>
+    mc = window.mc = {
+          "conf": {
+            "shareTitle": "唯定制，不可复制!",
+            "shareIcon": "http://style.mc2113.com/dist/app/shuzhi/img/shuzhi.jpg",
+            "titlePic": "http://style.mc2113.com/dist/app/shuzhi/img/shuzhi.jpg",
+            "shareDesc": "世界看苏州，又一大牌定制新品即将全球发布，敬请期待！"
+          },
+          "refUrl": {
+              "share": "http://wx.mc2050.com/cms/1000000000/shuzhi.html"
+          }
+        }
+        $(document).ready(function(){
+          $('.music').trigger('click');
+          $("body").one('touchstart', function (e){
+               $('.audio')[0].play();
+          });
+          //$(document).one('touchstart', function (e) {
+          //     muc.removeClass('sound_paused');
+          //     muc.addClass('sound_running');
+          //     if(!/mp3/.test($('.audio').attr('src'))){
+          //       $('.audio').attr('src',murl);
+          //       $('.music').show();
+          //     } 
+          //     $('.audio')[0].play();
+          // return false;
+          //});
+
+
+          });
+</script>
+<script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+<script src="http://style.mc2113.com/dist/lib/mc_ui/widget/js/mc_game_share_v3.js"></script>
+</body>
+</html>

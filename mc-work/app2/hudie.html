@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="hahnzhu" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>时光之交皆知音</title>
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax.css">
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax-animation.css">
+  <style>
+  /* custom */
+  section[data-id="1"] {
+   background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec1.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="2"] {
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec2.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+      
+  }
+  section[data-id="3"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec3.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="4"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec4.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+  }
+  section[data-id="5"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec5.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+  section[data-id="6"] {
+   background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec6.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    
+  }
+  section[data-id="7"] {
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec7.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="8"] {
+   background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec8.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+   
+  }
+   section[data-id="9"] {
+    background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec9.jpg);
+     background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+   section[data-id="10"] {
+    background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec10.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+   section[data-id="11"] {
+   background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec11.jpg);
+  background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+   
+  }
+   section[data-id="12"] {
+   background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec12.jpg);
+  background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+   
+  }
+  img{width: 100%;}
+  .music{
+    position: fixed;
+    display: block;
+  width: 24px;
+  height: 24px;
+  left: 18px;
+  top: 5px;
+  background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicc.png) no-repeat  center center;
+    background-size: contain;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  z-index: 2000;
+  }
+  .sound_running{
+    -webkit-animation: music 1s linear infinite;
+  animation: music 1s linear infinite;
+  }
+  .sound_paused{
+    background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicStop.png) no-repeat  center center;background-size: contain;
+  }
+  @keyframes music{
+    0% {transform:rotate(0);}
+    100% {transform:rotate(360deg);}}
+  @-webkit-keyframes music 
+  {0% {-webkit-transform:rotate(0);}
+  100% {-webkit-transform:rotate(360deg);}}
+  .yinpin{
+      width: 97px;
+  height: 291px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 17%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+          animation-name: rollIn;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation-name: swing;
+          animation-name: swing;
+}
+.breathe {
+  display: block;
+    box-shadow: 0 1px 8px #2fc2f7;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    width: 197.5px;
+    height: 197px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/faguang2.png);
+    background-size: 100% 100%;
+    background-position: center;
+      position: absolute;
+  left: 50%;
+  margin-left: -98.75px;
+    top: 60px;
+  }
+
+@-webkit-keyframes breathe{0%{box-shadow:0 1px 8px rgba(255,255,255,.1)}100%{box-shadow:0 0 35px #098522}}
+
+  .yinpin{
+      width: 97px;
+  height: 283px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 35px;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.breathe{
+  top: 60px;
+}
+
+
+.sec1t{
+	  width: 138px;
+  height: 27px;
+  position: absolute;
+  left: 50%;
+  margin-left: -69px;
+  top: 50px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec1-title.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec11{
+	width: 218.5px;
+  height: 33px;
+  position: absolute;
+  left: 50%;
+  margin-left: -109.25px;
+  top: 100px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec1-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec12{
+	width: 191px;
+  height: 61px;
+  position: absolute;
+  left: 50%;
+  margin-left: -47.75px;
+  top: 153px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec1-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.logo{
+	width: 65.5px;
+  height: 24px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/logo.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec21{
+	width: 136px;
+  height: 84px;
+  position: absolute;
+right: 20px;
+  top: 344px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec2-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec22{
+  width: 51px;
+  height: 128px;
+  position: absolute;
+ left: 25px;
+  top: 74px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec2-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec31{
+	width: 54px;
+  height: 193px;
+  position: absolute;
+  left: 25px;
+  top: 80px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec3-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec32{
+	width: 25px;
+  height: 175px;
+  position: absolute;
+  left: 95px;
+  top: 78px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec3-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec41{
+	 width: 51px;
+  height: 192px;
+  position: absolute;
+  left: 36px;
+  top: 80px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec4-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec42{
+  width: 48px;
+  height: 151px;
+  position: absolute;
+  left: 95px;
+  top: 78px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec4-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec52{
+	width: 151px;
+  height:48px;
+  position: absolute;
+  left: 24px;
+  top: 87px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec5-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec51{
+	width: 51px;
+  height: 191px;
+  position: absolute;
+  right:30px;
+  top: 45px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec5-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec61{
+	width: 50px;
+  height:174px;
+  position: absolute;
+  left: 35px;
+  top: 45px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec6-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec62{
+	width: 139px;
+  height:48px;
+  position: absolute;
+  right: 20px;
+  top: 70px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec6-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec71{
+	width: 47px;
+  height:183px;
+  position: absolute;
+  left: 42px;
+  top: 46px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec7-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec72{
+	width: 111px;
+  height:48px;
+  position: absolute;
+  right: 18px;
+  top: 88px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec7-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.sec81{
+	width: 81px;
+  height:162.5px;
+  position: absolute;
+  left: 15px;
+  top: 183px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec8-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec82{
+	width: 113px;
+  height:177px;
+  position: absolute;
+  right: 30px;
+  top: 63px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec8-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec91{
+	width: 51px;
+  height: 192px;
+  position: absolute;
+  left: 36px;
+  top: 80px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec9-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec92{
+  width: 48px;
+  height: 151px;
+  position: absolute;
+  left: 95px;
+  top: 78px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec9-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.secx1{
+  width: 50px;
+  height: 242px;
+  position: absolute;
+  left: 36px;
+  top: 80px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec11-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.secx2{
+	  width: 48px;
+  height: 138px;
+  position: absolute;
+  left: 95px;
+  top: 78px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec11-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec101{
+			width: 51px;
+  height: 191px;
+  position: absolute;
+  right:30px;
+  top: 45px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec10-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec102{
+	 width: 151px;
+  height:48px;
+  position: absolute;
+  left: 24px;
+  top: 87px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec10-22.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec121{
+   width: 282px;
+  height:268px;
+  position: absolute;
+  left: 0px;
+  bottom:0px;
+  background-image: url(http://style.mc2113.com/dist/app/hudie/img/sec12-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+  </style>
+  <script>
+  if ("wView" in window) {
+    window.wView.allowsInlineMediaPlayback = "YES";
+    window.wView.mediaPlaybackRequiresUserAction = "NO";
+  }
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="pages">
+    <section class="page">
+      <div class="sec11" data-animation="fadeInToLeft" data-duration="2000" data-delay="800" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec12"  data-animation="fadeInToRight" data-duration="2000" data-delay="1000"></div>
+    </section>
+
+    <section class="page">
+      <div class="sec21" data-animation="fadeIn" data-duration="2000" data-delay="400" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec22" data-animation="fadeIn" data-duration="2000" data-delay="400" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+
+
+    <section class="page">
+    	
+      <div class="sec31" data-animation="slideToLeft" data-duration="2000" data-delay="200"></div>
+      <div class="sec32"  data-animation="slideToRight" data-duration="2000" data-delay="300"></div>
+    </section>
+
+
+    <section class="page">
+    	
+      <div class="sec41" data-duration="500" data-animation="slideToBottom" data-delay="600"></div>
+		<div class="sec42" data-duration="500" data-animation="slideToTop" data-delay="600"></div>
+    </section>
+
+
+    <section class="page">
+    	
+      <div class="sec52" data-duration="1500" data-animation="followSlide" data-delay="200"></div>
+ 		<div class="sec51" data-duration="1500" data-animation="followSlide" data-delay="400"></div>
+      <div class="sec53" data-duration="1500" data-animation="followSlide" data-delay="600"></div>
+    </section>
+
+    <section class="page">
+    	
+      <div class="sec61" data-duration="2000" data-animation="slideToLeft" data-delay="300"></div>
+      <div class="sec62" data-duration="5000" data-animation="fadeInToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec63" data-duration="2000" data-animation="slideToRight" data-delay="650"></div>
+      <div class="sec64" data-duration="5000" data-animation="fadeInToBottom" data-delay="550"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    
+    <section class="page">
+    
+      <div class="sec71" data-duration="2000" data-animation="slideToRight" data-delay="300"></div>
+      <div class="sec72" data-duration="3500" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec73" data-duration="5000" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    
+     <section class="page">
+     
+      <div class="sec81" data-duration="1500" data-animation="followSlide" data-delay="200"></div>
+ 		<div class="sec82" data-duration="1500" data-animation="followSlide" data-delay="400"></div>
+      <div class="sec83" data-duration="1500" data-animation="followSlide" data-delay="600"></div>
+      <div class="sec84" data-duration="1500" data-animation="followSlide" data-delay="400"></div>
+      <div class="sec85" data-duration="1500" data-animation="followSlide" data-delay="600"></div>
+    </section>
+    
+
+     <section class="page">
+      
+       <div class="sec91" data-duration="1500" data-animation="slideToLeft" data-delay="200"></div>
+    <div class="sec92" data-duration="1500" data-animation="slideToLeft" data-delay="400"></div>
+      <div class="sec93" data-duration="1500" data-animation="slideToLeft" data-delay="600"></div>
+    </section>
+    
+    <section class="page">
+    
+       <div class="sec101" data-duration="2000" data-animation="slideToRight" data-delay="300"></div>
+      <div class="sec102" data-duration="3500" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+       <div class="sec103" data-duration="3500" data-animation="fadeInToLeft" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+        <div class="sec104" data-duration="3500" data-animation="fadeInToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+ 
+    <section class="page">
+    
+       <div class="secx1" data-duration="2000" data-animation="slideToRight" data-delay="300"></div>
+      <div class="secx2" data-duration="3500" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+       <div class="sec103" data-duration="3500" data-animation="fadeInToLeft" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+        <div class="sec104" data-duration="3500" data-animation="fadeInToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    <section class="page">
+     
+       <div class="sec121" data-duration="2000" data-animation="slideToRight" data-delay="300"></div>
+      <div class="sec122" data-duration="3500" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    
+
+    
+    
+   
+    <!--<section class="page">
+      <a href="http://mp.weixin.qq.com/s?__biz=MzA3MTI2NjYyMA==&mid=203968610&idx=1&sn=6a94131bf6f0836a97e4dbc3967d9ac8#rd" class="breathe"></a>
+    </section>-->
+    
+  </div>
+  <audio class="audio sound_running" src="" autoplay="autoplay" loop="loop" ></audio>
+</div>
+
+<span class="sound_paused music"></span>
+<script src="http://style.mc2113.com/dist/app/family/js/zepto.min.js"></script>
+<!--<script src="http://style.mc2113.com/dist/lib/js/zepto/zepto.min_v2.js"></script>-->
+<script src="http://style.mc2113.com/dist/app/family/js/parallax.js"></script>
+<script>
+$('.paodao').width( $(window).width() );
+var murl='http://style.mc2113.com/dist/app/hudie/img/gufeng.mp3';
+  var muc=$('.music');
+    $('.music').click(function(e){
+    if( muc.hasClass('sound_paused') ){
+      muc.removeClass('sound_paused');
+      muc.addClass('sound_running');
+     // if(!/mp3/.test($('.audio').attr('src'))){
+        $('.audio').attr('src',murl);
+     // } 
+      $('.audio')[0].play();
+    }else if( muc.hasClass('sound_running') ){
+      muc.removeClass('sound_running');
+      muc.addClass('sound_paused');
+      $('.audio')[0].pause();
+    }
+    
+    return false;
+  });
+</script>
+<script>
+  
+  $('.pages').parallax({
+    direction: 'vertical',  // horizontal vertical (水平翻页)
+    swipeAnim: 'cover',   // cover (切换效果)
+    drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+    loading:   true,    // 有无加载页
+    indicator: false,   // 有无指示点
+    arrow:     true,   // 有无指示箭头
+    /*
+     * 翻页后立即执行
+     * {int}    index: 第几页
+     * {DOMElement} element: 当前页节点
+     * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
+     */
+    onchange: function(index, element, direction) {
+      // code here...
+      // console.log(index, element, direction);
+      //if( index==0 ){$('.paodao2').width( $(window).width() );}else{$('.paodao2').width( 0 );}
+      if( index==3 ){$('.yinpin').addClass('swing') ;}else{$('.yinpin').removeClass('swing');}
+      if( index==4 ){$('.woshijun').addClass('rollIn') ;}else{$('.woshijun').removeClass('rollIn');}
+      
+      
+    },
+    /*
+     * 横竖屏检测
+     * {String}   orientation: landscape、protrait
+     */
+    orientationchange: function(orientation) {
+      // console.log(orientation);
+    }
+  });
+
+
+</script>
+<script>
+    mc = window.mc = {
+          "conf": {
+            "shareTitle": "时光之交皆知音!",
+            "shareIcon": "http://style.mc2113.com/dist/app/hudie/img/jin2.jpg",
+            "titlePic": "http://style.mc2113.com/dist/app/hudie/img/jin2.jpg",
+            "shareDesc": "3月21日，香港时光苏州非遗艺术馆盛大启幕"
+          },
+          "refUrl": {
+              "share": "http://wx.mc2050.com/cms/1000000000/hudie.html"
+          }
+        }
+        $(document).ready(function(){
+          $('.music').trigger('click');
+          $("body").one('touchstart', function (e){
+               $('.audio')[0].play();
+          });
+          //$(document).one('touchstart', function (e) {
+          //     muc.removeClass('sound_paused');
+          //     muc.addClass('sound_running');
+          //     if(!/mp3/.test($('.audio').attr('src'))){
+          //       $('.audio').attr('src',murl);
+          //       $('.music').show();
+          //     } 
+          //     $('.audio')[0].play();
+          // return false;
+          //});
+
+
+          });
+</script>
+<script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+<script src="http://style.mc2113.com/dist/lib/mc_ui/widget/js/mc_game_share_v3.js"></script>
+</body>
+</html>

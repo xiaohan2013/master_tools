@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="hahnzhu" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>时光才是最好的匠人</title>
+	<style>
+	*{padding:0;margin:0;box-sizing: border-box;-webkit-box-sizing: border-box;}
+	body{position: relative;background-color: #000000;overflow: hidden;}
+	section{position: absolute;width: 100%;}
+	/* custom */
+	section[data-id="1"] {
+		background-image: url(http://style.mc2113.com/dist/app/yaoqing/img/sec1.png);
+		background-size: 100% 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		z-index: 300;
+		transition: all 2s;
+		-webkit-transition:all 2s;
+		opacity: 0;
+	}
+	section[data-id="2"] {
+		background-image: url(http://style.mc2113.com/dist/app/yaoqing/img/sec2.png);
+		background-size: 100% 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		z-index: 400;
+		transition: all 1.8s;
+		-webkit-transition:all 1.8s;
+		opacity: 0;
+	}
+	section[data-id="3"] {
+		background-image: url(http://style.mc2113.com/dist/app/yaoqing/img/sec3.png);
+		background-size: 100% 100%;
+		background-position: center top;
+		background-repeat: no-repeat;
+		z-index: 500;
+		transition: all 5s;
+		-webkit-transition:all 5s;
+		opacity: 0;
+	}
+	.yinpin{
+		
+	}
+
+	.video{
+		width: 320px;
+		height: 180px;
+		position: absolute;
+  left: 50%;
+  margin-left: -160px;
+  top: 144px;
+	}
+	.mus{
+		-webkit-animation: music 8s linear infinite;
+  		animation: music 8s linear infinite;
+	}
+	@keyframes music{
+		0% {transform:rotate(0);}
+		100% {transform:rotate(360deg);}}
+	@-webkit-keyframes music 
+	{0% {-webkit-transform:rotate(0);}
+	100% {-webkit-transform:rotate(360deg);}}
+	.sec1-1{
+		width: 220px;
+		position: absolute;
+		left:50%;
+		margin-left: -110px;
+		top:55px;
+	}
+	.sec1-2{
+		width: 199px;
+		position: absolute;
+		left:50%;
+		margin-left: -99.5px;
+		top:193px;
+	}
+	.sec1-3{
+		width: 169px;
+		position: absolute;
+		left:50%;
+		margin-left: -84.5px;
+		top:247px;
+	}
+	.sec3-1{
+		width: 253px;
+		position: absolute;
+		left:50%;
+		margin-left: -126.5px;
+		bottom:47px;
+	}
+	.mask{
+		width: 100%;
+		position: absolute;
+		left:50%;
+		margin-left: -50%;
+		top:144px;
+	}
+	.sec3-2{
+		width: 227px;
+		position: absolute;
+		left:50%;
+		margin-left: -113.5px;
+		top:61px;
+	}
+	.sec3-3{
+		width: 252.5px;
+		position: absolute;
+		left:50%;
+		margin-left: -126.25px;
+		bottom:33px;
+	}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="pages">
+		<!-- 第一屏 -->
+		<section class="page" data-id="1">
+			<img class="sec1-1 mus" src="http://style.mc2113.com/dist/app/yaoqing/img/sec1-1.png">
+			<img class="sec1-2 " src="http://style.mc2113.com/dist/app/yaoqing/img/sec1-2.png">
+			<img class="sec1-3 " src="http://style.mc2113.com/dist/app/yaoqing/img/sec1-3.png">
+		</section>
+
+        <!-- 第二屏 -->
+		<section class="page" data-id="2">
+			
+		</section>
+
+        <!-- 第三屏 -->
+		<section class="page" data-id="3">
+			<img class="sec1-1 " src="http://style.mc2113.com/dist/app/yaoqing/img/sec1-1.png">
+			<video class="video" src="http://mc-style.qiniudn.com/dist/a/shiguang.mp4" controls="controls" loop="loop"></video>
+			<img src="http://style.mc2113.com/dist/app/yaoqing/img/sec3-2.png" class="sec3-2">
+			<img src="http://style.mc2113.com/dist/app/yaoqing/img/sec3-3.png" class="sec3-3">
+			<img src="http://style.mc2113.com/dist/app/yaoqing/img/video.jpg" class="mask">
+		</section>
+		
+	</div>
+</div>
+<script src="http://style.mc2113.com/dist/app/family/js/zepto.min.js"></script>
+<script>
+$(function(){
+	$('section').height( $(window).height() );
+})
+window.onload=function(){
+	$('section[data-id="1"]').css('opacity',1);
+	$('section[data-id="1"]').one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend transitionend', function(){
+		$('section[data-id="1"]').css('opacity','0').one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend transitionend', function(){$('section[data-id="2"]').css('opacity',1);});
+	});
+	$('section[data-id="2"]').one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend transitionend', function(){
+		$('section[data-id="2"]').css('opacity','0').one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend transitionend', function(){$('section[data-id="3"]').css('opacity',1);});
+	});
+	$('.mask').click(function(){
+		$(this).hide();
+		$('.video')[0].play();
+	})
+}
+</script>
+<script>
+	mc = window.mc = {
+			    "conf": {
+				    "shareTitle": "时光才是最好的匠人!",
+				    "shareIcon": "http://style.mc2113.com/dist/app/lujinyaoqing/img/hudie.jpg",
+				    "titlePic": "http://style.mc2113.com/dist/app/lujinyaoqing/img/hudie.jpg",
+				    "shareDesc": "与匠人，说时光，苏州首个非遗藏品艺术馆全球首发."
+				  },
+			    "refUrl": {
+			        "share": "http://wx.mc2050.com/cms/1000000000/yaoqing.html"
+			    }
+			  }
+</script>
+<script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+<script src="http://style.mc2113.com/dist/lib/mc_ui/widget/js/mc_game_share_v3.js"></script>
+</body>
+</html>

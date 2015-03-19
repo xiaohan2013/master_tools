@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="hahnzhu" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>一路向上，劲取未来!!</title>
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax.css">
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax-animation.css">
+  <style>
+  /* custom */
+  section[data-id="1"] {
+   background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec1.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="2"] {
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec2.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+      
+  }
+  section[data-id="3"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec2.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="4"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+  }
+  section[data-id="5"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+  section[data-id="6"] {
+   background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    
+  }
+  section[data-id="7"] {
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="8"] {
+   background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+   
+  }
+   section[data-id="9"] {
+    background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+     background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+   section[data-id="10"] {
+    background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+   section[data-id="11"] {
+   background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4.png);
+  background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+   
+  }
+  img{width: 100%;}
+  .music{
+    position: fixed;
+    display: block;
+  width: 24px;
+  height: 24px;
+  left: 18px;
+  top: 5px;
+  background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicc.png) no-repeat  center center;
+    background-size: contain;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  z-index: 2000;
+  }
+  .sound_running{
+    -webkit-animation: music 1s linear infinite;
+  animation: music 1s linear infinite;
+  }
+  .sound_paused{
+    background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicStop.png) no-repeat  center center;background-size: contain;
+  }
+  @keyframes music{
+    0% {transform:rotate(0);}
+    100% {transform:rotate(360deg);}}
+  @-webkit-keyframes music 
+  {0% {-webkit-transform:rotate(0);}
+  100% {-webkit-transform:rotate(360deg);}}
+  .yinpin{
+      width: 97px;
+  height: 291px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 17%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+          animation-name: rollIn;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation-name: swing;
+          animation-name: swing;
+}
+.breathe {
+  display: block;
+    box-shadow: 0 1px 8px #2fc2f7;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    width: 197.5px;
+    height: 197px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/faguang2.png);
+    background-size: 100% 100%;
+    background-position: center;
+      position: absolute;
+  left: 50%;
+  margin-left: -98.75px;
+    top: 60px;
+  }
+
+@-webkit-keyframes breathe{0%{box-shadow:0 1px 8px rgba(255,255,255,.1)}100%{box-shadow:0 0 35px #098522}}
+
+  .yinpin{
+      width: 97px;
+  height: 283px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 35px;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.breathe{
+  top: 60px;
+}
+
+
+.sec1t{
+	  width: 138px;
+  height: 27px;
+  position: absolute;
+  left: 50%;
+  margin-left: -69px;
+  top: 50px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec1-title.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec11{
+	width: 152.5px;
+  height: 100.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -76.25px;
+  top: 140px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec1-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec12{
+	width: 135.5px;
+  height: 85.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -47.75px;
+  top: 250px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec1-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.logo{
+	width: 65.5px;
+  height: 24px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/logo.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec22{
+	width: 201.5px;
+  height: 195px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100.75px;
+  top: 105px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec2-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec31{
+	width: 110px;
+  height: 241px;
+  position: absolute;
+  left: 50%;
+  margin-left: -85px;
+  top: 78px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec3-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec32{
+	width: 36.5px;
+  height: 150.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: 43.75px;
+  top: 124px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec3-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec41{
+	width: 224px;
+  height: 150.25px;
+  position: absolute;
+  left: 50%;
+  margin-left: -112px;
+  top: 100px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec42{
+	width: 231px;
+  height: 53.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -115.5px;
+  top: 330px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec4-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec52{
+	width: 206.5px;
+  height: 17px;
+  position: absolute;
+  left: 50%;
+  margin-left: -103.25px;
+  top: 240px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec5-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec51{
+	width: 226px;
+  height: 42.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -113px;
+  top: 111px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec5-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec53{
+	width: 194px;
+  height:60.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -97px;
+  top: 301px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec5-3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec61{
+	width: 195px;
+  height:40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -97.5px;
+  top: 103px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec6-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec62{
+	width: 194px;
+  height:42px;
+  position: absolute;
+  left: 50%;
+  margin-left: -97px;
+  top: 167px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec6-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec63{
+	width: 12px;
+  height:12px;
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  top: 152px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec6-3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec64{
+	width: 244px;
+  height:112px;
+  position: absolute;
+  left: 50%;
+  margin-left: -122px;
+  top: 285px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec6-4.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec71{
+	width: 210.5px;
+  height:77px;
+  position: absolute;
+  left: 50%;
+  margin-left: -105.25px;
+  top: 115px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec7-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec72{
+	width: 250.5px;
+  height:17px;
+  position: absolute;
+  left: 50%;
+  margin-left: -125.25px;
+  top: 259px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec7-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec73{
+	width: 160.5px;
+  height:51px;
+  position: absolute;
+  left: 50%;
+  margin-left: -80.25px;
+  top: 324px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec7-3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec81{
+	width: 53px;
+  height:40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -103.5px;
+  top: 64px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec8-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec82{
+	width: 55.5px;
+  height:34px;
+  position: absolute;
+  left: 50%;
+  margin-left: -22.75px;
+  top: 64px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec8-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec83{
+	width: 57.5px;
+  height:26.5px;
+  position: absolute;
+  left: 50%;
+    margin-left: 60.25px;
+  top: 68px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec8-3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec84{
+	width: 153.5px;
+  height:144px;
+  position: absolute;
+  left: 50%;
+  margin-left: -76.25px;
+  top: 168px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec8-4.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec85{
+	width: 232px;
+  height:21.5px;
+  position: absolute;
+  left: 50%;
+  margin-left: -116px;
+  top: 384px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec8-5.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec91{
+	width: 102px;
+  height:98px;
+  position: absolute;
+  left: 50%;
+    margin-left: -102px;
+  top: 124px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec9-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec92{
+	width: 138px;
+  height:138px;
+  position: absolute;
+  left: 50%;
+    margin-left: -10px;
+  top: 112px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec9-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec93{
+	width: 195px;
+  height:61px;
+  position: absolute;
+  left: 50%;
+  margin-left: -97.5px;
+  top: 323px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec9-3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.secx1{
+		width: 194px;
+  height:61px;
+  position: absolute;
+  left: 50%;
+  margin-left: -97px;
+  top: 104px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/secx-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.secx2{
+		width: 223px;
+  height:149px;
+  position: absolute;
+  left: 50%;
+  margin-left: -111.5px;
+  top: 240px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/secx-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec101{
+			width: 90px;
+  height:20px;
+  position: absolute;
+  left: 50%;
+  margin-left: -45px;
+  top: 91px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec10-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec102{
+			width: 260px;
+  height:144px;
+  position: absolute;
+  left: 50%;
+  margin-left: -130px;
+  top: 142px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec10-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec103{
+			width: 212px;
+  height:103px;
+  position: absolute;
+  left: 50%;
+  margin-left: -106px;
+  top: 158px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec10-3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec104{
+			width: 209px;
+  height:62px;
+  position: absolute;
+  left: 50%;
+  margin-left: -104.5px;
+  top: 325px;
+  background-image: url(http://style.mc2113.com/dist/app/lujins/img/sec10-4.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+  </style>
+  <script>
+  if ("wView" in window) {
+    window.wView.allowsInlineMediaPlayback = "YES";
+    window.wView.mediaPlaybackRequiresUserAction = "NO";
+  }
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="pages">
+    <section class="page">
+      <div class="sec1t" data-animation="fadeInToBottom" data-duration="2000" data-delay="600" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec11" data-animation="fadeInToLeft" data-duration="2000" data-delay="800" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec12"  data-animation="fadeInToRight" data-duration="2000" data-delay="1000"></div>
+    </section>
+
+    <section class="page">
+      <div class="logo"></div>
+      <div class="sec22" data-animation="fadeIn" data-duration="2000" data-delay="400" data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+
+
+    <section class="page">
+    	<div class="logo"></div>
+      <div class="sec31" data-animation="slideToLeft" data-duration="2000" data-delay="200"></div>
+      <div class="sec32"  data-animation="slideToRight" data-duration="2000" data-delay="300"></div>
+    </section>
+
+
+    <section class="page">
+    	<div class="logo"></div>
+      <div class="sec41" data-duration="500" data-animation="slideToBottom" data-delay="600"></div>
+		<div class="sec42" data-duration="500" data-animation="slideToTop" data-delay="600"></div>
+    </section>
+
+
+    <section class="page">
+    	<div class="logo"></div>
+      <div class="sec52" data-duration="1500" data-animation="followSlide" data-delay="200"></div>
+ 		<div class="sec51" data-duration="1500" data-animation="followSlide" data-delay="400"></div>
+      <div class="sec53" data-duration="1500" data-animation="followSlide" data-delay="600"></div>
+    </section>
+
+    <section class="page">
+    	<div class="logo"></div>
+      <div class="sec61" data-duration="2000" data-animation="slideToLeft" data-delay="300"></div>
+      <div class="sec62" data-duration="5000" data-animation="fadeInToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec63" data-duration="2000" data-animation="slideToRight" data-delay="650"></div>
+      <div class="sec64" data-duration="5000" data-animation="fadeInToBottom" data-delay="550"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    
+    <section class="page">
+      <div class="logo"></div>
+      <div class="sec71" data-duration="2000" data-animation="slideToRight" data-delay="300"></div>
+      <div class="sec72" data-duration="3500" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec73" data-duration="5000" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    
+     <section class="page">
+      <div class="logo"></div>
+      <div class="sec81" data-duration="1500" data-animation="followSlide" data-delay="200"></div>
+ 		<div class="sec82" data-duration="1500" data-animation="followSlide" data-delay="400"></div>
+      <div class="sec83" data-duration="1500" data-animation="followSlide" data-delay="600"></div>
+      <div class="sec84" data-duration="1500" data-animation="followSlide" data-delay="400"></div>
+      <div class="sec85" data-duration="1500" data-animation="followSlide" data-delay="600"></div>
+    </section>
+    
+    <section class="page">
+      <div class="logo"></div>
+       <div class="secx1" data-duration="2000" data-animation="slideToRight" data-delay="300"></div>
+      <div class="secx2" data-duration="3500" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    
+    <section class="page">
+      <div class="logo"></div>
+       <div class="sec101" data-duration="2000" data-animation="slideToRight" data-delay="300"></div>
+      <div class="sec102" data-duration="3500" data-animation="fadeInToBottom" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+       <div class="sec103" data-duration="3500" data-animation="fadeInToLeft" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+        <div class="sec104" data-duration="3500" data-animation="fadeInToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+    </section>
+    
+     <section class="page">
+      <div class="logo"></div>
+       <div class="sec91" data-duration="1500" data-animation="slideToLeft" data-delay="200"></div>
+ 		<div class="sec92" data-duration="1500" data-animation="slideToLeft" data-delay="400"></div>
+      <div class="sec93" data-duration="1500" data-animation="slideToLeft" data-delay="600"></div>
+    </section>
+    
+   
+    <!--<section class="page">
+      <a href="http://mp.weixin.qq.com/s?__biz=MzA3MTI2NjYyMA==&mid=203968610&idx=1&sn=6a94131bf6f0836a97e4dbc3967d9ac8#rd" class="breathe"></a>
+    </section>-->
+    
+  </div>
+  <audio class="audio sound_running" src="" autoplay="autoplay" loop="loop" ></audio>
+</div>
+<div class="logo"></div>
+<span class="sound_paused music"></span>
+<script src="http://style.mc2113.com/dist/app/family/js/zepto.min.js"></script>
+<!--<script src="http://style.mc2113.com/dist/lib/js/zepto/zepto.min_v2.js"></script>-->
+<script src="http://style.mc2113.com/dist/app/family/js/parallax.js"></script>
+<script>
+$('.paodao').width( $(window).width() );
+var murl='http://style.mc2113.com/dist/app/xiaojun/img/jiqing.mp3';
+  var muc=$('.music');
+    $('.music').click(function(e){
+    if( muc.hasClass('sound_paused') ){
+      muc.removeClass('sound_paused');
+      muc.addClass('sound_running');
+     // if(!/mp3/.test($('.audio').attr('src'))){
+        $('.audio').attr('src',murl);
+     // } 
+      $('.audio')[0].play();
+    }else if( muc.hasClass('sound_running') ){
+      muc.removeClass('sound_running');
+      muc.addClass('sound_paused');
+      $('.audio')[0].pause();
+    }
+    
+    return false;
+  });
+</script>
+<script>
+  
+  $('.pages').parallax({
+    direction: 'vertical',  // horizontal vertical (水平翻页)
+    swipeAnim: 'cover',   // cover (切换效果)
+    drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+    loading:   true,    // 有无加载页
+    indicator: false,   // 有无指示点
+    arrow:     true,   // 有无指示箭头
+    /*
+     * 翻页后立即执行
+     * {int}    index: 第几页
+     * {DOMElement} element: 当前页节点
+     * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
+     */
+    onchange: function(index, element, direction) {
+      // code here...
+      // console.log(index, element, direction);
+      //if( index==0 ){$('.paodao2').width( $(window).width() );}else{$('.paodao2').width( 0 );}
+      if( index==3 ){$('.yinpin').addClass('swing') ;}else{$('.yinpin').removeClass('swing');}
+      if( index==4 ){$('.woshijun').addClass('rollIn') ;}else{$('.woshijun').removeClass('rollIn');}
+      
+      
+    },
+    /*
+     * 横竖屏检测
+     * {String}   orientation: landscape、protrait
+     */
+    orientationchange: function(orientation) {
+      // console.log(orientation);
+    }
+  });
+
+
+</script>
+<script>
+    mc = window.mc = {
+          "conf": {
+            "shareTitle": "一路向上，劲取未来!",
+            "shareIcon": "http://style.mc2113.com/dist/app/xiaojun/img/jin.png",
+            "titlePic": "http://style.mc2113.com/dist/app/xiaojun/img/jin.png",
+            "shareDesc": "热力开跑，赢战羊年"
+          },
+          "refUrl": {
+              "share": "http://wx.mc2050.com/cms/1000000000/lujins.html"
+          }
+        }
+        $(document).ready(function(){
+          $('.music').trigger('click');
+          $("body").one('touchstart', function (e){
+               $('.audio')[0].play();
+          });
+          //$(document).one('touchstart', function (e) {
+          //     muc.removeClass('sound_paused');
+          //     muc.addClass('sound_running');
+          //     if(!/mp3/.test($('.audio').attr('src'))){
+          //       $('.audio').attr('src',murl);
+          //       $('.music').show();
+          //     } 
+          //     $('.audio')[0].play();
+          // return false;
+          //});
+
+
+          });
+</script>
+<script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+<script src="http://style.mc2113.com/dist/lib/mc_ui/widget/js/mc_game_share_v3.js"></script>
+</body>
+</html>

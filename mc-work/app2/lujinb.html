@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="hahnzhu" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>唯定制，不可复制</title>
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax.css">
+  <link rel="stylesheet" href="http://style.mc2113.com/dist/app/xiaojun/css/parallax-animation.css">
+  <style>
+  /* custom */
+  section[data-id="1"] {
+   background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec1x.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="2"] {
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec2.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+      
+  }
+  section[data-id="3"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec3.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     
+  }
+  section[data-id="4"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec4x.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+  }
+  section[data-id="5"] {
+  	 background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec6.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+  }
+  section[data-id="6"] {
+   background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec6.png);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    
+  }
+  img{width: 100%;}
+  .music{
+    position: fixed;
+    display: block;
+  width: 24px;
+  height: 24px;
+  left: 18px;
+  top: 5px;
+  background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicc.png) no-repeat  center center;
+    background-size: contain;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  z-index: 2000;
+  }
+  .sound_running{
+    -webkit-animation: music 1s linear infinite;
+  animation: music 1s linear infinite;
+  }
+  .sound_paused{
+    background: url(http://style.mc2113.com/dist/app/xiaojun/img/musicStop.png) no-repeat  center center;background-size: contain;
+  }
+  @keyframes music{
+    0% {transform:rotate(0);}
+    100% {transform:rotate(360deg);}}
+  @-webkit-keyframes music 
+  {0% {-webkit-transform:rotate(0);}
+  100% {-webkit-transform:rotate(360deg);}}
+  .yinpin{
+      width: 97px;
+  height: 291px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 17%;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+            transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+          animation-name: rollIn;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+            transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+            transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+            transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation-name: swing;
+          animation-name: swing;
+}
+.breathe {
+  display: block;
+    box-shadow: 0 1px 8px #2fc2f7;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    width: 197.5px;
+    height: 197px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/faguang2.png);
+    background-size: 100% 100%;
+    background-position: center;
+      position: absolute;
+  left: 50%;
+  margin-left: -98.75px;
+    top: 60px;
+  }
+
+@-webkit-keyframes breathe{0%{box-shadow:0 1px 8px rgba(255,255,255,.1)}100%{box-shadow:0 0 35px #098522}}
+
+  .yinpin{
+      width: 97px;
+  height: 283px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40.5px;
+  top: 35px;
+  background-image: url(http://style.mc2113.com/dist/app/xiaojun/img/yinpin.png?v1);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  }
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.breathe{
+  top: 60px;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+            transform: rotate3d(0, 0, 1, -360deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+          animation-name: fadeInLeft;
+}
+@-webkit-keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+            transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+            transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+            transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+            transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+          animation-name: bounceInDown;
+}
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+          animation-name: rotateIn;
+}
+.sec1t{
+	  width: 138px;
+  height: 27px;
+  position: absolute;
+  left: 50%;
+  margin-left: -69px;
+  top: 50px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec1-title.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec11{
+	width: 121px;
+  height: 170.5px;
+  position: absolute;
+ right: 0px;
+  top: 0px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec1-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.sec11w{
+  overflow: hidden;
+  width: 0;
+  position: absolute;
+  right: 0;
+  top:0;
+  height: 170.5px;
+  transition: width 2s;
+   -webkit-transition: width 2s;
+}
+.sec13{
+	width: 90px;
+  position: absolute;
+  left: 50%;
+  margin-left: -81px;
+  top: 142px;
+ 
+}
+.sec14{
+  width: 163px;
+  position: absolute;
+  left: 50%;
+  margin-left: -81px;
+  top: 163px;
+ 
+}
+.sec15{
+  width: 88px;
+  position: absolute;
+  left: 50%;
+  margin-left: -36px;
+  top: 205px;
+ 
+}
+.logo{
+	width: 65.5px;
+  height: 24px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/logo.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec23{
+  width: 102px;
+  position: absolute;
+left: 43px;
+  top: 38px;
+}
+.sec24{
+  width: 156px;
+  position: absolute;
+left: 43px;
+  top: 58px;
+}
+.sec25{
+  width: 88px;
+  position: absolute;
+  left: 72px;
+  top: 121px;
+}
+.sec22{
+  width: 168px;
+  height: 163px;
+  position: absolute;
+ right: 0;
+  top: 0;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec2-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec22w{
+  overflow: hidden;
+  width: 0;
+  position: absolute;
+  right: 0;
+  top:47px;
+  height: 170.5px;
+  transition: width 2s;
+   -webkit-transition: width 2s;
+}
+.sec33{
+  width: 99px;
+  position: absolute;
+  left: 30px;
+  top: 38px;
+}
+.sec34{
+width: 235px;
+  position: absolute;
+  left: 30px;
+  top: 58px;
+}
+.sec35{
+width: 87px;
+  position: absolute;
+  left: 86px;
+  top: 137px;
+}
+.sec32{
+	width: 236px;
+  height: 136px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec3-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec32w{
+   overflow: hidden;
+  width: 0;
+  position: absolute;
+  left: 32px;
+  top:164px;
+  height: 136px;
+  transition: width 2s;
+   -webkit-transition: width 2s;
+}
+.sec41{
+	 width: 147px;
+  height: 172px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec4-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec41w{
+   overflow: hidden;
+  width: 0;
+  position: absolute;
+  right: 73px;
+  bottom:0px;
+  height: 172px;
+  transition: width 2s;
+   -webkit-transition: width 2s;
+}
+.sec43{
+  width: 68px;
+  position: absolute;
+  left: 20px;
+  bottom: 166px;
+}
+.sec44{
+  width: 198px;
+  position: absolute;
+  left: 20px;
+  bottom: 38px;
+}
+.sec45{
+  width: 85px;
+  position: absolute;
+  left: 38px;
+  bottom: 36px;
+}
+.sec52{
+	width: 118px;
+  height:43px;
+  position: absolute;
+  left: 50%;
+  margin-left: -59px;
+  top: 177px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec5-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec51{
+	width: 170px;
+  height: 99px;
+  position: absolute;
+  left:50%;
+  margin-left: -85px;
+  top: 40px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec5-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec55{
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  bottom: 9.5%;
+}
+.sec5t{
+    width: 86px;
+  position: absolute;
+  left: 50%;
+  margin-left: -64px;
+  bottom: 9.5%;
+}
+.sec5yuan{
+  width: 280px;
+  height:280px;
+  border-radius: 50%;
+  -webkit-border-radius:50%;
+  background-color:#f9f5ef;
+  position: absolute;
+  left:50%;
+  margin-left: -140px;
+  top: -125px;
+}
+.sec2yuan1{
+  width: 74px;
+  height:74px;
+  border-radius: 50%;
+  -webkit-border-radius:50%;
+  background-color:#ffffff;
+  position: absolute;
+  right:-37px;
+  top: -37px;
+  opacity: .3;
+}
+.sec2yuan2{
+    width: 243px;
+  height:243px;
+  border-radius: 50%;
+  -webkit-border-radius:50%;
+  background-color:#ffffff;
+  position: absolute;
+  right:-150px;
+  bottom: -30px;
+  opacity: .3;
+}
+.sec2yuan3{
+    width: 280px;
+  height:280px;
+  border-radius: 50%;
+  -webkit-border-radius:50%;
+  background-color:#ffffff;
+  position: absolute;
+   left: -112px;
+  top: -75px;
+  opacity: .3;
+}
+.sec3yuan1{
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute;
+  left: -76px;
+  top: -130px;
+  opacity: .3;
+}
+.sec3yuan2{
+   width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute;
+  right: -100px;
+  top: 70px;
+  opacity: .3;
+}
+.sec61{
+	width: 70px;
+  height:25px;
+  position: absolute;
+  left: 50%;
+  margin-left: -35px;
+  top: 54px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec6-1.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec62{
+	width: 160px;
+  height:76px;
+  position: absolute;
+  left: 50%;
+  margin-left: -80px;
+  bottom: 32px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec6-2.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+}
+.sec63{
+  opacity: 0;
+  width: 205px;
+  height:205px;
+  position: absolute;
+  left: 50%;
+  margin-left: -102.5px;
+  top: 115px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec6-4.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  transition:all 2s;
+  -webkit-transition:all 2s;
+}
+.sec63.acti{
+  opacity: 1;
+  transform:rotate(360deg);;
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+}
+.sec64{
+  width: 75px;
+  height:130px;
+  position: absolute;
+  left: 50%;
+  margin-left: -37.5px;
+  top: 153px;
+  background-image: url(http://style.mc2113.com/dist/app/lujinb/img/sec6-3.png);
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden;
+  opacity: 0;
+}
+.sec1yuan1{
+   width: 265px;
+  height: 265px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #1d0101;
+  position: absolute;
+  left: -180px;
+  top: 40px;
+  opacity: .3;
+}
+.sec1yuan2{
+   width: 265px;
+  height:265px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #1d0101;
+  position: absolute;
+  right: -100px;
+  top: 95px;
+  opacity: .3;
+}
+.sec4yuan1{
+     width: 265px;
+  height:265px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #1d0101;
+  position: absolute;
+  left: -36px;
+  bottom: -48px;
+  opacity: .3;
+}
+  </style>
+  <script>
+  if ("wView" in window) {
+    window.wView.allowsInlineMediaPlayback = "YES";
+    window.wView.mediaPlaybackRequiresUserAction = "NO";
+  }
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="pages">
+    <section class="page">
+      <div class="sec1yuan1" data-duration="2000" data-animation="slideToTop" data-delay="400"></div>
+      <div class="sec1yuan2" data-duration="2000" data-animation="slideToBottom" data-delay="400"></div>
+      <div class="sec11w"><div class="sec11"></div></div>
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec1-3.png" class="sec13" data-animation="fadeInToRight" data-duration="2000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec1-4.png" class="sec14" data-animation="fadeInToRight" data-duration="2000" data-delay="1800">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec1-5.png" class="sec15" data-animation="fadeInToLeft" data-duration="3000" data-delay="2800">
+    </section>
+
+    <section class="page">
+      <div class="sec2yuan1" data-duration="2000" data-animation="slideToLeft" data-delay="300"></div>
+      <div class="sec2yuan2" data-duration="2000" data-animation="slideToLeft" data-delay="400"></div>
+      <div class="sec2yuan3" data-duration="2000" data-animation="slideToRight" data-delay="500"></div>
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec2-3.png" class="sec23" data-animation="fadeInToRight" data-duration="2000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec2-4.png" class="sec24" data-animation="fadeInToRight" data-duration="2000" data-delay="1800">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec2-5.png" class="sec25" data-animation="fadeInToRight" data-duration="2000" data-delay="2800">
+      <div class="sec22w"><div class="sec22"></div></div>
+    </section>
+
+
+    <section class="page">
+      <div class="sec3yuan1" data-animation="slideToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec3yuan2" data-animation="slideToBottom" data-delay="550"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec3-3.png" class="sec33" data-animation="slideToRight" data-duration="1000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec3-4.png" class="sec34" data-animation="slideToRight" data-duration="2000" data-delay="1800">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec3-5.png" class="sec35" data-animation="slideToLeft" data-duration="2000" data-delay="2800">
+      <div class="sec32w"><div class="sec32" ></div></div>
+    </section>
+
+
+    <section class="page">
+    	<div class="sec4yuan1" data-animation="slideToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec41w"><div class="sec41"></div></div>
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec4-3.png" class="sec43" data-animation="slideToRight" data-duration="1000" data-delay="1000">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec4-4.png" class="sec44" data-animation="slideToRight" data-duration="2000" data-delay="1800">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec4-5.png" class="sec45" data-animation="slideToLeft" data-duration="2000" data-delay="2800">
+    </section>
+
+
+    <section class="page">
+    	<div class="sec5yuan" data-duration="1500" data-animation="slideToTop" data-delay="2000"></div>
+      <div class="sec52" data-duration="1500" data-animation="followSlide" data-delay="2600"></div>
+ 		<div class="sec51" data-duration="1500" data-animation="followSlide" data-delay="2000"></div>
+      <div class="sec53" data-duration="1500" data-animation="followSlide" data-delay="2000"></div>
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec5-3xx.png" class="sec55" data-animation="followSlide" data-duration="1000" data-delay="600">
+      <img src="http://style.mc2113.com/dist/app/lujinb/img/sec5-3t.png" class="sec5t" data-duration="1000" data-animation="followSlide" data-delay="2600">
+    </section>
+
+    <section class="page">
+    	
+      <div class="sec61" data-duration="2000" data-animation="slideToLeft" data-delay="300"></div>
+      <div class="sec62" data-duration="5000" data-animation="fadeInToTop" data-delay="500"  data-timing-function="cubic-bezier(.12,.73,.62,1.38)"></div>
+      <div class="sec63"></div>
+      <div class="sec64"></div>
+    </section>
+    
+    <!--<section class="page">
+      <a href="http://mp.weixin.qq.com/s?__biz=MzA3MTI2NjYyMA==&mid=203968610&idx=1&sn=6a94131bf6f0836a97e4dbc3967d9ac8#rd" class="breathe"></a>
+    </section>-->
+    
+  </div>
+  <audio class="audio sound_running" src="" autoplay="autoplay" loop="loop" ></audio>
+</div>
+
+<span class="sound_paused music"></span>
+<script src="http://style.mc2113.com/dist/app/family/js/zepto.min.js"></script>
+<!--<script src="http://style.mc2113.com/dist/lib/js/zepto/zepto.min_v2.js"></script>-->
+<script src="http://style.mc2113.com/dist/app/family/js/parallax.js"></script>
+<script>
+$('.paodao').width( $(window).width() );
+var murl='http://style.mc2113.com/dist/app/lujinb/img/gufeng.mp3';
+  var muc=$('.music');
+    $('.music').click(function(e){
+    if( muc.hasClass('sound_paused') ){
+      muc.removeClass('sound_paused');
+      muc.addClass('sound_running');
+     // if(!/mp3/.test($('.audio').attr('src'))){
+        $('.audio').attr('src',murl);
+     // } 
+      $('.audio')[0].play();
+    }else if( muc.hasClass('sound_running') ){
+      muc.removeClass('sound_running');
+      muc.addClass('sound_paused');
+      $('.audio')[0].pause();
+    }
+    
+    return false;
+  });
+</script>
+<script>
+  
+  $('.pages').parallax({
+    direction: 'vertical',  // horizontal vertical (水平翻页)
+    swipeAnim: 'cover',   // cover (切换效果)
+    drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+    loading:   true,    // 有无加载页
+    indicator: false,   // 有无指示点
+    arrow:     true,   // 有无指示箭头
+    /*
+     * 翻页后立即执行
+     * {int}    index: 第几页
+     * {DOMElement} element: 当前页节点
+     * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
+     */
+    onchange: function(index, element, direction) {
+      // code here...
+      // console.log(index, element, direction);
+      if( index==0 ){setTimeout(function(){$('.sec11w').width( 121 );},1000)}else{$('.sec11w').width( 0 );}
+      if( index==1 ){setTimeout(function(){$('.sec22w').width(168);},1000)}else{$('.sec22w').width(0) ;}
+      if( index==2 ){setTimeout(function(){$('.sec32w').width(236) ;},1000)}else{$('.sec32w').width( 0 );}
+      if( index==3 ){setTimeout(function(){$('.sec41w').width(236) ;},1000)}else{$('.sec41w').width( 0 );}
+      if( index==5 ){$('.sec63').addClass('acti').one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend transitionend', function(){$('.sec64').addClass('animated fadeInLeft')});}else{$('.sec63').removeClass('acti');$('.sec64').removeClass('fadeInLeft');}
+    },
+    /*
+     * 横竖屏检测
+     * {String}   orientation: landscape、protrait
+     */
+    orientationchange: function(orientation) {
+      // console.log(orientation);
+    }
+  });
+
+
+</script>
+<script>
+    mc = window.mc = {
+          "conf": {
+            "shareTitle": "唯定制，不可复制!",
+            "shareIcon": "http://style.mc2113.com/dist/app/lujinb/img/lujinb.jpg",
+            "titlePic": "http://style.mc2113.com/dist/app/lujinb/img/lujinb.jpg",
+            "shareDesc": "世界看苏州，又一大牌定制新品即将全球发布，敬请期待！"
+          },
+          "refUrl": {
+              "share": "http://wx.mc2050.com/cms/1000000000/lujinb.html"
+          }
+        }
+        $(document).ready(function(){
+          $('.music').trigger('click');
+          $("body").one('touchstart', function (e){
+               $('.audio')[0].play();
+          });
+          //$(document).one('touchstart', function (e) {
+          //     muc.removeClass('sound_paused');
+          //     muc.addClass('sound_running');
+          //     if(!/mp3/.test($('.audio').attr('src'))){
+          //       $('.audio').attr('src',murl);
+          //       $('.music').show();
+          //     } 
+          //     $('.audio')[0].play();
+          // return false;
+          //});
+
+
+          });
+</script>
+<script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+<script src="http://style.mc2113.com/dist/lib/mc_ui/widget/js/mc_game_share_v3.js"></script>
+</body>
+</html>
