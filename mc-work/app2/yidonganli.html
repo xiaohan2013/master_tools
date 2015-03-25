@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="hahnzhu" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>移动展示</title>
+  <link rel="stylesheet" type="text/css" href="http://style.mc2113.com/dist/lib/css/resetv2.css">
+  <style>
+    html,body{height: 100%;}
+    .wrap{
+      padding-top: 7px;
+      background-color: #e1e1e1;
+      height: 100%;
+      overflow: hidden;
+    }
+    .banner{
+      display: block;
+      width: 302.5px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .item{
+      font-size: 12px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+       width: 302.5px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .items{
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      text-align: center;
+      height: 34px;
+      line-height: 34px;
+
+    }
+    .items a{
+       color:#000000;
+    }
+    .items.active{
+      border-bottom: 2px solid #0196ce;
+     
+    }
+    .items.active a{
+       color:#0196ce;
+    }
+    .datawrap{
+      overflow:hidden;
+      position: relative;
+      background-color: #e1e1e1;
+    }
+    .list{
+     /* height: 85%;*/
+      padding-top: 13px;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
+      position: absolute;
+        left: 50%;
+  top: 0;
+  margin-left: -50%;
+    }
+    .lists{
+      width: 302px;
+      height: 92px;
+      position: relative;
+      background-color: #ffffff;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 12px;
+      padding-left: 76px;
+      overflow: hidden;
+    }
+    .gameImage{
+      width: 61px;
+      height: 61px;
+      position: absolute;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border:3px solid #e1e1e1;
+      left:10px;
+      top: 15px;
+    }
+    .more{
+      display: block;
+      width: 48px;
+      height: 24.5px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+    }
+    .wu{
+    	display: block;
+      width: 48px;
+      height: 24.5px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+    }
+    .gameTitle{font-size: 12px;padding-top: 10px;position: relative;}
+    .hot:after{
+		top: 6px;
+    	position: absolute;
+    	content: url(http://style.mc2113.com/dist/app/ianli/hot.png); 
+    }
+    .gameInfo{
+    	height: 38px;
+    	margin-top: -8px;
+    }
+    .gameInfo p:nth-of-type(1){
+    	font-size: 12px;
+    	margin-left: -22px;
+    }
+    .gameInfo p:nth-of-type(2){
+    	font-size: 12px;
+    	margin-left: -18px;
+    }
+    .shrink{-webkit-transform:scale(0.8);-o-transform:scale(1);}
+    .blue{color:#0196ce;}
+    .tiyan{display: block;position: absolute;right: 10px;text-align: center;background-color: #0095cd;color: #ffffff;
+  font-size: 12px;
+  width: 58px;
+  height: 20px;
+  line-height: 20px;bottom: 6px;}
+  </style>
+  <script src="http://style.mc2113.com/dist/lib/js/jquery/jq_move.js"></script>
+  <script type="text/javascript" src="http://style.mc2113.com/dist/app/shangqiang/js/laytpl.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <img class="banner" src="http://style.mc2113.com/dist/app/ianli/banner.png">
+    <ul class="item">
+      <li class="items active"><a href="http://www.baidu.com">显示全部</a></li>
+      <li class="items"><a href="http://www.baidu.com">发布时间</a></li>
+      <li class="items"><a href="http://www.baidu.com">官方推荐</a></li>
+      <li class="items"><a href="http://www.baidu.com">热门程度</a></li>
+    </ul>
+    <div class="datawrap">
+      <ul class="list">
+      	
+       <!--  <li class="lists">
+          <img class="gameImage" src="http://mc-style.qiniudn.com/dist/a/hashiqi.jpg">
+          <h2 class="gameTitle hot">ua要晕圣诞老人</h2>
+          <div class="gameInfo">
+          	<p class="shrink"><span>热度:★★★☆</span>&nbsp;&nbsp;<span>活动数:85</span>&nbsp;&nbsp;<span>总参与人数:1185</span><br><span>公司:光明乳业</span>&nbsp;&nbsp;<span>时间:2014.12.22-28</span><br><span>标签:</span><span class="blue">双十一、</span><span class="blue">双十一</span></p>
+          </div>
+          <a class="tiyan" href="http://www.baidu.com">立即体验</a>
+        </li> -->
+  
+      </ul>
+      
+    </div>
+    <img class="more" src="http://style.mc2113.com/dist/app/ianli/more.png">
+    <img class="wu" src="http://style.mc2113.com/dist/app/ianli/wu.png">
+  </div>
+
+
+
+<script id="activityTpl" type="text/html">
+		<li class="lists">
+			<img class="gameImage" src="{{d.pic}}">
+			{{# if(d.hot) { }}
+				<h2 class="gameTitle hot">{{d.title}}</h2>
+			{{# } }}
+			{{# if(!d.hot) { }}
+				<h2 class="gameTitle">{{d.title}}</h2>
+			{{# } }}
+			 <div class="gameInfo">
+			 	<p class="shrink">
+			 		{{# if(d.partakerNum==4) { }}
+			 		<span>热度:★★★★</span>&nbsp;&nbsp;
+			 		{{# } }}
+			 		{{# if(d.partakerNum==3) { }}
+			 		<span>热度:★★★☆</span>&nbsp;&nbsp;
+			 		{{# } }}
+			 		{{# if(d.partakerNum==2) { }}
+			 		<span>热度:★★☆☆</span>&nbsp;&nbsp;
+			 		{{# } }}
+			 		{{# if(d.partakerNum==1) { }}
+			 		<span>热度:★☆☆☆</span>&nbsp;&nbsp;
+			 		{{# } }}
+			 		<span>总参与人数:{{d.partakerNum}}</span><br>
+			 		<span>公司:{{d.mpName}}</span>&nbsp;&nbsp;
+			 		<span>时间:{{d.gmtCreate}}</span><br>
+			 		<span>标签:</span>
+			 	</p>
+        <a class="tiyan" href="{{d.href}}">立即体验</a>
+			 </div>
+		</li>
+
+	</script>
+<script type="text/javascript">
+$(function(){
+	$('.datawrap').height($(window).height()-$('.banner').height()-$('.item').height()-$('.more').outerHeight(true)-20 );
+	
+    $('.more').on('touchstart',function(){
+    	var currentPage = 0;
+		var totalPage = 1;
+      	function getData(){
+        		$.getJSON('http://style.mc2113.com/dist/app/shangqiang/json2.json', function(data) {
+        			if (data.code == "200") {
+						var retData = data.data.dataList;
+						var retData2 = data.data.paginator;
+							if(!retData2) {
+								$('.more').hide();
+								$('.wu').show();
+								return;
+							}
+							if( retData2.totalPage ){
+								totalPage = retData2.totalPage;
+							}
+							 if (currentPage >= parseInt(totalPage)) {
+									$('.more').hide();
+									$('.wu').show();
+									return;
+								}
+							currentPage +=1;
+							if(totalPage <= 1){
+									$('.more').hide();
+									$('.wu').show();
+							}
+							html = (function(retData) {
+								var litpl = [];
+						
+								$.each(retData, function(i) {
+									var data = retData;
+									var gettpl = document.getElementById('activityTpl').innerHTML;
+									var tpl = laytpl(gettpl).render(data[i]);
+									litpl.push(tpl);
+									
+								});
+								return litpl.join('');
+							})(retData);
+						}
+						$('.list').append(html);
+						if($('.list').html()){huadong();}
+				});
+
+	};
+	getData();
+      return false;
+    });
+    
+
+})
+  var downY = 0;
+  var downTop = 0;
+  var prevY = 0;
+  var iSpeedY = 0;
+  var timer = null;
+  var oDiv = $('.datawrap')[0];
+  var oUl = $('.list')[0];
+  function huadong(){
+    console.log('s')
+    oUl.ontouchstart = function(ev){console.log('b')
+    var touchs = ev.changedTouches[0];
+    downY = touchs.pageY;
+    downTop = this.offsetTop;
+    prevY = touchs.pageY;
+    var bBtn = true;
+    oUl.ontouchmove = function(ev){
+      var touchs = ev.changedTouches[0];
+
+      iSpeedY = touchs.pageY - prevY;
+      prevY = touchs.pageY;
+      
+      if(this.offsetTop >= 0){
+        if(bBtn){
+          bBtn = false;
+          downY = touchs.pageY;
+        }
+        this.style.top = (touchs.pageY - downY)/3 + 'px';
+        
+      }
+      else if(this.offsetTop <= oDiv.offsetHeight - oUl.offsetHeight){
+        if(bBtn){
+          bBtn = false;
+          downY = touchs.pageY;
+        }
+        this.style.top = (touchs.pageY - downY)/3 + (oDiv.offsetHeight - oUl.offsetHeight) + 'px';
+        
+      }
+      else{
+        this.style.top = touchs.pageY - downY + downTop + 'px';
+        var scaleY = this.offsetTop / (oDiv.offsetHeight - oUl.offsetHeight);
+        //document.title = scaleY;
+      }
+    };
+    oUl.ontouchend = function(){
+      this.ontouchmove = null;
+      this.ontouchend = null;
+      var This = this;
+      //iSpeedY
+      
+      clearInterval(timer);
+      timer = setInterval(function(){
+        
+        if( Math.abs(iSpeedY)<=1 || This.offsetTop > 50 || This.offsetTop <= oDiv.offsetHeight - oUl.offsetHeight - 50 ){
+          clearInterval(timer);
+          if( This.offsetTop >= 0 ){
+            startMove(This,{top : 0},400,'easeOut',function(){
+              
+            });
+            
+          }
+          else if( This.offsetTop <= oDiv.offsetHeight - oUl.offsetHeight ){
+            startMove(This,{top : oDiv.offsetHeight - oUl.offsetHeight},400,'easeOut',function(){
+              
+          });
+          }
+          else{
+            console && console.log(oUl.offsetHeight);
+          }
+        }
+        else{
+          iSpeedY *= 0.95;
+          This.style.top = This.offsetTop + iSpeedY + 'px';
+          
+        }
+        
+      },13);
+      
+    };
+    }
+  };
+  document.ontouchmove = function(ev){
+      ev.preventDefault();
+  };
+</script>
+</body>
+</html>
