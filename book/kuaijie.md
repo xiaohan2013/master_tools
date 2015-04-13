@@ -32,6 +32,22 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="Description" content="">
     <meta name="Keywords" content=" - ">
+    <script type="text/javascript">
+      if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+        var version = parseFloat(RegExp.$1);
+        if (version > 2.3) {
+          var phoneScale = parseInt(window.screen.width) /1280;
+          document
+              .write('<meta name="viewport" content="width=1280, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+        } else {
+          document
+              .write('<meta name="viewport" content="width=1280, target-densitydpi=device-dpi">');
+        }
+      } else {
+        document
+            .write('<meta name="viewport" content="width=1280, user-scalable=no, target-densitydpi=device-dpi">');
+      }
+    </script>
 </head>
 <body>
     

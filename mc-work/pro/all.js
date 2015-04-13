@@ -10307,28 +10307,7 @@ return jQuery;
 
 }));
 
-/*
-                   _ooOoo_
-                  o8888888o
-                  88" . "88
-                  (| -_- |)
-                  O\  =  /O
-               ____/`---'\____
-             .'  \\|     |//  `.
-            /  \\|||  :  |||//  \
-           /  _||||| -:- |||||-  \
-           |   | \\\  -  /// |   |
-           | \_|  ''\---/''  |   |
-           \  .-\__  `-`  ___/-. /
-         ___`. .'  /--.--\  `. . __
-      ."" '<  `.___\_<|>_/___.'  >'"".
-     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-     \  \ `-.   \_ __\ /__ _/   .-` /  /
-======`-.____`-.___\_____/___.-`____.-'======
-                   `=---='
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         佛祖保佑       永无BUG
-*/
+
 // JavaScript Document
 function getCookie(name)
 {
@@ -10487,7 +10466,7 @@ $(function() {
             
             if (iNow == aLiOl.length - 1) {
                 iNow = 0;
-             	iNow2=-1;
+                iNow2=-1;
                 oUl.style.left = 0;
             } else {
                 iNow++;
@@ -10495,7 +10474,7 @@ $(function() {
 
             iNow2++;
             
-//			console.log(iNow+","+iNow2)
+//          console.log(iNow+","+iNow2)
             for (var i = 0; i < aLiOl.length; i++) {
                 aLiOl[i].className = '';
             }
@@ -10522,7 +10501,7 @@ $(function() {
 
             iNow2--;
            
-//			console.log(iNow+","+iNow2)
+//          console.log(iNow+","+iNow2)
             for (var i = 0; i < aLiOl.length; i++) {
                 aLiOl[i].className = '';
             }
@@ -10551,16 +10530,18 @@ $(function() {
             oBox.onmouseout = function() {
             timer = setInterval(toRun, 3000);
         };
-    	}
+        }
     };
   
        
     $('#help-content').height( $('body').height()-$('.head').height()-$('#foot').height() );
     $('#connect-content').height( $('body').height()-$('.head').height()-$('#foot').height() );
     $('#join-content').height( $('body').height()-$('.head').height()-$('#foot').height() );
+//  $('#anli-content').height( $('body').height()-$('.head').height()-$('#foot').height() );
     if( $('#connect-content').height()<595 ){$('#connect-content').height( 595 )}
     if( $('#help-content').height()<490 ){$('#help-content').height( 490 )}
     if( $('#join-content').height()<535 ){$('#join-content').height( 535 )}
+//  if( $('#anli-content').height()<970 ){$('#join-content').height( 970 )}
 
 });
 $(function() {
@@ -10682,3 +10663,7 @@ $(function() {
 
 
 });
+window.onresize=function(){
+    window.location.reload && window.location.reload();
+    if(!window.location.reload){window.location.href='http://wx.mc2050.com';}
+}
