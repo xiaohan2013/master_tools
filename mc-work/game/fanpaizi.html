@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="qingniao" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>缤纷翻牌子</title>
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/global/reset.css">
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/modules/animate/animate.minv2.css?201555122">
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/app/ushare/game/revenge/merge.css?20155512">
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/app/ushare/game/revenge/mc_game_award.css?20155512">
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/app/ushare/game/binfen/binfen.css?002">
+	<script src="http://style.cdn.juhaomai.net/style/js/global/lib/jquery/jquery-2.1.1.min.js"></script>
+	<script src="http://style.cdn.juhaomai.net/style/js/app/lightapp/mrh/velocity.min.js"></script>
+	<script type="text/javascript">
+		mc={"ads":{"adsType":"关注公众号","autoDownFP":"N","btnText":"关注我们","link":"","pic":"http://img.juhaomai.net/mcup/m1/201504081952040411.png","tipTitle":"目前还剩67份奖品"},"awards":{"remainPrize":67,"totalPrize":100},"conf":{"a_info":"&lt;p&gt;请填写奖券使用须知、注意事项及兑奖地点等相关说明。&lt;/p&gt;","autoDownFP":"N","m_link":"","shareDesc":"老虎机~","shareIcon":"http://img.juhaomai.net/mcup/m1/201502061407100079.jpg","shareSpeDesc":"老虎机","shareSpeTitle":"老虎机！","shareTitle":"老虎机"},"info":{"anSiteId":1,"dateTime":"2015年05月12日-06月12日","dayTimes":100,"friendScore":0,"gameEnd":false,"gameId":100869,"gameStart":true,"maxScore":43,"remainTimes":64,"selfScore":43,"source":"all","tag":"","title":"翻牌子"},"refUrl":{"api":"http://test.mc2113.cn/plugin/ushare/social_api.htm","award":"http://test.mc2113.cn/plugin/ushare/award_user_info_form.htm?gameId=100869&puid=4914037383&pticket=70458&source=all&id=%id%","more":"http://mp.weixin.qq.com/s?__biz=MjM5Njc5NjU5OQ==&mid=203560207&idx=1&sn=8b645891994d05a950b1ef0767088901#rd","rank":"http://test.mc2113.cn/plugin/ushare/social_rank.htm?gameId=100869&puid=4914037383&pticket=70458&source=all","rule":"http://test.mc2113.cn/plugin/ushare/plugin/ushare/social_game_rule.htm?gameId=100869&puid=4914037383&pticket=70458&source=all","share":"http://test.mc2113.cn/plugin/ushare/play_social_game_7097836815.htm?gameId=100869&puid=4914037383&pticket=70458&source=all","ucenter":"http://test.mc2113.cn/plugin/ushare/accept_award_api.htm?gameId=100869&puid=4914037383&pticket=70458&source=all&method=list"},"rela":{"pticket":70458,"puid":"4914037383","ticket":"70458","uid":"4914037383"},"resource":{"baseUrl":"http://style.juhaomai.net/static/game/10000094/images","imgAudio":[""],"txt":[{"key":"m_link","value":""},{"key":"a_info","value":"&lt;p&gt;请填写奖券使用须知、注意事项及兑奖地点等相关说明。&lt;/p&gt;"},{"key":"autoDownFP","value":"N"}],"version":""},"userInfo":{"nickName":"4914037383"}};
+		source={
+			'bg':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/bg.jpg',
+			'biaoti':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/biaoti.png',
+			'huosheng':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/huosheng.png',
+			'jindu':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/jindu.png',
+			'laiba':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/laiba.png',
+			'long':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/long.png',
+			'souji':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/souji.png',
+			'start':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/start.png',
+			'sharep':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/sharep.png',
+			'wrap1':'http://style.cdn.juhaomai.net/style/images/app/game/binfen/wrap1.png?01'
+		};
+		function preloadImages(sources, callbackPercent, callbackComplete, temporary) {
+			var loadedImages = 0;
+			var totalImages = 0;
+			var images = {};
+			for (var src in sources) {
+				totalImages++;
+			}
+			for (var src in sources) {
+				images[src] = new Image();
+				images[src].onload = function() {
+					loadedImages++;
+					var percent = parseInt(loadedImages / totalImages * 100) + "%";
+					callbackPercent && callbackPercent(percent);
+					if (loadedImages == totalImages) {
+						callbackComplete && callbackComplete(percent);
+					}
+				};
+				images[src].onerror = function() {
+					loadedImages++;
+					temporary && (this.src = temporary);
+					var percent = parseInt(loadedImages / totalImages * 100) + "%";
+					callbackPercent && callbackPercent(percent);
+					if (loadedImages == totalImages) {
+						callbackComplete && callbackComplete(percent);
+					}
+				};
+				images[src].src = sources[src];
+			}
+		};
+		preloadImages(source, function(p) {
+			$('.loading').html(p);
+		}, function() {
+			$('.loading').velocity({
+				'opacity': 0
+			}, 500, function() {
+				$(this).remove();
+				// $('.revenger').addClass('animated slideInUp');
+				 $('.start').addClass('animated bounce');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="loading"></div>
+	<div class="wrap1 biankuang marginauto">
+		<img class="wrap1p" src="http://style.cdn.juhaomai.net/style/images/app/game/binfen/wrap1.png">
+		<img class="start" src="http://style.cdn.juhaomai.net/style/images/app/game/binfen/start.png">
+	</div>
+	<div class="soujiwrap">
+		<div class="biankuang marginauto soujikuang">
+			<img class="souji" src="http://style.cdn.juhaomai.net/style/images/app/game/binfen/souji.png">
+			<img class="yangpin" src="http://style.cdn.juhaomai.net/style/images/app/game/binfen/yangpin.png">
+			<span class="yangpinname">光明植物火力</span>
+			<img class="laiba" src="http://style.cdn.juhaomai.net/style/images/app/game/binfen/laiba.png">
+		</div>
+	</div>
+	<div class="wrap2 biankuang marginauto">
+		<p class="biaoti">抢到<span class="wupin"></span><span class="geshu"></span>个</p>
+		<div class="jindu"></div>
+		<div class="shijianwrap">
+			<span class="shijian"></span>
+			<span class="shijian2">00:<span></span></span>
+		</div>
+		<div class="ninewrap">
+			<ul class="marginauto">
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+				<li class="diao" data-complete='no'><span class="moren"></span><span class="bianhua "></span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="awardd" style="display:none;">
+		<div class="win-cover lw-box" style="display:block;">
+			<h1 style="top:-5px;font-weight: 900;color:#ffffff;font-size:22px;" class="d-l-w">厉害哦</h1>
+			<img id="shuts" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAfCAYAAACLSL/LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTRBMEVCRTk4Q0Q5MTFFNDg4MTBFRTM2Mzc1Q0I0NEEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTRBMEVCRUE4Q0Q5MTFFNDg4MTBFRTM2Mzc1Q0I0NEEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBNEEwRUJFNzhDRDkxMUU0ODgxMEVFMzYzNzVDQjQ0QSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBNEEwRUJFODhDRDkxMUU0ODgxMEVFMzYzNzVDQjQ0QSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrIexPIAAAM+SURBVHjaxJhNSFRRFMfvezZp4iyUbOGmWiRRFvRBWQ5KEFi4yQgJqk0EjRZUq4jKygppVS1qDGQ2GYSEtRlKCCId+xAqKIuwRbVx0UQuJhQzff0P/S/chvl8M2+68JN35t17zt9555537ljDSlUrpR6DtervCIMgmFXFGT7QAw7Sfgu22/gTAw3gKW/IhPugvAiiyhlLixINDQHHidn84CdoBg9ot4BBUOmhqErGaKEtsZshSrQo25g4A9rALdoBMARqPBBVQ98B2hKzDaJm9AQ7YYHkVTs4T7sOvAG1BRRVS591tCVWO0T9k9N2koUO6KJAGUvAO7CpAKI2g/f0qRijC6KcxIl2CgcOd8pu2gvBc+ah2yFrn4EFtMV3TzJR6YTpITumyZj7COxzIWo/1+p4TfSdcthZOB1ijftBuw8cA1YWa2XOcXCbtvhYQ58qX2GKObYBfKZ9DVzOsL4EdIOrtGXtejCWTUA7h8fxhcn7kfYpbnNfmmp+kvYHbp6v2Qazc8yVGAO8oH0I3AWLjDly3c97inPrwfdcAtkuEjkOtoEBY3dFgJ88BLt47x7nxnMNYg273/6SQzfAYdrjTPYVtOVRHgVz6ZwEklcLV9+YHhKwA1w0KroWdQEcySSq0I/SHPN8S0SNz+T6Eu+p/yVM1ncaL2P98j+Tr+98FkuO3QRnjRz7xOtzzL+SYgsrY0nQif8EbGQR1g1nkKWkrFjC/BSiX/ADbPbiZKfRcO7hXL/XwuR8MMqCKaMX7AXTxpxpNpy9tOtZZBd7JWwZeAlW0u7mo0x2aJnlo7xCexX/oaWFFiYdwSuwnLZ0DKczlIQ5vk9P0Ja1r43ONW9hjTxSVRm91XU2k5mGw07kAO0qdiqN+QprNXaZfDs7wB0XG6aPa+eNY1qrG2EWc0S/qH+BLTxuuR2ydiv4bezmYNSyrGyFWazmIdrfmGOjBTiMyOZZTZ+KMTqTibOTNHgh4/gm3eY6VvVCjXH6HDOObyGI86USVppQzaNM0gkPDrwT9K1f/hKzH+JKE4VVMAd0gxfhcWvSw58IJhkjQltiD0JchRYm1XzEOKaFuWOmivCjyhRjhY1j3QjEVf8RYAA2zL8q1eHXQAAAAABJRU5ErkJggg==">
+			<!-- <h2 style="top:42px;font-weight: 100;" class="d-l-w">你击败了<span class="oppoName">xxx</span></h2> -->
+			<h2 class="lw-title">你获得了<span class="oppo-game-score"></span>个印花</h2>
+			<div class="award_des" style="top:108px;">获得<span class="award_name">奖品</span>
+			</div>
+			<img class="award_img" src="http://style.cdn.juhaomai.net/style/images/app/game/revenge/award.png">
+			<!-- <img class="award_tip" src="http://style.cdn.juhaomai.net/style/images/app/game/revenge/award-tip.png"> -->
+			<a class="btn-show-off" style="left: 50%;margin-left: -118px;">炫耀一下</a>
+			<a class="btn-again" style="left: 53.125%;">继续比赛</a>
+		</div>
+		<div class="lose-cover lw-box" style="display:none">
+			<h1 style="top:-5px;font-weight: 900;color:#ffffff;font-size:22px;" class="d-l-w">很遗憾</h1>
+			<img id="shuts" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAfCAYAAACLSL/LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTRBMEVCRTk4Q0Q5MTFFNDg4MTBFRTM2Mzc1Q0I0NEEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTRBMEVCRUE4Q0Q5MTFFNDg4MTBFRTM2Mzc1Q0I0NEEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBNEEwRUJFNzhDRDkxMUU0ODgxMEVFMzYzNzVDQjQ0QSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBNEEwRUJFODhDRDkxMUU0ODgxMEVFMzYzNzVDQjQ0QSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrIexPIAAAM+SURBVHjaxJhNSFRRFMfvezZp4iyUbOGmWiRRFvRBWQ5KEFi4yQgJqk0EjRZUq4jKygppVS1qDGQ2GYSEtRlKCCId+xAqKIuwRbVx0UQuJhQzff0P/S/chvl8M2+68JN35t17zt9555537ljDSlUrpR6DtervCIMgmFXFGT7QAw7Sfgu22/gTAw3gKW/IhPugvAiiyhlLixINDQHHidn84CdoBg9ot4BBUOmhqErGaKEtsZshSrQo25g4A9rALdoBMARqPBBVQ98B2hKzDaJm9AQ7YYHkVTs4T7sOvAG1BRRVS591tCVWO0T9k9N2koUO6KJAGUvAO7CpAKI2g/f0qRijC6KcxIl2CgcOd8pu2gvBc+ah2yFrn4EFtMV3TzJR6YTpITumyZj7COxzIWo/1+p4TfSdcthZOB1ijftBuw8cA1YWa2XOcXCbtvhYQ58qX2GKObYBfKZ9DVzOsL4EdIOrtGXtejCWTUA7h8fxhcn7kfYpbnNfmmp+kvYHbp6v2Qazc8yVGAO8oH0I3AWLjDly3c97inPrwfdcAtkuEjkOtoEBY3dFgJ88BLt47x7nxnMNYg273/6SQzfAYdrjTPYVtOVRHgVz6ZwEklcLV9+YHhKwA1w0KroWdQEcySSq0I/SHPN8S0SNz+T6Eu+p/yVM1ncaL2P98j+Tr+98FkuO3QRnjRz7xOtzzL+SYgsrY0nQif8EbGQR1g1nkKWkrFjC/BSiX/ADbPbiZKfRcO7hXL/XwuR8MMqCKaMX7AXTxpxpNpy9tOtZZBd7JWwZeAlW0u7mo0x2aJnlo7xCexX/oaWFFiYdwSuwnLZ0DKczlIQ5vk9P0Ja1r43ONW9hjTxSVRm91XU2k5mGw07kAO0qdiqN+QprNXaZfDs7wB0XG6aPa+eNY1qrG2EWc0S/qH+BLTxuuR2ydiv4bezmYNSyrGyFWazmIdrfmGOjBTiMyOZZTZ+KMTqTibOTNHgh4/gm3eY6VvVCjXH6HDOObyGI86USVppQzaNM0gkPDrwT9K1f/hKzH+JKE4VVMAd0gxfhcWvSw58IJhkjQltiD0JchRYm1XzEOKaFuWOmivCjyhRjhY1j3QjEVf8RYAA2zL8q1eHXQAAAAABJRU5ErkJggg==">
+			<!-- <h2 style="top:42px;font-weight: 100;" class="d-l-w"><span class="oppoName">xxx</span>击败了你</h2> -->
+			<h2 class="lw-title" style="top:50px;">你获得了<span class="oppo-game-score"></span>个印花</h2>
+			<h2 style="font-weight: bold;">没有可兑换的奖品，再接再厉！</h2>
+			<img class="unluck_img" src="http://style.cdn.juhaomai.net/style/images/app/game/revenge/unluck.png">
+			<a class="btn-invite" style="left: 50%;margin-left: -118px;">邀请朋友</a>
+			<a class="btn-again" style="left: 53.125%;">继续比赛</a>
+		</div>
+	</div>
+	<div class="sharep"></div>
+	<script type="text/javascript">
+		$('body').on('touchmove', function(e) {
+				e.preventDefault();
+			});
+	</script>
+    <script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+    	(function(){
+    ImportJavscript = {
+        url:function(url){
+            document.write("<script type=\"text/javascript\" src=\""+url+"\"></scr"+"ipt>");
+        }
+    }
+})();
+/*merge end*/
+ImportJavscript.url("http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_game_api.js?201555");
+ImportJavscript.url("http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_game_topbar.js?201555");
+ImportJavscript.url("http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_game_foot_v2.js?201555");
+ImportJavscript.url("http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_game_iclick_v3.js?201555");
+ImportJavscript.url("http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_game_share_v3.js?201555");
+ImportJavscript.url("http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_game_app.js?20155505005");
+    </script>
+	<script src="http://style.cdn.juhaomai.net/style/js/app/game/binfen/binfen.js?21"></script>
+</body>
+</html>

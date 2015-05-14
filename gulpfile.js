@@ -36,7 +36,7 @@ gulp.task('workmcjs', function (){
         .pipe(gulp.dest('mc-work/pro'));
 });
 gulp.task('workmccss', function() {
-  gulp.src('mc-work/dev/*.css')
+  gulp.src('mc-work/dev/xiaojun/*.css')
     .pipe(mincss({keepBreaks:true})).pipe(rename('all.min.css'))
     .pipe(gulp.dest('mc-work/pro'))
 });
