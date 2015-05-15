@@ -1,0 +1,193 @@
+html,body{width: 100%;height:100%;overflow: hidden;background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/bg.jpg);background-size: 100% 100%;background-repeat: no-repeat;}
+.marginauto{margin-left: auto;margin-right: auto;}
+.left{float: left;}
+.right{float: right;}
+.loading{position: absolute;width: 100%;height: 100%;text-align: center;color: #fff;background-color: #000;font-size: 30px;padding-top: 49%;z-index: 500;}
+.soujiwrap{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.52);
+	width: 100%;
+	height: 100%;
+	z-index: 300;
+	top: 0;
+	-webkit-transform:translateY(-1000px);
+	transform: translateY(-1000px);
+	overflow: hidden;
+}
+.soujiwrap .soujikuang{
+	width: 240px;
+	height: 260px;
+	margin-top:28.9%; 
+	position: relative;
+}
+.soujiwrap .soujikuang .souji{
+	position: absolute;
+	width: 195px;
+	left: 50%;
+	margin-left: -97.5px;
+	top: -22px;
+}
+.soujiwrap .soujikuang .yangpin{
+	  width: 95px;
+  height: 105px;
+  position: absolute;
+  left: 50%;
+  margin-left: -47.5px;
+  top: 58px;
+  -webkit-border-radius:16px;
+  border-radius: 16px;
+  border: 3px solid #f1e1b5;;
+}
+.yangpinname{
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	left: 50%;
+	margin-left: -50%;
+	  top: 170px;
+  font-weight: bold;
+  color: #542b19;
+}
+.laiba{
+	position: absolute;
+	width: 121px;
+	height: 42px;
+	left: 50%;
+	margin-left: -60.5px;
+	  bottom: 12px;
+}
+.wrap1{width: 249px;height: 201px;margin-top: 49.22%;position: relative;}
+.wrap1p{width: 314px;position: absolute;  left: 50%;margin-left: -157px;top: -52px;}
+.start{width: 172px;position: absolute;  left: 50%;  margin-left: -86px;bottom: 20px;}
+.wrap2{width: 294px;padding-top: 80px;position: relative;
+  padding-bottom: 10px;-webkit-transform: translateY(200%);transform: translateY(200%);}
+.wrap2 .biaoti{text-align: center;width: 259px;height: 54px;line-height:38px;position: absolute;left: 50%;margin-left: -129.5px;top:-8px;background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/biaoti.png);background-size: contain;color: #6f4916;font-weight: bold;}
+.wrap2 .jindu{width: 262px;height: 27px;position: absolute;left: 50%;margin-left: -131px;top:44px;background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/jindu.png);background-size: contain;
+	}
+.wrap2 .shijianwrap{width: 262px;height: 27px;position: absolute;left: 50%;margin-left: -131px;top:44px;}
+.wrap2 .shijian{display:block;position:absolute;background-color: #542b19;width: 242px;height: 19px;line-height: 19px;-webkit-border-radius:10px;border-radius: 10px;left: 10px;top: 4px;color: #fff;  text-align: center;-webkit-transition:width .5s linear;transition:width .5s linear;}
+.wrap2 .shijian2{display:block;position:absolute;width: 242px;height: 19px;line-height: 19px;left: 10px;top: 4px;color: #fff;text-align: center;}
+.biankuang{
+	border: 3px solid #ad7734;
+	background-color: #f6ebcd;
+	-webkit-border-radius:25px;
+	border-radius: 25px;
+}
+.ninewrap{
+	width: 100%;
+}
+.ninewrap ul{
+	overflow: hidden;
+	width: 280px;
+	background-color: #edc300;
+	-webkit-border-radius:25px;
+	border-radius: 25px;
+	padding-bottom: 10px;
+	position: relative;
+	-webkit-perspective:500px;
+	perspective:500px;
+}
+.ninewrap ul li{
+	width: 86px;
+	height: 95px;
+	float: left;
+	-webkit-border-radius:15px;
+	border-radius: 15px;
+	margin-left: 5.5px;
+	margin-top: 10px;
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition:all 1s linear;
+    -webkit-transform-origin: center center 0px;
+    transform-origin: center center 0px;
+	transition:all 1s linear;
+	
+}
+.ninewrap ul li span{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	  background-size: 80%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  left: 0;
+  -webkit-border-radius:13px;
+	border-radius: 13px;
+}
+.ninewrap ul li span.moren{
+	background-color: #fff2cb;
+	background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/long.png);;
+}
+.ninewrap ul li span.bianhua{
+	-webkit-transform:translateZ(-1.1px) ;
+}
+.ninewrap ul li span.bianhua1{
+	background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/yangpin.png);
+}
+.ninewrap ul li span.bianhua2{
+	background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/dabai.png);
+}
+.ninewrap ul li span.bianhua3{
+	background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/naiye.png);
+}
+.ninewrap ul li.active{
+	-webkit-transform:translateZ(0.01px) rotateY(-180deg);   
+	transform:translateZ(0.01px) rotateY(-180deg);   
+}
+.awardd{
+	  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.sharep{
+	background-image: url(http://style.cdn.juhaomai.net/style/images/app/game/binfen/sharep.png);
+	background-size: 100% 100%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 20002;
+	display: none;
+}
+@-webkit-keyframes rotate {
+      0%{
+	-webkit-transform:translateZ(0.01px) rotateY(-0deg);   
+	transform:translateZ(0.01px) rotateY(-0deg);   
+    }
+    40%,50%,60%{
+	-webkit-transform:translateZ(0.01px) rotateY(-180deg);   
+	transform:translateZ(0.01px) rotateY(-180deg);   
+    }
+    100%{
+    -webkit-transform:translateZ(0.01px) rotateY(-0deg);   
+	transform:translateZ(0.01px) rotateY(-0deg);   	
+    }
+}
+@keyframes rotate {
+       0%{
+	-webkit-transform:translateZ(0.01px) rotateY(-0deg);   
+	transform:translateZ(0.01px) rotateY(-0deg);   
+    }
+    40%,50%,60%{
+	-webkit-transform:translateZ(0.01px) rotateY(-180deg);   
+	transform:translateZ(0.01px) rotateY(-180deg);   
+    }
+    100%{
+    -webkit-transform:translateZ(0.01px) rotateY(-0deg);   
+	transform:translateZ(0.01px) rotateY(-0deg);   	
+    }
+}
+.rotate {
+    -webkit-animation-name: rotate;
+    animation-name: rotate;
+   	 -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+}
