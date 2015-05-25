@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="qingniao" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title></title>
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/global/reset.css">
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/modules/game/widget/css/mc_game_merge_v5.css">
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/app/ushare/game/dianzan/dianzan.css?0">
+	<script src="http://style.cdn.juhaomai.net/style/js/global/lib/jquery/jquery-2.1.1.min.js"></script>
+	<script src="http://style.cdn.juhaomai.net/style/js/app/lightapp/mrh/velocity.min.js"></script>
+	<script type="text/javascript" src="http://style.mc2113.com/dist/lib/mc_ui/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript">
+		mc={"ads":{"adsType":"关注公众号","autoDownFP":"N","btnText":"关注我们","link":"http://blog.scalap.com","pic":"http://img.juhaomai.net/mcup/m1/201504081952040411.png","tipTitle":"目前还剩31份奖品"},"awards":{"remainPrize":31,"totalPrize":100},"conf":{"a_info":"&lt;p&gt;请填写奖券使用须知、注意事项及兑奖地点等相关说明。&lt;/p&gt;","autoDownFP":"N","gailu":"10","m_link":"http://blog.scalap.com","mname":"光明植物活力","name":"印花","shareDesc":"老虎机~","shareIcon":"http://img.juhaomai.net/mcup/m1/201502061407100079.jpg","shareSpeDesc":"老虎机","shareSpeTitle":"老虎机！","shareTitle":"老虎机"},"info":{"anSiteId":1,"dateTime":"2015年05月12日-06月12日","dayTimes":100,"friendScore":0,"gameEnd":false,"gameId":100869,"gameStart":true,"maxScore":0,"remainTimes":100,"selfScore":0,"source":"all","tag":"","title":"翻牌子"},"refUrl":{"api":"http://test.mc2113.cn/plugin/ushare/social_api.htm","award":"http://test.mc2113.cn/plugin/ushare/award_user_info_form.htm?gameId=100869&puid=4127328126&pticket=70524&source=all&id=%id%","more":"http://mp.weixin.qq.com/s?__biz=MjM5Njc5NjU5OQ==&mid=203560207&idx=1&sn=8b645891994d05a950b1ef0767088901#rd","rank":"http://test.mc2113.cn/plugin/ushare/social_rank.htm?gameId=100869&puid=4127328126&pticket=70524&source=all","rule":"http://test.mc2113.cn/plugin/ushare/plugin/ushare/social_game_rule.htm?gameId=100869&puid=4127328126&pticket=70524&source=all","share":"http://test.mc2113.cn/plugin/ushare/play_social_game_4321629469.htm?gameId=100869&puid=4127328126&pticket=70524&source=all","ucenter":"http://test.mc2113.cn/plugin/ushare/accept_award_api.htm?gameId=100869&puid=4127328126&pticket=70524&source=all&method=list"},"rela":{"pticket":70524,"puid":"4127328126","ticket":"70524","uid":"4127328126"},"resource":{"baseUrl":"http://style.juhaomai.net/static/game/10000094/images","imgAudio":["bg.jpg","biaoti.png","dabai.png","jindu.png","laiba.png","long.png","naiye.png","souji.png","start.png","wrap1.png","yangpin.png"],"txt":[{"key":"mname","value":"光明植物活力"},{"key":"gailu","value":"10"},{"key":"name","value":"印花"},{"key":"m_link","value":"http://blog.scalap.com"},{"key":"a_info","value":"&lt;p&gt;请填写奖券使用须知、注意事项及兑奖地点等相关说明。&lt;/p&gt;"},{"key":"autoDownFP","value":"N"}],"version":""},"userInfo":{"nickName":"4127328126"}};
+	</script>
+	<script type="text/javascript" src="http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_resource.js"></script>
+	<script type="text/javascript">
+		function preloadImages(sources, callbackPercent, callbackComplete, temporary) {
+			var loadedImages = 0;
+			var totalImages = 0;
+			var images = {};
+			for (var src in sources) {
+				totalImages++;
+			}
+			for (var src in sources) {
+				images[src] = new Image();
+				images[src].onload = function() {
+					loadedImages++;
+					var percent = parseInt(loadedImages / totalImages * 100) + "%";
+					callbackPercent && callbackPercent(percent);
+					if (loadedImages == totalImages) {
+						callbackComplete && callbackComplete(percent);
+					}
+				};
+				images[src].onerror = function() {
+					loadedImages++;
+					temporary && (this.src = temporary);
+					var percent = parseInt(loadedImages / totalImages * 100) + "%";
+					callbackPercent && callbackPercent(percent);
+					if (loadedImages == totalImages) {
+						callbackComplete && callbackComplete(percent);
+					}
+				};
+				images[src].src = sources[src];
+			}
+		};
+		source={
+			'bg':MCRSC.getImage( "bg.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/bg.png"),
+			'guai1':MCRSC.getImage( "guai1.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/guai1.png"),
+			'guai2':MCRSC.getImage( "guai2.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/guai2.png"),
+			'guai3':MCRSC.getImage( "guai3.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/guai3.png"),
+			'guai4':MCRSC.getImage( "guai4.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/guai4.png"),
+			'index':MCRSC.getImage( "index.jpg" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/index.jpg"),
+			'index-title':MCRSC.getImage( "index-title.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/index-title.png"),
+			'start':MCRSC.getImage( "start.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/start.png"),
+			'xin':MCRSC.getImage( "xin.png" ,"http://style.cdn.juhaomai.net/static/game/10000103/images/xin.png")
+		};
+		preloadImages(source, function(p) {
+			$('.loading').html(p);
+		}, function() {
+			$('.loading').velocity({
+				'opacity': 0
+			}, 500, function() {
+				$(this).remove();
+				// $('.revenger').addClass('animated slideInUp');
+				 $('.start').addClass('animated bounce');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="loading"></div>
+	<div class="index" id="index">
+		<img class="biaoti" src="http://style.cdn.juhaomai.net/style/images/app/game/dianzan/index-title.png">
+		<img class="start" src="http://style.cdn.juhaomai.net/style/images/app/game/dianzan/start.png">
+	</div>
+	<div class="wutai">
+		<p class="t1"><span class="t11"></span><span style="position: absolute;left: 52px;line-height: 28px;">:</span><span class="t12"></span></p>
+		<p class="t2"></p>
+		<ul>
+			<li class="guai1"></li>
+			<li class="guai2"></li>
+			<li class="guai3"></li>
+			<li class="guai4"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		// $('body').on('touchmove', function(e) {
+		// 		e.preventDefault();
+		// 	});
+	</script>
+	<script type="text/javascript" src="http://style.cdn.juhaomai.net/style/js/modules/game/widget/js/mc_game_merge_v5.js"></script>
+	<script src="http://style.cdn.juhaomai.net/style/js/app/game/dianzan/dianzan.js?0"></script>
+</body>
+</html>
