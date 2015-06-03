@@ -9,7 +9,7 @@ var minhtml = require('gulp-htmlmin');
 var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
-
+var browserSync = require('browser-sync');
 // 语法检查
 gulp.task('jshint', function () {
     return gulp.src('develop/js/tween.js')
@@ -77,7 +77,15 @@ gulp.task('minify_sea', function (){
 gulp.task('watch', function () {
     gulp.watch('develop/js/tween.js', ['minify']);
 });
-
+//mobile
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./mobile-test"
+        }
+    });
+    gulp.watch("./mobile-test/**.*").on("change", browserSync.reload);
+});
 // 注册任务
 gulp.task('default', ['minify', 'watch']);
 gulp.task('sea', ['minify_sea', 'watch']);
