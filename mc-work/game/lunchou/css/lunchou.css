@@ -64,6 +64,16 @@ img{width: 100%;}
     -ms-transform-origin: center bottom;
     transform-origin: center bottom
 }
+@-webkit-keyframes huxi {0%{box-shadow:0 1px 4px rgba(255,255,255,.1)}100%{box-shadow:0 0 15px #ffe542}}
+@keyframes huxi {0%{box-shadow:0 1px 4px rgba(255,255,255,.1)}100%{box-shadow:0 0 15px #ffe542}}
+.huxi {
+    -webkit-border-radius:20px;
+    border-radius: 20px;
+
+    -webkit-animation:huxi 1s ease-in-out infinite alternate;
+    animation-name:huxi 1s ease-in-out infinite alternate;
+    
+}
 .marginauto{margin-left: auto;margin-right: auto;}
 .left{float: left;}
 .right{float: right;}
