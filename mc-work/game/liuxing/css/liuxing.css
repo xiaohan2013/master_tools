@@ -1,0 +1,189 @@
+html,body{overflow-y: auto;}
+body{min-height: 1008px;}
+img{width:100%;}
+.mask1{
+  position: absolute;
+  width: 640px;
+  background-color: #000;
+  z-index: 400;
+  left: 0;
+  top: 0;
+}
+@-webkit-keyframes bounce {
+    0%, 100%, 20%, 53%, 80% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+   }
+   40%, 43% {
+       -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+       transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+       -webkit-transform: translate3d(0, -30px, 0);
+       transform: translate3d(0, -30px, 0)
+  }
+  70% {
+      -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+      transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0)
+ }
+ 90% {
+     -webkit-transform: translate3d(0, -4px, 0);
+     transform: translate3d(0, -4px, 0)
+}
+}
+@keyframes bounce {
+    0%, 100%, 20%, 53%, 80% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+   }
+   40%, 43% {
+       -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+       transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+       -webkit-transform: translate3d(0, -30px, 0);
+       transform: translate3d(0, -30px, 0)
+  }
+  70% {
+      -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+      transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0)
+ }
+ 90% {
+     -webkit-transform: translate3d(0, -4px, 0);
+     transform: translate3d(0, -4px, 0)
+}
+}
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom
+}
+@-webkit-keyframes huxi {0%{box-shadow:0 1px 4px rgba(255,255,255,.1)}100%{box-shadow:0 0 15px #ffe542}}
+@keyframes huxi {0%{box-shadow:0 1px 4px rgba(255,255,255,.1)}100%{box-shadow:0 0 15px #ffe542}}
+.huxi {
+    -webkit-border-radius:20px;
+    border-radius: 20px;
+
+    -webkit-animation:huxi 1s ease-in-out infinite alternate;
+    animation-name:huxi 1s ease-in-out infinite alternate;
+    
+}
+.marginauto{margin-left: auto;margin-right: auto;}
+.left{float: left;}
+.right{float: right;}
+.body{width: 640px;min-height: 1008px;position: relative;}
+.loading{position: absolute;width: 100%;height: 100%;text-align: center;color: #fff;background-color: #000;font-size: 50px;padding-top: 49%;z-index: 500;}
+.body{background-image: url(http://style.cdn.juhaomai.net/style/game/liuxing/images/indexbg.png);background-size: 100% 100%;}
+#canvas{  position: absolute;}
+.wutai p {
+  position: absolute;
+  top: 36px;
+  color: #f8b606;
+  font-size: 40.78px;
+  font-weight: bold;
+}
+.wutai .t1{
+left:38px;
+  width: 191px;
+  height: 77px;
+background-image: url(http://style.cdn.juhaomai.net/style/game/xingxing/images/shizhong.png);
+background-size: contain;
+background-position: center center;
+background-repeat: no-repeat;
+  padding-left: 98px;
+  padding-top: 15px;
+}
+.wutai .t2{
+right: 38px;
+  width: 187px;
+  height: 71px;
+background-image: url(http://style.cdn.juhaomai.net/style/game/xingxing/images/geshu.png);
+background-size: contain;
+background-position: center center;
+background-repeat: no-repeat;
+  text-align: center;
+  text-indent: 35px;
+  line-height: 75px;
+  top: 43px;
+}
+.award{
+  width: 640px;
+  height: 100%;
+  position: absolute;
+  z-index: 320;
+  background-color: rgba(0,0,0,.8);
+  left: 0;
+  top: 0;
+}
+.award img{
+  position: absolute;
+  width: 410px;
+  left: 50%;
+  margin-left: -205px;
+  top:107px;
+}
+.count{
+  position: absolute;
+  color: #4b1c09;
+  left: 342px;
+  top: 253px;
+  width: 58px;
+  height: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.award .xinyuan{
+  position: absolute;
+  width: 196px;
+  height: 97px;
+  left: 50%;
+  margin-left: -98px;
+  top: 460px;
+}
+.award .shut{
+   position: absolute;
+  width: 58px;
+  left: 435px;
+  top: 132px;
+  margin-left: 0;
+}
+.fudai{
+  position:absolute;
+  width:150px;
+  height:150px;
+  left:50%;
+  margin-left:-75px;
+  bottom:200px;
+  background-image:url(http://style.cdn.juhaomai.net/style/game/liuxing/images/sprite.png);
+  background-size:150px 900px;
+  background-position-x:0;
+  background-position-y:0;
+}
+.donghua{
+   animation:donghua 0.6s step-start 1;
+}
+@keyframes donghua
+{
+0%{background-position-y: 0px;}
+20%{background-position-y: -150px;}
+40%{background-position-y: -300px;}
+60%{background-position-y: -450px;}
+80%{background-position-y: -600px;}
+100%{background-position-y: -750px;}
+}
+@-webkit-keyframes donghua
+{
+0%{background-position-y: 0px;}
+20%{background-position-y: -150px;}
+40%{background-position-y: -300px;}
+60%{background-position-y: -450px;}
+80%{background-position-y: -600px;}
+100%{background-position-y: -750px;}
+}

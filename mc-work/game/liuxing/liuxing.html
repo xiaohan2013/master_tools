@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="qingniao" />
+	<meta name="format-detection" content="telephone=no" />
+	<script type="text/javascript">
+		eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('F N(a){8 b=0.Q||a,t=0.L||b,n=0.6.7||b,v=0.6.C||b,4=0.I||a,o=0.O||4,p=0.6.B||4,q=0.6.E||4;8 w=G.H(b,t,n,v,4,o,p,q);8 c=J(w)/a;5&&5.r(c);u(/P (\\d+\\.\\d+)/.R(z.A)){5&&5.r(x.$1);8 d=D(x.$1);u(d>2.3){m.e(\'<f g="h" i="7=\'+a+\', K-s = \'+c+\', M-s = \'+c+\', j-k=l-9">\')}y{m.e(\'<f g="h" i="7=\'+a+\', j-k=l-9">\')}}y{m.e(\'<f g="h" i="7=\'+a+\', S-T=U, j-k=l-9">\')}};',57,57,'window||||ih|console|screen|width|var|dpi|||||write|meta|name|viewport|content|target|densitydpi|device|document|sw|oh|ish|sah|log|scale|ow|if|saw||RegExp|else|navigator|userAgent|height|availWidth|parseFloat|availHeight|function|Math|min|innerHeight|parseInt|minimum|outerWidth|maximum|fixScreen|outerHeight|Android|innerWidth|test|user|scalable|no'.split('|'),0,{}));
+		fixScreen(640);
+	</script>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>抽奖</title>
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/css/global/reset.css">
+	<link rel="stylesheet" href="http://style.cdn.juhaomai.net/style/game/liuxing/css/liuxing.css?32999345">
+	<script src="http://style.cdn.juhaomai.net/style/js/global/lib/jquery/jquery-2.1.4.min.js"></script>
+	<script src="http://style.cdn.juhaomai.net/style/js/app/lightapp/mrh/velocity.min.js"></script>
+	<script type="text/javascript">
+		eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('2 9(b,c,d,e){1 f=0;1 g=0;1 h={};3(1 i 4 b){g++}3(1 i 4 b){h[i]=l k();h[i].j=2(){f++;1 a=7(f/g*6)+"%";c&&c(a);5(f==g){d&&d(a)}};h[i].m=2(){f++;e&&(n.8=e);1 a=7(f/g*6)+"%";c&&c(a);5(f==g){d&&d(a)}};h[i].8=b[i]}};',24,24,'|var|function|for|in|if|100|parseInt|src|preloadImages||||||||||onload|Image|new|onerror|this'.split('|'),0,{}));
+		source={
+			'indexbg':"http://style.cdn.juhaomai.net/style/game/liuxing/images/indexbg.png",
+			'liuxing1':"http://style.cdn.juhaomai.net/style/game/liuxing/images/9liuxing1.png",
+			'liuxing2':"http://style.cdn.juhaomai.net/style/game/liuxing/images/9liuxing2.png",
+			'liuxing3':"http://style.cdn.juhaomai.net/style/game/liuxing/images/9liuxing3.png",
+			'liuxing4':"http://style.cdn.juhaomai.net/style/game/liuxing/images/9liuxing4.png",
+			'bg':"http://style.cdn.juhaomai.net/style/game/liuxing/images/bg.png",
+			'diao7':"http://style.cdn.juhaomai.net/style/game/xingxing/images/xinyuan.png",
+			'diao2':"http://style.cdn.juhaomai.net/style/game/xingxing/images/gongxi.png",
+			'spritesheet':"http://style.cdn.juhaomai.net/style/game/liuxing/images/sprite.png"
+		};
+		preloadImages(source, function(p) {
+			$('.loading').html(p);
+		}, function() {
+			$('.loading').velocity({
+				'opacity': 0
+			}, 500, function() {
+				$(this).remove();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="loading"></div>
+	<div class="mask1"><img src="http://style.cdn.juhaomai.net/style/game/liuxing/images/bg.png"></div>
+	<div class="body wutai">
+		<p class="t1">15</p>
+		<p class="t2">0</p>
+		<canvas id="canvas"></canvas>
+		<div class="fudai"></div>
+	</div>
+	<div class="award" style="display: none;"><img src="http://style.cdn.juhaomai.net/style/game/xingxing/images/gongxi.png"><span class="count"></span><img class="xinyuan" src="http://style.cdn.juhaomai.net/style/game/xingxing/images/xinyuan.png"><img class="shut" src="http://style.cdn.juhaomai.net/style/game/xingxing/images/shut.png"></div>
+	<script type="text/javascript">
+		// $('body').on('touchmove', function(e) {
+		// 		e.preventDefault();
+		// 	});
+	</script>
+	<script src="http://style.cdn.juhaomai.net/style/game/liuxing/js/liuxing.js?399923465"></script>
+</body>
+</html>
